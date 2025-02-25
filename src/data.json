@@ -1,0 +1,172 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Booksville",
+      "description": "Booksville is a web app for book lovers to discover, buy, rent, and review books while connecting with others. Built with Vue 3 and Vite.",
+      "image": "/images/booksville.png",
+      "previewImage": "/images/booksville.png",
+      "role": "Frontend Developer",
+      "teamSize": "2 members",
+      "technologies": ["Vue 3", "Vite", "Vercel", "Vuex"],
+      "completedDate": "November 2024",
+      "category": "Web Development",
+      "overview": "Booksville is a comprehensive web application designed to create a community for book enthusiasts. The platform allows users to discover new titles, purchase or rent books, leave reviews, and connect with fellow readers who share similar interests. As the Frontend Developer, I focused on creating an intuitive and responsive user interface that makes navigation and interaction seamless across all devices.",
+      "challenges": [
+        {
+          "title": "Real-time User Interaction",
+          "solution": "Implemented Vuex for state management and integrated WebSockets to enable real-time chat and notification features, enhancing the community aspect of the platform."
+        },
+        {
+          "title": "Performance Optimization",
+          "solution": "Used Vue 3's Composition API and lazy loading components to significantly improve initial load time and overall application performance."
+        }
+      ],
+      "links": [
+        {
+          "text": "Live Demo",
+          "url": "https://booksville.vercel.app"
+        },
+        {
+          "text": "GitHub Repository",
+          "url": "https://github.com/username/booksville"
+        }
+      ],
+      "achievements": [
+        "Reduced page load time by 40% through code optimization",
+        "Implemented responsive design that works seamlessly across all device sizes",
+        "Built a recommendation system that increased user engagement by 25%"
+      ],
+      "gallery": [
+        {
+          "src": "/images/booksville-homepage.png",
+          "alt": "Booksville Homepage"
+        },
+        {
+          "src": "/images/booksville-search.png",
+          "alt": "Book Search Feature"
+        },
+        {
+          "src": "/images/booksville-profile.png",
+          "alt": "User Profile Page"
+        }
+      ],
+      "nextProject": {
+        "id": 2,
+        "title": "BookScraper"
+      }
+    },
+    {
+      "id": 2,
+      "title": "BookScraper",
+      "description": "BookScraper is a web app that scrapes real-time share data, tracks stock prices, and provides automated market insights.",
+      "image": "/images/sharesansar.png",
+      "previewImage": "/images/sharesansar.png",
+      "role": "Full Stack Developer",
+      "teamSize": "Solo Project",
+      "technologies": ["Python", "BeautifulSoup", "Flask", "Vue.js"],
+      "completedDate": "October 2024",
+      "category": "Data Science",
+      "overview": "BookScraper is an automated data analysis tool that extracts real-time information from financial websites, processes the data, and presents actionable insights to users. The application tracks stock prices, analyzes market trends, and generates reports to help investors make informed decisions. As the sole developer, I handled everything from data extraction and backend processing to frontend visualization.",
+      "challenges": [
+        {
+          "title": "Data Accuracy and Reliability",
+          "solution": "Implemented robust error handling and data validation techniques, along with multiple source verification to ensure data accuracy even when primary sources were unavailable."
+        },
+        {
+          "title": "Processing Large Datasets",
+          "solution": "Used asyncio in Python for concurrent processing and implemented efficient data storage with SQLite for local caching, significantly reducing processing time for large datasets."
+        }
+      ],
+      "links": [
+        {
+          "text": "Project Demo",
+          "url": "https://bookscraper-demo.herokuapp.com"
+        },
+        {
+          "text": "Source Code",
+          "url": "https://github.com/username/bookscraper"
+        }
+      ],
+      "achievements": [
+        "Processed over 10,000 data points daily with 99.8% accuracy",
+        "Reduced manual analysis time by 85% for financial advisors using the platform",
+        "Featured in a local tech publication for innovative use of web scraping technology"
+      ],
+      "gallery": [
+        {
+          "src": "/images/bookscraper-dashboard.png",
+          "alt": "BookScraper Dashboard"
+        },
+        {
+          "src": "/images/bookscraper-analysis.png",
+          "alt": "Market Analysis Screen"
+        },
+        {
+          "src": "/images/bookscraper-reports.png",
+          "alt": "Generated Reports Page"
+        }
+      ],
+      "nextProject": {
+        "id": 3,
+        "title": "Branding"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Branding",
+      "description": "My skills in branding is a pure example of how a hobby can grow into a profession. Exploring your product and providing with a decision-making shortcut is nothing but fun for me.",
+      "image": "/images/sujan.png",
+      "previewImage": "/images/sujan.png",
+      "role": "Brand Designer",
+      "teamSize": "Solo Project",
+      "technologies": ["Figma", "Adobe Suite", "Sketch"],
+      "completedDate": "September 2024",
+      "category": "Design",
+      "overview": "This project showcases my journey from branding as a hobby to a professional skill. I've worked with various clients to develop comprehensive brand identities that reflect their values and connect with their target audiences. My approach involves deep research into the client's industry, target demographics, and competitors to create unique and memorable brand assets.",
+      "challenges": [
+        {
+          "title": "Creating Distinct Brand Identities in Crowded Markets",
+          "solution": "Developed a custom research methodology that identifies brand white space and leverages psychological color theory and typography to create truly distinctive visual languages."
+        },
+        {
+          "title": "Maintaining Consistency Across Platforms",
+          "solution": "Created detailed brand guidelines and asset libraries that ensure consistency across digital and print media while allowing for necessary adaptations to different formats."
+        }
+      ],
+      "links": [
+        {
+          "text": "Portfolio",
+          "url": "https://branddesign-portfolio.com"
+        },
+        {
+          "text": "Behance",
+          "url": "https://behance.net/username"
+        }
+      ],
+      "achievements": [
+        "Created brand identities for 15+ startups that successfully secured funding",
+        "Redesigned an established brand that resulted in 30% increased market recognition",
+        "Won regional design award for innovative approach to brand storytelling"
+      ],
+      "gallery": [
+        {
+          "src": "/images/branding-logo-designs.png",
+          "alt": "Collection of Logo Designs"
+        },
+        {
+          "src": "/images/branding-guidelines.png",
+          "alt": "Brand Guidelines Example"
+        },
+        {
+          "src": "/images/branding-applications.png",
+          "alt": "Real-world Brand Applications"
+        }
+      ],
+      "nextProject": {
+        "id": 1,
+        "title": "Booksville"
+      }
+    }
+  ]
+}
