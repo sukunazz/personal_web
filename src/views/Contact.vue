@@ -195,7 +195,17 @@ export default {
   gap: 1rem;
   margin-top: 1rem;
 }
+.success-message {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+}
 
+.error-message {
+  margin-top: 1rem;
+  color: red;
+  font-weight: bold;
+}
 .social-icon {
   width: 40px;
   height: 40px;
