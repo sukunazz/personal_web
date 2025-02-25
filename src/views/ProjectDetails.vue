@@ -704,7 +704,7 @@ export default {
             </div>
           </div>
         </div>
-        
+
         <!-- Project Preview Image -->
         <div class="project-preview">
           <img
@@ -761,7 +761,7 @@ export default {
                   {{ project.teamSize || "2 members" }}
                 </p>
               </div>
-              
+
               <!-- Technologies Used -->
               <div
                 class="info-card"
@@ -955,14 +955,14 @@ export default {
 }
 
 .navigation {
-  padding-top: 10px ;
+  padding-top: 10px;
   border-bottom: 1px solid #eaeaea;
   /* margin-bottom: 40px; */
 }
 
 .document-icon {
   color: #666;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 0.9rem;
   margin: 0 0 15px 0;
 }
@@ -997,7 +997,7 @@ export default {
 .project-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color:  #4caf50;
+  color: #4caf50;
   /* margin: 0 0 20px 0; */
 }
 
@@ -1016,7 +1016,7 @@ export default {
 }
 
 .web-tag {
-  background-color:  #4caf50;
+  background-color: #4caf50;
   color: #333;
 }
 
@@ -1082,7 +1082,7 @@ export default {
 }
 
 .highlight {
-  color:  #4caf50;
+  color: #4caf50;
   font-weight: 600;
 }
 
@@ -1177,7 +1177,7 @@ export default {
 }
 
 .project-link:hover {
-  color:  #4caf50;
+  color: #4caf50;
   padding-left: 8px;
 }
 
@@ -1250,7 +1250,7 @@ export default {
 
 .next-arrow {
   font-size: 1.6rem;
-  color:  #4caf50;
+  color: #4caf50;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1276,7 +1276,7 @@ export default {
   .project-title {
     font-size: 2rem;
   }
-  
+
   .project-preview {
     height: 350px;
   }
@@ -1309,7 +1309,7 @@ export default {
   .next-project-card {
     padding: 20px;
   }
-  
+
   .project-preview {
     height: 250px;
   }
@@ -1319,7 +1319,9 @@ export default {
   .container {
     padding: 0 20px;
   }
-
+  .navigation {
+    margin-top: 7rem;
+  }
   .project-preview {
     margin-left: -20px;
     margin-right: -20px;

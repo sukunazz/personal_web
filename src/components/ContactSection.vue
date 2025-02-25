@@ -206,10 +206,24 @@ textarea {
   .contact {
     padding: 60px 0;
   }
-
+  .contact-info {
+    text-align: center;
+  }
+  .info-item {
+    text-align: center;
+  }
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  .form-group input,
+  textarea {
+    text-align: center;
+  }
+  .submit-btn {
+    margin: auto;
+    display: flex;
+    justify-content: center;
   }
 }
 </style>
