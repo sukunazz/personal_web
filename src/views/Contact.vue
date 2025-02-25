@@ -64,14 +64,14 @@
               />
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <input
                 type="text"
                 v-model="form.subject"
                 placeholder="Subject"
                 required
               />
-            </div>
+            </div> -->
 
             <div class="form-group">
               <textarea
@@ -82,6 +82,10 @@
             </div>
 
             <button type="submit" class="submit-btn">Send Message</button>
+            <p v-if="successMessage" class="success-message">
+              {{ successMessage }}
+            </p>
+            <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
           </form>
         </div>
       </div>
@@ -90,34 +94,48 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "Contact",
+  name: "ContactSection",
   data() {
     return {
-      form: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      },
+      form: { name: "", email: "", message: "" },
+      successMessage: "",
+      errorMessage: "",
     };
   },
   methods: {
-    submitForm() {
-      // Handle form submission
-      console.log("Form submitted:", this.form);
-      // Reset form
-      this.form = {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    async submitForm() {
+      this.successMessage = "";
+      this.errorMessage = ""; // Reset messages before submitting
+
+      const message = {
+        content: `📩 **New Contact Form Submission**\n\n**Name:** ${this.form.name}\n**Email:** ${this.form.email}\n**Message:**\n${this.form.message}`,
       };
+
+      try {
+        const response = await axios.post("/api/discord", {
+          message: message.content,
+        });
+
+        if (response.status === 200) {
+          this.successMessage = "Message sent successfully!";
+          this.form = { name: "", email: "", message: "" };
+        } else {
+          throw new Error("Unexpected response from Discord.");
+        }
+      } catch (error) {
+        console.error(
+          "Error sending message:",
+          error.response?.data || error.message
+        );
+        this.errorMessage = "Failed to send message. Please try again.";
+      }
     },
   },
 };
 </script>
-
 <style scoped>
 .contact-page {
   padding-top: 80px; /* Account for fixed navbar */
