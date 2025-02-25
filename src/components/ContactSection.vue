@@ -1,17 +1,17 @@
-<!-- <template>
+<template>
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info">
           <h2>Get in touch</h2>
           <div class="info-item">
-            <p>3961 Small Street, New York, United States</p>
+            <p>Pokhara,Nepal</p>
           </div>
           <div class="info-item">
-            <p>646-675-5974</p>
+            <p>9825152682****</p>
           </div>
           <div class="info-item">
-            <p>info@youraddress.com</p>
+            <p>sujansigdel03@gmail.com</p>
           </div>
           <div class="social-links">
             <h3>Connect with us:</h3>
@@ -53,6 +53,10 @@
             </div>
             <button type="submit" class="submit-btn">Submit</button>
           </form>
+          <p v-if="successMessage" class="success-message">
+            {{ successMessage }}
+          </p>
+          <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         </div>
       </div>
     </div>
@@ -60,27 +64,44 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "ContactSection",
   data() {
     return {
-      form: {
-        name: "",
-        email: "",
-        message: "",
-      },
+      form: { name: "", email: "", message: "" },
+      successMessage: "",
+      errorMessage: "",
     };
   },
   methods: {
-    submitForm() {
-      // Handle form submission
-      console.log("Form submitted:", this.form);
-      // Reset form
-      this.form = {
-        name: "",
-        email: "",
-        message: "",
+    async submitForm() {
+      this.successMessage = "";
+      this.errorMessage = ""; // Reset messages before submitting
+
+      const message = {
+        content: `📩 **New Contact Form Submission**\n\n**Name:** ${this.form.name}\n**Email:** ${this.form.email}\n**Message:**\n${this.form.message}`,
       };
+
+      try {
+        const response = await axios.post("/api/discord", {
+          message: message.content,
+        });
+
+        if (response.status === 200) {
+          this.successMessage = "Message sent successfully!";
+          this.form = { name: "", email: "", message: "" };
+        } else {
+          throw new Error("Unexpected response from Discord.");
+        }
+      } catch (error) {
+        console.error(
+          "Error sending message:",
+          error.response?.data || error.message
+        );
+        this.errorMessage = "Failed to send message. Please try again.";
+      }
     },
   },
 };
@@ -89,8 +110,8 @@ export default {
 <style scoped>
 .contact {
   padding: 100px 0;
-  /* background: #f9f9f9; */
-  background: #fff;
+  /* background: #fff; */
+  background: #f9f9f9;
 }
 
 .contact-grid {
@@ -100,8 +121,9 @@ export default {
 }
 
 .contact-info h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 2rem;
+  color: #4caf50;
 }
 
 .info-item {
@@ -168,6 +190,18 @@ textarea {
   background: #45a049;
 }
 
+.success-message {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+}
+
+.error-message {
+  margin-top: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .contact {
     padding: 60px 0;
@@ -178,9 +212,9 @@ textarea {
     gap: 3rem;
   }
 }
-</style> -->
+</style>
 
-<template>
+<!-- <template>
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-grid">
@@ -394,4 +428,4 @@ textarea {
     gap: 3rem;
   }
 }
-</style>
+</style> -->
