@@ -163,7 +163,7 @@ export default {
 }
 
 .info-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
 }

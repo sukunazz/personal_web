@@ -26,12 +26,32 @@ export default {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   /* color: #333; */
 }
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600; /* Semi-bold for headings */
+}
 
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400; /* Regular weight for body text */
+}
+
+.nav-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700; /* Bold for your logo text */
+}
+
+.nav-link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500; /* Medium weight for navigation */
+}
 .container {
   max-width: 1400px;
   margin: 0 auto;
