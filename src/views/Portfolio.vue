@@ -109,7 +109,6 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   /* background-color: white; */
-
   padding: 0 2rem;
 }
 
@@ -152,16 +151,19 @@ export default {
 
 .portfolio-item {
   transition: all 0.3s ease;
+  height: 100%;
 }
 
 .card {
   /* background: white; */
   background: #f8f9fa;
-
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -203,6 +205,9 @@ export default {
 
 .card-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card-content h3 {
@@ -217,11 +222,17 @@ export default {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  flex: 1;
 }
 
 .card-footer {
   border-top: 1px solid #eee;
   padding-top: 1.5rem;
+  margin-top: auto;
 }
 
 .view-project {
