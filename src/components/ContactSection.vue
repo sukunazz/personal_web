@@ -141,17 +141,6 @@ export default {
   position: relative;
 }
 
-.section-title:after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #4caf50;
-}
-
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

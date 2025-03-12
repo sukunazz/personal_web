@@ -181,6 +181,7 @@ export default {
 .social-links {
   text-align: center;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .social-icons {

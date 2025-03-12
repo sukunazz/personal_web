@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .about {
   padding: 70px 0;
   background: #ffffff;
