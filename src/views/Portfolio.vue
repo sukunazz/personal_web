@@ -251,6 +251,7 @@ export default {
 @media (max-width: 768px) {
   .page-header {
     padding: 3rem 0;
+    margin-top: 3rem;
   }
 
   .page-header h1 {
@@ -262,7 +263,7 @@ export default {
     gap: 1.5rem;
   }
   .card {
-    margin: 1rem 1rem 2rem 1rem;
+    margin: 1rem 2rem 3rem 2rem;
   }
   .card-image {
     height: 200px;

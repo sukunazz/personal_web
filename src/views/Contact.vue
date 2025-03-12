@@ -30,7 +30,7 @@
           </div>
 
           <div class="social-links">
-            <h3>Follow Me</h3>
+            <h3 class="social-links-follow">Follow Me</h3>
             <div class="social-icons">
               <a href="#" class="social-icon"
                 ><i class="fab fa-facebook-f"></i
@@ -63,15 +63,6 @@
                 required
               />
             </div>
-
-            <!-- <div class="form-group">
-              <input
-                type="text"
-                v-model="form.subject"
-                placeholder="Subject"
-                required
-              />
-            </div> -->
 
             <div class="form-group">
               <textarea
@@ -165,6 +156,9 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+.social-links-follow {
+  padding-top: 1.25rem;
 }
 
 .info-card {
