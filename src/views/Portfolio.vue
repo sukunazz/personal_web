@@ -263,7 +263,7 @@ export default {
     gap: 1.5rem;
   }
   .card {
-    margin: 1rem 2rem 3rem 2rem;
+    margin: 1rem 2rem 2rem 2rem;
   }
   .card-image {
     height: 200px;
