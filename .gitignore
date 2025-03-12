@@ -30,3 +30,4 @@ coverage
 .env
 
 *.tsbuildinfo
+src/assets/images/python-automation.json
