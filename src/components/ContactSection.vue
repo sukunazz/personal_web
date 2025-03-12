@@ -157,7 +157,7 @@ export default {
 .info-card {
   background: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 82px 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
 }
@@ -185,7 +185,7 @@ export default {
 }
 
 .social-links {
-  padding: 25px 30px;
+  padding: 49px 30px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
