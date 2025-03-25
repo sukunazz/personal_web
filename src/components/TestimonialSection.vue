@@ -16,7 +16,7 @@
               class="author-image"
             />
             <div class="author-info">
-              <h4>Ash Ketchum</h4>
+              <h4>Ashim</h4>
               <p>Python Enthusiast</p>
             </div>
           </div>
