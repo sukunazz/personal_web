@@ -2,60 +2,62 @@
   "projects": [
     {
       "id": 1,
-      "title": "Booksville",
-      "description": "Booksville is a web app for book lovers to discover, buy, rent, and review books while connecting with others. Built with Vue 3 and Vite.",
-      "image": "/images/booksville.png",
-      "previewImage": "/images/booksville.png",
-      "role": "Frontend Developer",
-      "teamSize": "2 members",
-      "technologies": ["Vue 3", "Vite", "Vercel", "Vuex"],
-      "completedDate": "November 2024",
-      "category": "Web Development",
-      "overview": "Booksville is a comprehensive web application designed to create a community for book enthusiasts. The platform allows users to discover new titles, purchase or rent books, leave reviews, and connect with fellow readers who share similar interests. As the Frontend Developer, I focused on creating an intuitive and responsive user interface that makes navigation and interaction seamless across all devices.",
+      "title": "CretChain",
+      "description": "CretChain is a decentralized platform designed to enhance digital asset security, transparency, and efficiency using blockchain technology. It provides seamless solutions for asset management, smart contracts, and secure transactions.",
+      "image": "/images/cretchain.png",
+      "previewImage": "/images/cretchain-preview.png",
+      "role": "Full Stack Developer",
+      "teamSize": "4 members",
+      "technologies": ["Solidity", "Ethereum", "React", "Node.js", "Web3.js"],
+      "completedDate": "March 2025",
+      "category": "Blockchain Development",
+      "overview": "CretChain is a cutting-edge blockchain-based platform that enables users to manage digital assets securely. It offers decentralized finance (DeFi) solutions, smart contract automation, and enhanced security features to ensure transparent and trustless transactions. My role involved developing both the frontend and backend, ensuring seamless user interaction with the blockchain network.",
       "challenges": [
         {
-          "title": "Real-time User Interaction",
-          "solution": "Implemented Vuex for state management and integrated WebSockets to enable real-time chat and notification features, enhancing the community aspect of the platform."
+          "title": "Smart Contract Security",
+          "solution": "Implemented rigorous smart contract audits and integrated OpenZeppelin security libraries to prevent vulnerabilities like reentrancy attacks."
         },
         {
-          "title": "Performance Optimization",
-          "solution": "Used Vue 3's Composition API and lazy loading components to significantly improve initial load time and overall application performance."
+          "title": "Blockchain Scalability",
+          "solution": "Optimized gas fees and implemented Layer 2 scaling solutions to enhance transaction efficiency and reduce costs."
         }
       ],
       "links": [
         {
           "text": "Live Demo",
-          "url": "https://booksville.vercel.app"
+          "url": "https://cretchain.co"
         },
         {
           "text": "GitHub Repository",
-          "url": "https://github.com/username/booksville"
+          "url": "https://github.com/username/cretchain"
         }
       ],
       "achievements": [
-        "Reduced page load time by 40% through code optimization",
-        "Implemented responsive design that works seamlessly across all device sizes",
-        "Built a recommendation system that increased user engagement by 25%"
+        "Successfully deployed secure smart contracts with zero vulnerabilities",
+        "Optimized blockchain transactions, reducing gas fees by 30%",
+        "Designed an intuitive UI for seamless DeFi interactions"
       ],
       "gallery": [
         {
-          "src": "/images/booksville-homepage.png",
-          "alt": "Booksville Homepage"
+          "src": "/images/cretchain-dashboard.png",
+          "alt": "CretChain Dashboard"
         },
         {
-          "src": "/images/booksville-search.png",
-          "alt": "Book Search Feature"
+          "src": "/images/cretchain-transactions.png",
+          "alt": "Secure Transactions Feature"
         },
         {
-          "src": "/images/booksville-profile.png",
-          "alt": "User Profile Page"
+          "src": "/images/cretchain-smart-contracts.png",
+          "alt": "Smart Contract Management"
         }
       ],
       "nextProject": {
         "id": 2,
-        "title": "BookScraper"
+        "title": "Next Blockchain Innovation"
       }
-    },
+    }
+  ]
+}
     {
       "id": 2,
       "title": "BookScraper",
