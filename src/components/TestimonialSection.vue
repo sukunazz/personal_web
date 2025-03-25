@@ -11,7 +11,7 @@
           </p>
           <div class="testimonial-author">
             <img
-              src="@/assets/images/ash.png"
+              src="@/assets/images/bot.png"
               alt="Lena Andrews"
               class="author-image"
             />

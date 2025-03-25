@@ -110,58 +110,58 @@
     },
     {
       "id": 3,
-      "title": "Branding",
-      "description": "My skills in branding is a pure example of how a hobby can grow into a profession. Exploring your product and providing with a decision-making shortcut is nothing but fun for me.",
-      "image": "/images/sujan.png",
-      "previewImage": "/images/sujan.png",
-      "role": "Brand Designer",
+      "title": "Simple Banking App",
+      "description": "A minimalistic banking application built with HTML, CSS, and JavaScript, allowing users to perform transactions, send money, and apply for loans seamlessly.",
+      "image": "/images/banking.png",
+      "previewImage": "/images/banking.png",
+      "role": "Frontend Developer",
       "teamSize": "Solo Project",
-      "technologies": ["Figma", "Adobe Suite", "Sketch"],
-      "completedDate": "September 2024",
-      "category": "Design",
-      "overview": "This project showcases my journey from branding as a hobby to a professional skill. I've worked with various clients to develop comprehensive brand identities that reflect their values and connect with their target audiences. My approach involves deep research into the client's industry, target demographics, and competitors to create unique and memorable brand assets.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "completedDate": "March 2025",
+      "category": "Web Development",
+      "overview": "This project is a lightweight yet functional banking application designed with a simple UI. It enables users to manage their accounts, transfer funds, and request loans with an intuitive user experience. The application includes features like transaction tracking, balance updates, and loan eligibility calculations.",
       "challenges": [
         {
-          "title": "Creating Distinct Brand Identities in Crowded Markets",
-          "solution": "Developed a custom research methodology that identifies brand white space and leverages psychological color theory and typography to create truly distinctive visual languages."
+          "title": "Ensuring Secure Transactions",
+          "solution": "Implemented basic form validation and JavaScript event listeners to prevent invalid transactions and unauthorized fund transfers."
         },
         {
-          "title": "Maintaining Consistency Across Platforms",
-          "solution": "Created detailed brand guidelines and asset libraries that ensure consistency across digital and print media while allowing for necessary adaptations to different formats."
+          "title": "Designing a User-Friendly Interface",
+          "solution": "Used modern CSS styling and responsive design principles to create a clean and easy-to-navigate interface suitable for all devices."
         }
       ],
       "links": [
         {
-          "text": "Portfolio",
-          "url": "https://branddesign-portfolio.com"
+          "text": "Live Demo",
+          "url": "https://banking-app-demo.com"
         },
         {
-          "text": "Behance",
-          "url": "https://behance.net/username"
+          "text": "GitHub Repository",
+          "url": "https://github.com/username/banking-app"
         }
       ],
       "achievements": [
-        "Created brand identities for 15+ startups that successfully secured funding",
-        "Redesigned an established brand that resulted in 30% increased market recognition",
-        "Won regional design award for innovative approach to brand storytelling"
+        "Implemented a functional transaction system using vanilla JavaScript",
+        "Designed an intuitive UI for seamless money transfers and loan applications",
+        "Built a fully responsive interface that adapts to different screen sizes"
       ],
       "gallery": [
         {
-          "src": "/images/branding-logo-designs.png",
-          "alt": "Collection of Logo Designs"
+          "src": "/images/banking-dashboard.png",
+          "alt": "Banking App Dashboard"
         },
         {
-          "src": "/images/branding-guidelines.png",
-          "alt": "Brand Guidelines Example"
+          "src": "/images/transaction-history.png",
+          "alt": "Transaction History Screen"
         },
         {
-          "src": "/images/branding-applications.png",
-          "alt": "Real-world Brand Applications"
+          "src": "/images/loan-application.png",
+          "alt": "Loan Application Form"
         }
       ],
       "nextProject": {
         "id": 1,
-        "title": "Booksville"
+        "title": "E-Commerce Store"
       }
     }
   ]
