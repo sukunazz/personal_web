@@ -24,16 +24,6 @@
             <img src="@/assets/images/vue.png" alt="Vue.js logo" />
           </div>
         </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/node.png" alt="node.js logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/mongodb.png" alt="mongodb logo" />
-          </div>
-        </div>
       </div>
     </div>
   </section>
