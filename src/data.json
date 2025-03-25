@@ -5,7 +5,7 @@
       "title": "CretChain",
       "description": "CretChain is a decentralized platform designed to enhance digital asset security, transparency, and efficiency using blockchain technology. It provides seamless solutions for asset management, smart contracts, and secure transactions.",
       "image": "/images/cretchain.png",
-      "previewImage": "/images/cretchain-preview.png",
+      "previewImage": "/images/cretchain.png",
       "role": "Full Stack Developer",
       "teamSize": "4 members",
       "technologies": ["Solidity", "Ethereum", "React", "Node.js", "Web3.js"],
@@ -45,19 +45,13 @@
         {
           "src": "/images/cretchain-transactions.png",
           "alt": "Secure Transactions Feature"
-        },
-        {
-          "src": "/images/cretchain-smart-contracts.png",
-          "alt": "Smart Contract Management"
         }
       ],
       "nextProject": {
         "id": 2,
         "title": "Next Blockchain Innovation"
       }
-    }
-  ]
-}
+    },
     {
       "id": 2,
       "title": "BookScraper",
