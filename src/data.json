@@ -160,8 +160,84 @@
         }
       ],
       "nextProject": {
+        "id": 4,
+        "title": "WoodCraft"
+      }
+    },
+    {
+      "id": 4,
+      "title": "WoodCraft",
+      "description": "WoodCraft is a comprehensive e-commerce platform that enables users to purchase a wide variety of goods online with secure payment processing, inventory management, and seamless user experience.",
+      "image": "/images/woodcraft.png",
+      "previewImage": "/images/woodcraft.png",
+      "role": "Full Stack Developer",
+      "teamSize": "3 members",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Stripe API",
+        "Redux"
+      ],
+      "completedDate": "June 2025",
+      "category": "E-Commerce Development",
+      "overview": "WoodCraft is a modern e-commerce platform designed to provide users with a seamless online shopping experience. The platform features product browsing, advanced search functionality, shopping cart management, secure checkout, order tracking, and admin dashboard for inventory management. Built with a focus on user experience and scalability, it supports multiple payment methods and real-time inventory updates.",
+      "challenges": [
+        {
+          "title": "Payment Security and Integration",
+          "solution": "Integrated Stripe payment gateway with robust security measures including SSL encryption, tokenization, and PCI DSS compliance to ensure secure transactions."
+        },
+        {
+          "title": "Real-time Inventory Management",
+          "solution": "Implemented WebSocket connections and MongoDB change streams to provide real-time inventory updates, preventing overselling and maintaining accurate stock levels."
+        },
+        {
+          "title": "Scalable Architecture",
+          "solution": "Designed a microservices architecture with separate services for user management, product catalog, orders, and payments, ensuring the platform can handle high traffic loads."
+        }
+      ],
+      "links": [
+        {
+          "text": "Live Store",
+          "url": "https://woodcraft-store.com"
+        },
+        {
+          "text": "GitHub Repository",
+          "url": "https://github.com/username/woodcraft"
+        },
+        {
+          "text": "API Documentation",
+          "url": "https://api.woodcraft-store.com/docs"
+        }
+      ],
+      "achievements": [
+        "Successfully processed over 5,000 orders with 99.9% payment success rate",
+        "Implemented advanced search and filtering system with sub-second response times",
+        "Built responsive design that increased mobile conversion rates by 40%",
+        "Integrated automated email notifications for order confirmations and shipping updates"
+      ],
+      "gallery": [
+        {
+          "src": "/images/woodcraft-homepage.png",
+          "alt": "WoodCraft Homepage"
+        },
+        {
+          "src": "/images/woodcraft-products.png",
+          "alt": "Product Catalog Page"
+        },
+        {
+          "src": "/images/woodcraft-checkout.png",
+          "alt": "Secure Checkout Process"
+        },
+        {
+          "src": "/images/woodcraft-dashboard.png",
+          "alt": "Admin Dashboard"
+        }
+      ],
+      "nextProject": {
         "id": 1,
-        "title": "E-Commerce Store"
+        "title": "CretChain"
       }
     }
   ]
