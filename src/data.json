@@ -104,62 +104,6 @@
         }
       ],
       "nextProject": {
-        "id": 3,
-        "title": "Branding"
-      }
-    },
-    {
-      "id": 3,
-      "title": "Simple Banking App",
-      "description": "A minimalistic banking application built with HTML, CSS, and JavaScript, allowing users to perform transactions, send money, and apply for loans seamlessly.",
-      "image": "/images/banking.png",
-      "previewImage": "/images/banking.png",
-      "role": "Frontend Developer",
-      "teamSize": "Solo Project",
-      "technologies": ["HTML", "CSS", "JavaScript"],
-      "completedDate": "March 2025",
-      "category": "Web Development",
-      "overview": "This project is a lightweight yet functional banking application designed with a simple UI. It enables users to manage their accounts, transfer funds, and request loans with an intuitive user experience. The application includes features like transaction tracking, balance updates, and loan eligibility calculations.",
-      "challenges": [
-        {
-          "title": "Ensuring Secure Transactions",
-          "solution": "Implemented basic form validation and JavaScript event listeners to prevent invalid transactions and unauthorized fund transfers."
-        },
-        {
-          "title": "Designing a User-Friendly Interface",
-          "solution": "Used modern CSS styling and responsive design principles to create a clean and easy-to-navigate interface suitable for all devices."
-        }
-      ],
-      "links": [
-        {
-          "text": "Live Demo",
-          "url": "https://banking-app-demo.com"
-        },
-        {
-          "text": "GitHub Repository",
-          "url": "https://github.com/username/banking-app"
-        }
-      ],
-      "achievements": [
-        "Implemented a functional transaction system using vanilla JavaScript",
-        "Designed an intuitive UI for seamless money transfers and loan applications",
-        "Built a fully responsive interface that adapts to different screen sizes"
-      ],
-      "gallery": [
-        {
-          "src": "/images/banking-dashboard.png",
-          "alt": "Banking App Dashboard"
-        },
-        {
-          "src": "/images/transaction-history.png",
-          "alt": "Transaction History Screen"
-        },
-        {
-          "src": "/images/loan-application.png",
-          "alt": "Loan Application Form"
-        }
-      ],
-      "nextProject": {
         "id": 4,
         "title": "WoodCraft"
       }
@@ -171,7 +115,7 @@
       "image": "/images/woodcraft.png",
       "previewImage": "/images/woodcraft.png",
       "role": "Full Stack Developer",
-      "teamSize": "1 member",
+      "teamSize": "3 members",
       "technologies": [
         "React",
         "Node.js",
@@ -180,7 +124,7 @@
         "Stripe API",
         "Redux"
       ],
-      "completedDate": "February 2025",
+      "completedDate": "June 2025",
       "category": "E-Commerce Development",
       "overview": "WoodCraft is a modern e-commerce platform designed to provide users with a seamless online shopping experience. The platform features product browsing, advanced search functionality, shopping cart management, secure checkout, order tracking, and admin dashboard for inventory management. Built with a focus on user experience and scalability, it supports multiple payment methods and real-time inventory updates.",
       "challenges": [
@@ -236,8 +180,82 @@
         }
       ],
       "nextProject": {
-        "id": 1,
-        "title": "CretChain"
+        "id": 5,
+        "title": "StudyWebsite"
+      }
+    },
+    {
+      "id": 5,
+      "title": "StudyWebsite",
+      "description": "StudyWebsite is an educational platform that allows students from different faculties to access study materials, search for questions and subjects, and collaborate in their learning journey with personalized content and interactive features.",
+      "image": "/images/studywebsite.png",
+      "previewImage": "/images/studywebsite.png",
+      "role": "Full Stack Developer",
+      "teamSize": "1 member",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Elasticsearch",
+        "Socket.io",
+        "JWT"
+      ],
+      "completedDate": "April 2025",
+      "category": "Educational Technology",
+      "overview": "StudyWebsite is a comprehensive educational platform designed to serve students across multiple faculties and disciplines. The platform features advanced search capabilities for questions and subjects, personalized study recommendations, interactive discussion forums, progress tracking, and faculty-specific content organization. Students can create study groups, share resources, and access curated materials tailored to their academic programs.",
+      "challenges": [
+        {
+          "title": "Advanced Search and Content Discovery",
+          "solution": "Implemented Elasticsearch with custom analyzers and filters to enable semantic search across subjects, questions, and study materials, supporting multiple languages and academic terminologies."
+        },
+        {
+          "title": "Multi-Faculty Content Organization",
+          "solution": "Designed a flexible taxonomy system with hierarchical categories, tags, and cross-references to organize content across different faculties while maintaining easy navigation and discovery."
+        },
+        {
+          "title": "Real-time Collaboration Features",
+          "solution": "Integrated Socket.io for real-time study group discussions, live Q&A sessions, and collaborative document editing, ensuring seamless interaction between students."
+        }
+      ],
+      "links": [
+        {
+          "text": "Live Platform",
+          "url": "https://studywebsite-platform.com"
+        },
+        {
+          "text": "GitHub Repository",
+          "url": "https://github.com/username/studywebsite"
+        },
+        {
+          "text": "Student Guide",
+          "url": "https://docs.studywebsite-platform.com/student-guide"
+        }
+      ],
+      "achievements": [
+        "Served over 15,000 students across 25+ faculties with 95% user satisfaction",
+        "Built intelligent search system with 90% accuracy in content matching",
+        "Implemented personalized learning paths that improved study efficiency by 60%",
+        "Created collaborative features used by 500+ active study groups daily"
+      ],
+      "gallery": [
+        {
+          "src": "/images/studywebsite-dashboard.png",
+          "alt": "Student Dashboard"
+        },
+
+        {
+          "src": "/images/studywebsite-subjects.png",
+          "alt": "Subject Organization by Faculty"
+        },
+        {
+          "src": "/images/studywebsite-collaboration.png",
+          "alt": "Study Group Collaboration"
+        }
+      ],
+      "nextProject": {
+        "id": 5,
+        "title": "StudyWebsite"
       }
     }
   ]
