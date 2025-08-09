@@ -171,7 +171,7 @@
       "image": "/images/woodcraft.png",
       "previewImage": "/images/woodcraft.png",
       "role": "Full Stack Developer",
-      "teamSize": "3 members",
+      "teamSize": "1 member",
       "technologies": [
         "React",
         "Node.js",
@@ -180,7 +180,7 @@
         "Stripe API",
         "Redux"
       ],
-      "completedDate": "June 2025",
+      "completedDate": "February 2025",
       "category": "E-Commerce Development",
       "overview": "WoodCraft is a modern e-commerce platform designed to provide users with a seamless online shopping experience. The platform features product browsing, advanced search functionality, shopping cart management, secure checkout, order tracking, and admin dashboard for inventory management. Built with a focus on user experience and scalability, it supports multiple payment methods and real-time inventory updates.",
       "challenges": [
