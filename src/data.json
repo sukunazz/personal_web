@@ -89,20 +89,7 @@
         "Reduced manual analysis time by 85% for financial advisors using the platform",
         "Featured in a local tech publication for innovative use of web scraping technology"
       ],
-      "gallery": [
-        {
-          "src": "/images/bookscraper-dashboard.png",
-          "alt": "BookScraper Dashboard"
-        },
-        {
-          "src": "/images/bookscraper-analysis.png",
-          "alt": "Market Analysis Screen"
-        },
-        {
-          "src": "/images/bookscraper-reports.png",
-          "alt": "Generated Reports Page"
-        }
-      ],
+
       "nextProject": {
         "id": 4,
         "title": "WoodCraft"

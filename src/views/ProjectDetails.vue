@@ -148,7 +148,7 @@
         <!-- Project Gallery Section -->
         <div
           class="gallery-section"
-          v-if="isBooksville && project.gallery && project.gallery.length > 0"
+          v-if="project.gallery && project.gallery.length > 0"
         >
           <h2 class="section-title">Project Gallery</h2>
           <div class="gallery-grid">
@@ -189,13 +189,6 @@ export default {
     };
   },
   computed: {
-    isBooksville() {
-      return (
-        this.project &&
-        (this.project.title === "Booksville" ||
-          this.project.title.toLowerCase().includes("booksville"))
-      );
-    },
     nextProject() {
       if (!this.project || !this.projects.length) return null;
 
