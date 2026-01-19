@@ -17,8 +17,6 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -26,41 +24,39 @@ export default {
 }
 
 body {
-  /* font-family: "Poppins", sans-serif; */
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-  /* color: #333; */
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  line-height: 1.7;
 }
+
 h1,
 h2,
 h3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600; /* Semi-bold for headings */
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
 }
 
 p {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400; /* Regular weight for body text */
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 400;
+  color: var(--color-ink-muted);
 }
 
-.nav-brand {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700; /* Bold for your logo text */
-}
-
+.nav-brand,
 .nav-link {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500; /* Medium weight for navigation */
+  font-family: "Manrope", "Segoe UI", sans-serif;
 }
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 15px;
+    padding: 0 18px;
   }
 }
 </style>

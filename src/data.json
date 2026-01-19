@@ -28,8 +28,12 @@
           "url": "https://cretchain.co"
         },
         {
-          "text": "GitHub Repository",
-          "url": "https://github.com/username/cretchain"
+          "text": "GitHub Frontend",
+          "url": "https://github.com/sukunazz/certchain-appl-main"
+        },
+        {
+          "text": "GitHub Backend",
+          "url": "https://github.com/sukunazz/certchain-api-main"
         }
       ],
       "achievements": [
@@ -130,16 +134,12 @@
       ],
       "links": [
         {
-          "text": "Live Store",
-          "url": "https://woodcraft-store.com"
+          "text": "GitHub Frontend",
+          "url": "https://github.com/sukunazz/ecommerce-frontend"
         },
         {
-          "text": "GitHub Repository",
-          "url": "https://github.com/username/woodcraft"
-        },
-        {
-          "text": "API Documentation",
-          "url": "https://api.woodcraft-store.com/docs"
+          "text": "GitHub Backend",
+          "url": "https://github.com/sukunazz/ecommerce-backend"
         }
       ],
       "achievements": [

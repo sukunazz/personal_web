@@ -54,10 +54,11 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1rem 4.5rem;
+  background: rgba(248, 245, 239, 0.9);
+  padding: 1.1rem 4.5rem;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(31, 42, 29, 0.12);
+  backdrop-filter: blur(12px);
 }
 
 .nav-container {
@@ -67,10 +68,11 @@ export default {
 }
 
 .nav-brand {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #4caf50;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-forest);
   text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
 .nav-links {
@@ -80,11 +82,11 @@ export default {
 
 .nav-link {
   position: relative;
-  color: #333;
+  color: var(--color-ink);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
-  padding-bottom: 5px; /* Space for underline */
+  padding-bottom: 6px;
 }
 
 .nav-link::after {
@@ -94,7 +96,7 @@ export default {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #4caf50;
+  background-color: var(--color-forest);
   transition: width 0.4s ease-in-out;
 }
 
@@ -103,17 +105,16 @@ export default {
 }
 
 .nav-link:hover {
-  color: #4caf50;
+  color: var(--color-forest);
 }
 
-/* Active link remains underlined */
 .nav-link.active::after {
   width: 100%;
 }
 
 .nav-link.active {
-  color: #4caf50;
-  font-weight: 600;
+  color: var(--color-forest);
+  font-weight: 700;
 }
 
 /* Mobile Top Header for Name/Logo */
@@ -123,22 +124,22 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(248, 245, 239, 0.95);
+  box-shadow: 0 10px 25px rgba(31, 42, 29, 0.12);
   z-index: 1000;
-  /* text-align: center; */
-  height: 50px;
+  height: 52px;
   padding-left: 1rem;
+  backdrop-filter: blur(12px);
 }
 
 .mobile-brand {
   display: block;
   width: 100%;
   height: 100%;
-  line-height: 50px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #4caf50;
+  line-height: 52px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-forest);
   text-decoration: none;
 }
 
@@ -149,13 +150,13 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(248, 245, 239, 0.95);
+  box-shadow: 0 -8px 20px rgba(31, 42, 29, 0.15);
   z-index: 1000;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(31, 42, 29, 0.08);
 }
 
 .mobile-nav-item {
@@ -163,22 +164,23 @@ export default {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #666;
+  color: var(--color-ink-muted);
   font-size: 0.75rem;
   padding: 0.5rem 0;
   width: 33.33%;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
 .mobile-icon {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 0.25rem;
   font-style: normal;
 }
 
 .mobile-nav-item.active {
-  color: #4caf50;
-  font-weight: 500;
+  color: var(--color-forest);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -195,7 +197,6 @@ export default {
   }
 }
 
-/* Switch to mobile navbar at 584px */
 @media (max-width: 584px) {
   .desktop-navbar {
     display: none;
@@ -209,10 +210,9 @@ export default {
     display: block;
   }
 
-  /* Add padding to top and bottom of page content to accommodate the navbars */
   body {
-    padding-bottom: 70px;
-    padding-top: 60px;
+    padding-bottom: 72px;
+    padding-top: 64px;
   }
 }
 </style>

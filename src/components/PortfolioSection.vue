@@ -48,21 +48,21 @@ export default {
 <style scoped>
 .portfolio {
   padding: 100px 0;
-  background: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 245, 239, 0.9));
 }
 
 h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #4caf50;
+  font-size: 2.6rem;
+  color: var(--color-forest);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   text-align: center;
-  color: #666;
+  color: var(--color-ink-muted);
   margin-bottom: 3rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .portfolio-grid {
@@ -75,17 +75,17 @@ h2 {
 }
 
 .portfolio-item {
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  border: 1px solid #eaeaea;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.4rem;
+  padding: 1.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(31, 42, 29, 0.08);
+  box-shadow: 0 16px 30px rgba(31, 42, 29, 0.12);
 }
 
 .portfolio-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 22px 36px rgba(31, 42, 29, 0.15);
 }
 
 .icon-container {
@@ -101,13 +101,13 @@ h2 {
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: drop-shadow(0 8px 12px rgba(31, 42, 29, 0.1));
 }
 
 .portfolio-item:hover .icon-container img {
   transform: scale(1.1);
 }
 
-/* Specific styling for each tool icon */
 .portfolio-item:nth-child(1) .icon-container img {
   max-width: 100px;
 }
@@ -126,11 +126,11 @@ h2 {
 
 @media (max-width: 768px) {
   .portfolio {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .portfolio-grid {
@@ -140,7 +140,7 @@ h2 {
   }
 
   .portfolio-item {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .icon-container {
@@ -148,3 +148,4 @@ h2 {
   }
 }
 </style>
+

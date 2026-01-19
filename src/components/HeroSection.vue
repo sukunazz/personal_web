@@ -65,108 +65,144 @@ export default {
 <style>
 .hero-container {
   min-height: 100vh;
-  background-color: #f9f9f9;
-  padding: 2rem 6rem;
+  background: radial-gradient(circle at top, rgba(248, 245, 239, 0.95), rgba(236, 246, 239, 0.85));
+  padding: 3.5rem 6rem;
   display: flex;
   align-items: center;
   position: relative;
-  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(31, 111, 92, 0.12), transparent 55%);
+  pointer-events: none;
+}
+
+.hero-container::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 197, 114, 0.5), transparent 70%);
+  top: -120px;
+  right: -160px;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 7rem;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .left-section {
-  max-width: 600px;
+  max-width: 620px;
+  animation: fadeUp 0.8s ease-out;
 }
 
 .title {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
 }
 
 .greeting {
-  font-size: 1.5rem;
-  color: #666;
-  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--color-ink-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .role {
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-weight: 700;
   line-height: 1.1;
-  color: #4caf50;
-  letter-spacing: -1px;
+  color: var(--color-forest);
+  letter-spacing: -0.03em;
+  font-family: "Fraunces", "Times New Roman", serif;
 }
 
 .description {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #666;
-  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+  margin-bottom: 2.2rem;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .primary-btn,
 .secondary-btn {
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease,
+    background 0.3s ease;
 }
 
 .primary-btn {
-  background-color: #4caf50;
-  color: white;
+  background: linear-gradient(135deg, var(--color-forest), var(--color-moss));
+  color: #fff;
   border: none;
+  box-shadow: 0 12px 24px rgba(31, 111, 92, 0.25);
 }
 
 .primary-btn:hover {
-  background-color: #444;
   transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(31, 111, 92, 0.3);
 }
 
 .secondary-btn {
   background-color: transparent;
-  color: #4caf50;
-  border: 2px solid #333;
+  color: var(--color-ink);
+  border: 1.5px solid rgba(31, 42, 29, 0.35);
 }
 
 .secondary-btn:hover {
-  background-color: #333;
-  color: white;
+  background-color: rgba(31, 111, 92, 0.08);
+  color: var(--color-forest);
   transform: translateY(-2px);
 }
 
 .social-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .social-links a {
-  color: #666;
-  font-size: 1.25rem;
-  transition: color 0.3s ease;
+  color: var(--color-ink-muted);
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0.55rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 18px rgba(31, 42, 29, 0.08);
 }
 
 .social-links a:hover {
-  color: #333;
+  color: var(--color-forest);
+  transform: translateY(-3px);
 }
 
 .right-section {
@@ -174,25 +210,28 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: floatIn 0.9s ease-out;
 }
 
 .image-container {
   position: relative;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
+  width: 340px;
+  height: 340px;
+  border-radius: 42% 58% 60% 40% / 48% 38% 62% 52%;
   overflow: hidden;
+  box-shadow: 0 30px 60px rgba(31, 42, 29, 0.2);
+  border: 6px solid rgba(248, 245, 239, 0.9);
 }
 
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .profile-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 /* Decorative Elements */
@@ -201,8 +240,90 @@ export default {
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  border: 6px solid rgba(76, 175, 80, 0.5);
-  animation: pulse 2s infinite ease-in-out;
+  border: 5px solid rgba(31, 111, 92, 0.35);
+  animation: pulse 2.6s infinite ease-in-out;
+}
+
+.floating-dots {
+  position: absolute;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-sun);
+  border-radius: 50%;
+  position: absolute;
+  animation: float 4s infinite ease-in-out alternate;
+}
+
+.dot1 {
+  top: -30px;
+  left: 30px;
+  animation-delay: 0.5s;
+}
+
+.dot2 {
+  bottom: -40px;
+  right: 50px;
+  animation-delay: 1s;
+}
+
+.dot3 {
+  top: 60px;
+  right: -30px;
+  animation-delay: 1.5s;
+}
+
+.orbiting-icons {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  animation: rotate 10s linear infinite;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--color-moss);
+  position: absolute;
+}
+
+.icon1 {
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon2 {
+  bottom: 8%;
+  right: 26%;
+}
+
+.icon3 {
+  top: 48%;
+  left: 6%;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
@@ -211,44 +332,13 @@ export default {
     opacity: 0.7;
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.08);
     opacity: 1;
   }
   100% {
     transform: scale(1);
     opacity: 0.7;
   }
-}
-
-.floating-dots {
-  position: absolute;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #4caf50;
-  border-radius: 50%;
-  position: absolute;
-  animation: float 4s infinite ease-in-out alternate;
-}
-
-.dot1 {
-  top: -30px;
-  left: 40px;
-  animation-delay: 0.5s;
-}
-
-.dot2 {
-  bottom: -40px;
-  right: 60px;
-  animation-delay: 1s;
-}
-
-.dot3 {
-  top: 50px;
-  right: -20px;
-  animation-delay: 1.5s;
 }
 
 @keyframes float {
@@ -258,35 +348,6 @@ export default {
   to {
     transform: translateY(-20px);
   }
-}
-
-.orbiting-icons {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  animation: rotate 6s linear infinite;
-}
-
-.icon {
-  font-size: 2rem;
-  color: #4caf50;
-  position: absolute;
-}
-
-.icon1 {
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.icon2 {
-  bottom: 10%;
-  right: 30%;
-}
-
-.icon3 {
-  top: 50%;
-  left: 10%;
 }
 
 @keyframes rotate {
@@ -301,15 +362,11 @@ export default {
 /* Responsive Adjustments */
 @media (max-width: 1400px) {
   .hero-container {
-    padding: 2rem 4rem;
+    padding: 3rem 4rem;
   }
 
   .hero-content {
-    gap: 8rem;
-  }
-
-  .left-section {
-    max-width: 500px;
+    gap: 5rem;
   }
 
   .image-container {
@@ -323,382 +380,162 @@ export default {
   }
 
   .orbiting-icons {
-    width: 360px;
-    height: 360px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero-container {
-    padding: 2rem 3rem;
-  }
-
-  .hero-content {
-    gap: 6rem;
-  }
-
-  .left-section {
-    max-width: 450px;
-  }
-
-  .role {
-    font-size: 2.8rem;
-  }
-
-  .greeting {
-    font-size: 1.4rem;
-  }
-
-  .description {
-    font-size: 1.2rem;
-  }
-
-  .image-container {
-    width: 300px;
-    height: 300px;
-  }
-
-  .glowing-ring {
-    width: 360px;
-    height: 360px;
-  }
-
-  .orbiting-icons {
     width: 340px;
     height: 340px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .hero-container {
-    padding: 2rem 2rem;
+    padding: 2.5rem 3rem;
   }
 
   .hero-content {
     gap: 4rem;
   }
 
-  .left-section {
-    max-width: 400px;
-  }
-
   .role {
-    font-size: 2.5rem;
+    font-size: 2.9rem;
   }
 
   .greeting {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-
-  .cta-buttons {
-    margin-bottom: 2.5rem;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    padding: 0.9rem 1.8rem;
+    font-size: 1.05rem;
   }
 
   .image-container {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
   }
 
   .glowing-ring {
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
   }
 
   .orbiting-icons {
     width: 320px;
     height: 320px;
   }
-
-  .icon {
-    font-size: 1.8rem;
-  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-container {
-    padding: 1.5rem;
-    min-height: auto;
+    padding: 2.5rem 2rem;
   }
 
   .hero-content {
-    display: flex;
-    flex-direction: column-reverse; /* Puts the image on top */
-    align-items: center;
+    gap: 3rem;
+  }
+
+  .role {
+    font-size: 2.6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.85rem 1.6rem;
+  }
+
+  .image-container {
+    width: 280px;
+    height: 280px;
+  }
+
+  .glowing-ring {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbiting-icons {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
     text-align: center;
-    gap: 2rem;
-    margin: 4rem 1rem 1rem 1rem;
   }
 
   .left-section {
     margin: 0 auto;
-    padding-top: 1.5rem;
-    max-width: 450px;
-  }
-  .right-section {
-    margin-top: 3rem;
-  }
-  .cta-buttons {
-    justify-content: center;
   }
 
+  .cta-buttons,
   .social-links {
     justify-content: center;
   }
 
-  .role {
-    font-size: 2.3rem;
-  }
-
-  .greeting {
-    font-size: 1.2rem;
-  }
-
-  .image-container {
-    width: 250px;
-    height: 250px;
-  }
-
-  .glowing-ring {
-    width: 300px;
-    height: 300px;
-    border-width: 5px;
-  }
-
-  .orbiting-icons {
-    width: 280px;
-    height: 280px;
+  .right-section {
+    margin-top: 2rem;
   }
 }
 
-@media (max-width: 574px) {
+@media (max-width: 600px) {
   .hero-container {
-    padding: 1rem;
+    padding: 2rem 1.5rem 3rem;
   }
 
-  .hero-content {
-    margin: 0 0.5rem;
-    gap: 1rem;
+  .role {
+    font-size: 2.2rem;
   }
 
-  .right-section {
-    margin-top: 8rem;
+  .image-container {
+    width: 240px;
+    height: 240px;
   }
 
-  .left-section {
-    padding-top: 1rem;
-    margin-top: 2rem;
+  .glowing-ring {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbiting-icons {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 1.8rem 1.2rem 3rem;
+  }
+
+  .title {
+    margin-bottom: 1.4rem;
+  }
+
+  .greeting {
+    font-size: 0.95rem;
   }
 
   .role {
     font-size: 2rem;
   }
 
-  .greeting {
-    font-size: 1.1rem;
-  }
-
-  .description {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .cta-buttons {
-    gap: 1rem;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .social-links {
-    gap: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-container {
-    padding: 1rem 0.75rem;
-  }
-
-  .hero-content {
-    margin: 0 0.25rem;
-  }
-
-  .left-section {
-    width: 100%;
-  }
-
-  .role {
-    font-size: 1.8rem;
-  }
-
-  .greeting {
-    font-size: 1rem;
-  }
-
   .description {
     font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
   }
 
   .cta-buttons {
     flex-direction: column;
-    gap: 0.8rem;
+    align-items: center;
     width: 100%;
-    max-width: 220px;
-    margin: 0 auto 1.5rem auto;
   }
 
   .primary-btn,
   .secondary-btn {
     width: 100%;
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .social-links {
-    gap: 1rem;
-  }
-
-  .social-links a {
-    font-size: 1.1rem;
-  }
-
-  .title {
-    gap: 0.5rem;
-    margin-bottom: 1.2rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .role {
-    font-size: 1.6rem;
-  }
-
-  .greeting {
-    font-size: 0.9rem;
-  }
-
-  .description {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .cta-buttons {
-    max-width: 200px;
-    margin-bottom: 1.2rem;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    padding: 0.65rem 0.9rem;
-    font-size: 0.85rem;
-  }
-
-  .social-links a {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .hero-container {
-    padding: 0.75rem 0.5rem;
-  }
-
-  .hero-content {
-    margin: 0;
-  }
-
-  .left-section {
-    padding-top: 0.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .role {
-    font-size: 1.4rem;
-  }
-
-  .greeting {
-    font-size: 0.85rem;
-  }
-
-  .description {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
-  }
-
-  .cta-buttons {
-    gap: 0.6rem;
-    max-width: 180px;
-    margin-bottom: 1rem;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.8rem;
-  }
-
-  .social-links {
-    gap: 0.8rem;
-  }
-
-  .social-links a {
-    font-size: 0.95rem;
-  }
-
-  .title {
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .role {
-    font-size: 1.3rem;
-  }
-
-  .greeting {
-    font-size: 0.8rem;
-  }
-
-  .description {
-    font-size: 0.8rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .cta-buttons {
-    max-width: 160px;
-    gap: 0.5rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    padding: 0.55rem 0.7rem;
-    font-size: 0.75rem;
-  }
-
-  .social-links {
-    gap: 0.7rem;
-  }
-
-  .social-links a {
-    font-size: 0.9rem;
+    max-width: 240px;
   }
 }
 </style>

@@ -123,8 +123,8 @@ export default {
 
 <style scoped>
 .contact {
-  padding: 80px 0;
-  background: #f9f9f9;
+  padding: 90px 0;
+  background: transparent;
 }
 
 .container {
@@ -134,17 +134,16 @@ export default {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #4caf50;
-  position: relative;
+  color: var(--color-forest);
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3.5rem;
 }
 
 /* Contact Info Styles */
@@ -155,11 +154,12 @@ export default {
 }
 
 .info-card {
-  background: white;
-  border-radius: 10px;
-  padding: 82px 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 60px 30px;
+  box-shadow: 0 16px 30px rgba(31, 42, 29, 0.12);
   margin-bottom: 2rem;
+  border: 1px solid rgba(31, 42, 29, 0.08);
 }
 
 .info-item {
@@ -174,27 +174,28 @@ export default {
 
 .info-icon {
   font-size: 1.2rem;
-  color: #4caf50;
+  color: var(--color-forest);
   margin-right: 1rem;
   width: 25px;
 }
 
 .info-item p {
-  color: #666;
-  font-size: 1.1rem;
+  color: var(--color-ink-muted);
+  font-size: 1.05rem;
 }
 
 .social-links {
-  padding: 49px 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 16px 30px rgba(31, 42, 29, 0.12);
+  border: 1px solid rgba(31, 42, 29, 0.08);
 }
 
 .social-links h3 {
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  color: #333;
+  color: var(--color-ink);
 }
 
 .social-icons {
@@ -203,57 +204,59 @@ export default {
 }
 
 .social-icon {
-  color: #4caf50;
+  color: var(--color-forest);
   font-size: 1.4rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(76, 175, 80, 0.1);
+  background: rgba(31, 111, 92, 0.12);
 }
 
 .social-icon:hover {
   color: white;
-  background: #4caf50;
+  background: var(--color-forest);
   transform: translateY(-3px);
 }
 
 /* Form Styles */
 .form-card {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 16px 30px rgba(31, 42, 29, 0.12);
+  border: 1px solid rgba(31, 42, 29, 0.08);
 }
 
 .form-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--color-ink);
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
 }
 
 input,
 textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid rgba(31, 42, 29, 0.2);
+  border-radius: 12px;
   font-family: inherit;
-  transition: border-color 0.3s ease;
+  background: rgba(248, 245, 239, 0.6);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  border-color: var(--color-forest);
+  box-shadow: 0 0 0 2px rgba(31, 111, 92, 0.2);
 }
 
 textarea {
@@ -262,18 +265,19 @@ textarea {
 }
 
 .submit-btn {
-  background: #4caf50;
+  background: linear-gradient(135deg, var(--color-forest), var(--color-moss));
   color: white;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  box-shadow: 0 12px 24px rgba(31, 111, 92, 0.25);
 }
 
 .submit-btn span {
@@ -281,29 +285,28 @@ textarea {
 }
 
 .submit-btn:hover {
-  background: #45a049;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 28px rgba(31, 111, 92, 0.3);
 }
 
 .success-message {
   margin-top: 1rem;
-  color: #4caf50;
-  font-weight: bold;
+  color: var(--color-forest);
+  font-weight: 600;
   text-align: center;
   padding: 8px;
-  background: rgba(76, 175, 80, 0.1);
-  border-radius: 5px;
+  background: rgba(31, 111, 92, 0.1);
+  border-radius: 8px;
 }
 
 .error-message {
   margin-top: 1rem;
-  color: #f44336;
-  font-weight: bold;
+  color: #c0392b;
+  font-weight: 600;
   text-align: center;
   padding: 8px;
-  background: rgba(244, 67, 54, 0.1);
-  border-radius: 5px;
+  background: rgba(192, 57, 43, 0.12);
+  border-radius: 8px;
 }
 
 /* Responsive Styles */
@@ -315,11 +318,11 @@ textarea {
 
 @media (max-width: 768px) {
   .contact {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 2rem;
   }
 
@@ -377,3 +380,4 @@ textarea {
   }
 }
 </style>
+

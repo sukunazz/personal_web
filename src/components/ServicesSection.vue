@@ -1,8 +1,8 @@
 <template>
   <section class="services" id="services">
     <div class="container">
-      <h2>Projects</h2>
-      <p class="subtitle">List of all the projects that I have completed</p>
+      <h2>Featured Projects</h2>
+      <p class="subtitle">A selection of builds that blend craft and utility.</p>
       <div class="services-grid">
         <div
           class="service-card"
@@ -53,91 +53,109 @@ export default {
 
 <style scoped>
 .services {
-  padding: 80px 0;
-  background: #f9f9f9;
+  padding: 90px 0 100px;
+  background: transparent;
 }
 
 h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #4caf50;
+  font-size: 2.8rem;
+  color: var(--color-forest);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   text-align: center;
-  color: #666;
-  margin-bottom: 2.5rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .service-card {
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 14px 30px rgba(31, 42, 29, 0.12);
+  border: 1px solid rgba(31, 42, 29, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 38px rgba(31, 42, 29, 0.16);
 }
 
 .service-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 1.25rem;
+  border-radius: 16px;
 }
 
 .service-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--color-ink);
 }
 
 .service-card p {
-  color: #666;
-  margin-bottom: 1.25rem;
-  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+  margin: 0;
+  font-size: 0.98rem;
 }
 
 .service-link {
-  color: #4caf50;
+  color: var(--color-forest);
   text-decoration: none;
-  font-weight: 500;
-  display: inline-block;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.95rem;
 }
 
-.service-link:hover {
-  text-decoration: underline;
+.service-link::after {
+  content: "→";
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover::after {
+  transform: translateX(4px);
 }
 
 .view-all-container {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2.8rem;
 }
 
 .view-all-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  color: #4caf50;
+  padding: 0.95rem 2.2rem;
+  font-size: 1rem;
+  color: var(--color-ink);
   text-decoration: none;
-  border: 2px solid #333;
-  border-radius: 50px;
+  border: 1.5px solid rgba(31, 42, 29, 0.3);
+  border-radius: 999px;
   transition: all 0.3s ease;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .view-all-btn:hover {
-  background: #4caf50;
-  color: white;
+  background: rgba(31, 111, 92, 0.1);
+  color: var(--color-forest);
   transform: translateY(-2px);
 }
 
@@ -151,20 +169,21 @@ h2 {
 
 @media (max-width: 768px) {
   .services {
-    padding: 50px 0;
+    padding: 60px 0 80px;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .service-card {
-    padding: 1.25rem;
-    margin: 2rem 2rem 3rem 2rem;
+    padding: 1.4rem;
+    margin: 0 1rem;
   }
 
   .service-card img {
-    height: 160px;
+    height: 180px;
   }
 }
 </style>
+
