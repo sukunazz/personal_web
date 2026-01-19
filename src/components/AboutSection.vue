@@ -20,9 +20,6 @@
             </p>
           </div>
           <div class="about-buttons">
-            <a href="/resume.pdf" download class="btn btn-primary">
-              Download CV
-            </a>
             <a href="#" class="btn btn-secondary">LEARN MORE</a>
           </div>
         </div>

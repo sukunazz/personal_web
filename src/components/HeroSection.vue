@@ -13,7 +13,9 @@
         </p>
         <div class="cta-buttons">
           <a href="/projects" class="primary-btn">View Projects</a>
-          <a href="/contact" class="secondary-btn">Get in Touch</a>
+          <a href="/images/sujan_resume.pdf" class="secondary-btn" download>
+            Download CV
+          </a>
         </div>
         <div class="social-links">
           <a href="https://github.com/sukunazz" aria-label="Github"
