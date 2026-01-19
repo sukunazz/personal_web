@@ -109,7 +109,7 @@ h2 {
 
 .btn-primary {
   background: var(--color-forest);
-  color: #fff;
+  /* color: #fff; */
   border: none;
   box-shadow: 0 10px 20px rgba(31, 111, 92, 0.2);
 }
