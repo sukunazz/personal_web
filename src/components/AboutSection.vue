@@ -115,9 +115,10 @@ h2 {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.75);
+  background: #fff;
   color: var(--color-forest);
   border: 1px solid rgba(31, 111, 92, 0.4);
+  box-shadow: 0 8px 16px rgba(31, 42, 29, 0.08);
 }
 
 .btn-primary:hover {

@@ -22,14 +22,24 @@
           <div class="social-links">
             <h3>Connect with me:</h3>
             <div class="social-icons">
-              <a href="#" class="social-icon"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+              <a
+                href="https://www.linkedin.com/in/sujansigdel/"
+                class="social-icon"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/sukunazz/"
+                class="social-icon"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
         </div>

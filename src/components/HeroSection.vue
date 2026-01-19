@@ -165,7 +165,7 @@ export default {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, var(--color-forest), var(--color-moss));
+  background: linear-gradient(135deg, #1f6f5c, #4b8f6f);
   color: #fff;
   border: none;
   box-shadow: 0 12px 24px rgba(31, 111, 92, 0.25);
@@ -177,13 +177,14 @@ export default {
 }
 
 .secondary-btn {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.9);
   color: var(--color-ink);
   border: 1.5px solid rgba(31, 42, 29, 0.35);
+  box-shadow: 0 10px 18px rgba(31, 42, 29, 0.08);
 }
 
 .secondary-btn:hover {
-  background-color: rgba(31, 111, 92, 0.08);
+  background-color: rgba(31, 111, 92, 0.12);
   color: var(--color-forest);
   transform: translateY(-2px);
 }

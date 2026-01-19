@@ -50,14 +50,6 @@
             />
           </div>
         </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img
-              src="https://via.placeholder.com/120x120?text=UI+Design"
-              alt="UI design icon"
-            />
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -146,8 +138,7 @@ h2 {
 
 .portfolio-item:nth-child(4) .icon-container img,
 .portfolio-item:nth-child(7) .icon-container img,
-.portfolio-item:nth-child(8) .icon-container img,
-.portfolio-item:nth-child(9) .icon-container img {
+.portfolio-item:nth-child(8) .icon-container img {
   max-width: 100px;
 }
 
