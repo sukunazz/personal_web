@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "CretChain",
-      "description": "CretChain is a decentralized platform designed to enhance digital asset security, transparency, and efficiency using blockchain technology. It provides seamless solutions for asset management, smart contracts, and secure transactions.",
+      "title": "CertChain",
+      "description": "CertChain is a decentralized platform designed to enhance digital asset security, transparency, and efficiency using blockchain technology. It provides seamless solutions for asset management, smart contracts, and secure transactions.",
       "image": "/images/certchain.png",
       "previewImage": "/images/certchain.png",
       "role": "Full Stack Developer",
@@ -11,7 +11,7 @@
       "technologies": ["Solidity", "Ethereum", "React", "Node.js", "Web3.js"],
       "completedDate": "March 2025",
       "category": "Blockchain Development",
-      "overview": "CretChain is a cutting-edge blockchain-based platform that enables users to manage digital assets securely. It offers decentralized finance (DeFi) solutions, smart contract automation, and enhanced security features to ensure transparent and trustless transactions. My role involved developing both the frontend and backend, ensuring seamless user interaction with the blockchain network.",
+      "overview": "CertChain is a cutting-edge blockchain-based platform that enables users to manage digital assets securely. It offers decentralized finance (DeFi) solutions, smart contract automation, and enhanced security features to ensure transparent and trustless transactions. My role involved developing both the frontend and backend, ensuring seamless user interaction with the blockchain network.",
       "challenges": [
         {
           "title": "Smart Contract Security",

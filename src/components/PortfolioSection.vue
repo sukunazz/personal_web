@@ -21,7 +21,7 @@
         </div>
         <div class="portfolio-item">
           <div class="icon-container">
-            <img src="@/assets/images/vue.png" alt="Vue.js logo" />
+            <img src="/images/250px-React_Logo_SVG.svg.png" alt="React logo" />
           </div>
         </div>
         <div class="portfolio-item">
