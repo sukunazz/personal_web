@@ -36,18 +36,12 @@
         </div>
         <div class="portfolio-item">
           <div class="icon-container">
-            <img
-              src="https://via.placeholder.com/120x120?text=Next.js"
-              alt="Next.js logo"
-            />
+            <img src="/images/250px-Nextjs-logo.svg.png" alt="Next.js logo" />
           </div>
         </div>
         <div class="portfolio-item">
           <div class="icon-container">
-            <img
-              src="https://via.placeholder.com/120x120?text=NestJS"
-              alt="NestJS logo"
-            />
+            <img src="/images/lg-67786f2e073fb-NestJS.png" alt="NestJS logo" />
           </div>
         </div>
       </div>
@@ -113,8 +107,9 @@ h2 {
 }
 
 .icon-container img {
-  width: 80%;
-  height: auto;
+  width: auto;
+  height: 72px;
+  max-width: 120px;
   object-fit: contain;
   transition: transform 0.3s ease;
   filter: drop-shadow(0 8px 12px rgba(31, 42, 29, 0.1));
@@ -122,24 +117,6 @@ h2 {
 
 .portfolio-item:hover .icon-container img {
   transform: scale(1.1);
-}
-
-.portfolio-item:nth-child(1) .icon-container img {
-  max-width: 100px;
-}
-
-.portfolio-item:nth-child(2) .icon-container img {
-  max-width: 90px;
-}
-
-.portfolio-item:nth-child(3) .icon-container img {
-  max-width: 90px;
-}
-
-.portfolio-item:nth-child(4) .icon-container img,
-.portfolio-item:nth-child(7) .icon-container img,
-.portfolio-item:nth-child(8) .icon-container img {
-  max-width: 100px;
 }
 
 @media (max-width: 768px) {
