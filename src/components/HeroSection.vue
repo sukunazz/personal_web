@@ -12,8 +12,8 @@
           to detail.
         </p>
         <div class="cta-buttons">
-          <button class="primary-btn">View Projects</button>
-          <button class="secondary-btn">Get in Touch</button>
+          <a href="/projects" class="primary-btn">View Projects</a>
+          <a href="/contact" class="secondary-btn">Get in Touch</a>
         </div>
         <div class="social-links">
           <a href="https://github.com/sukunazz" aria-label="Github"
@@ -158,6 +158,10 @@ export default {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease,
     background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
 }
 
 .primary-btn {

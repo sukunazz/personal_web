@@ -101,17 +101,21 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
 }
 
 .btn-primary {
   background: var(--color-forest);
-  color: white;
+  color: #fff;
   border: none;
   box-shadow: 0 10px 20px rgba(31, 111, 92, 0.2);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.75);
   color: var(--color-forest);
   border: 1px solid rgba(31, 111, 92, 0.4);
 }
@@ -123,7 +127,7 @@ h2 {
 }
 
 .btn-secondary:hover {
-  background: rgba(31, 111, 92, 0.08);
+  background: rgba(31, 111, 92, 0.12);
   transform: translateY(-1px);
 }
 
