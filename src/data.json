@@ -3,15 +3,15 @@
     {
       "id": 1,
       "title": "CertChain",
-      "description": "CertChain is a decentralized platform designed to enhance digital asset security, transparency, and efficiency using blockchain technology. It provides seamless solutions for asset management, smart contracts, and secure transactions.",
+      "description": "CertChain is a decentralized platform designed to enhance digital asset security, transparency, and efficiency using blockchain technology. The frontend is built with Next.js and the backend services run on NestJS for secure, scalable transactions.",
       "image": "/images/certchain.png",
       "previewImage": "/images/certchain.png",
       "role": "Full Stack Developer",
       "teamSize": "4 members",
-      "technologies": ["Solidity", "Ethereum", "React", "Node.js", "Web3.js"],
+      "technologies": ["Solidity", "Ethereum", "Next.js", "NestJS", "Web3.js"],
       "completedDate": "March 2025",
       "category": "Blockchain Development",
-      "overview": "CertChain is a cutting-edge blockchain-based platform that enables users to manage digital assets securely. It offers decentralized finance (DeFi) solutions, smart contract automation, and enhanced security features to ensure transparent and trustless transactions. My role involved developing both the frontend and backend, ensuring seamless user interaction with the blockchain network.",
+      "overview": "CertChain is a cutting-edge blockchain-based platform that enables users to manage digital assets securely. It offers decentralized finance (DeFi) solutions, smart contract automation, and enhanced security features to ensure transparent and trustless transactions. I built the Next.js frontend and NestJS backend to deliver a fast UI with reliable APIs for blockchain interactions.",
       "challenges": [
         {
           "title": "Smart Contract Security",
@@ -25,7 +25,7 @@
       "links": [
         {
           "text": "Live Demo",
-          "url": "https://cretchain.co"
+          "url": "https://certchain-appl-main.vercel.app/"
         },
         {
           "text": "GitHub Frontend",
