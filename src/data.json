@@ -134,6 +134,10 @@
       ],
       "links": [
         {
+          "text": "Live Demo",
+          "url": "https://wood-craft-pi.vercel.app/"
+        },
+        {
           "text": "GitHub Frontend",
           "url": "https://github.com/sukunazz/ecommerce-frontend"
         },
