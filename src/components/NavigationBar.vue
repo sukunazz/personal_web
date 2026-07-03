@@ -38,7 +38,7 @@ export default {
 .site-header {
   position: relative;
   z-index: 10;
-  padding: 1.25rem 0 0;
+  padding: 1.25rem 0 1.25rem;
 }
 
 .header-frame {

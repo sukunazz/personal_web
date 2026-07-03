@@ -103,13 +103,13 @@ export default {
   color: #fff;
   padding: 0.34rem 0.56rem;
   border-radius: var(--radius-sm);
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .hero-name {
   font-size: clamp(2.2rem, 5.4vw, 3.9rem);
   line-height: 0.96;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.4rem;
 }
 
 .hero-layout {
@@ -118,6 +118,7 @@ export default {
   gap: 1.5rem;
   align-items: center;
   min-height: calc(100vh - 220px);
+  padding: 0.5rem 0 3.5rem;
 }
 
 .hero-visual {
@@ -140,13 +141,13 @@ export default {
   font-weight: 600;
   font-size: 0.78rem;
   color: var(--color-accent-600);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.1rem;
 }
 
 .hero-copy {
   max-width: 500px;
   color: var(--color-text-700);
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.8rem;
 }
 
 .hero-actions {
@@ -224,6 +225,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 0.95rem;
+  padding-top: 0.3rem;
 }
 
 .hero-socials a {
