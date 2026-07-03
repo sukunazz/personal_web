@@ -17,7 +17,11 @@
 
       <!-- Navigation -->
       <nav class="nav-links">
-        <router-link to="/projects" class="nav-link" active-class="active">
+        <router-link
+          :to="{ path: '/', hash: '#projects' }"
+          class="nav-link"
+          active-class="active"
+        >
           <i class="fas fa-file-alt"></i>
           <span>Projects</span>
         </router-link>
@@ -27,7 +31,11 @@
           <span>Resume</span>
         </a>
 
-        <router-link to="/contact" class="nav-link" active-class="active">
+        <router-link
+          :to="{ path: '/', hash: '#contact' }"
+          class="nav-link"
+          active-class="active"
+        >
           <i class="fas fa-book"></i>
           <span>Contact</span>
         </router-link>
