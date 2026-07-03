@@ -3,7 +3,10 @@
     <section class="container section-frame hero">
       <div class="hero-layout">
         <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/sujansigdel/" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/sujansigdel/"
+            aria-label="LinkedIn"
+          >
             <i class="fab fa-linkedin"></i>
           </a>
           <a href="https://github.com/sukunazz" aria-label="GitHub">
@@ -19,13 +22,14 @@
           <h1 class="hero-name">Sujan<br />Sigdel</h1>
           <p class="hero-role">FRONTEND DEVELOPER</p>
           <p class="hero-copy">
-            AKA Sukunazz. Software Developer from Pokhara, Nepal with
-            experience in building practical applications with modern web
-            technologies.
+            AKA Sukunazz. Software Developer from Pokhara, Nepal with experience
+            in building practical applications with modern web technologies.
           </p>
 
           <div class="hero-actions">
-            <router-link to="/contact" class="btn-primary">let's talk</router-link>
+            <router-link to="/contact" class="btn-primary"
+              >let's talk</router-link
+            >
           </div>
         </div>
 
