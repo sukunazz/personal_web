@@ -1,18 +1,26 @@
 <template>
   <main class="home-page">
     <section class="container section-frame hero">
-      <p class="eyebrow">It is me</p>
-      <h1 class="hero-name">S u j a n<br />S i g d e l</h1>
-      <p class="hero-role">Frontend Developer</p>
-      <p class="hero-copy">
-        Software developer from Pokhara, Nepal. I build practical web products
-        with strong frontend architecture, reliable backend integration, and a
-        focus on maintainability.
-      </p>
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">It is me</p>
+          <h1 class="hero-name">S u j a n<br />S i g d e l</h1>
+          <p class="hero-role">Frontend Developer</p>
+          <p class="hero-copy">
+            Software developer from Pokhara, Nepal. I build practical web
+            products with strong frontend architecture, reliable backend
+            integration, and a focus on maintainability.
+          </p>
 
-      <div class="hero-actions">
-        <router-link to="/contact" class="btn-primary">let us talk</router-link>
-        <a href="/sujan_resume.pdf" download class="btn-ghost">my resume</a>
+          <div class="hero-actions">
+            <router-link to="/contact" class="btn-primary">let us talk</router-link>
+            <a href="/sujan_resume.pdf" download class="btn-ghost">my resume</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="/images/sujan.png" alt="Profile placeholder" />
+        </div>
       </div>
 
       <div class="hero-note">
@@ -87,6 +95,27 @@ export default {
   line-height: 1;
   letter-spacing: 0.08em;
   margin-bottom: 0.75rem;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #1f1f1f;
+  background: #e8dfd1;
 }
 
 .hero-role {
@@ -189,6 +218,15 @@ h2 {
 @media (max-width: 720px) {
   .section-frame {
     padding: 1.2rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual img {
+    width: min(100%, 260px);
+    height: min(100%, 260px);
   }
 
   .skills-grid {
