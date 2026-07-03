@@ -20,21 +20,21 @@ export default {
 h1,
 h2,
 h3 {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-family: "IBM Plex Serif", "Georgia", serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-text-900);
 }
 
 p {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   color: var(--color-text-700);
 }
 
 .nav-brand,
 .nav-link {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
 }
 
 .container {
