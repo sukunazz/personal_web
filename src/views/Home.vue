@@ -19,8 +19,9 @@
           <h1 class="hero-name">Sujan<br />Sigdel</h1>
           <p class="hero-role">FRONTEND DEVELOPER</p>
           <p class="hero-copy">
-            AKA Sukunazz. Software Developer from Pokhara, Nepal with experience
-            in building practical applications with modern web technologies.
+            AKA Sukunazz. Software Developer from Pokhara, Nepal with
+            experience in building practical applications with modern web
+            technologies.
           </p>
 
           <div class="hero-actions">
@@ -31,10 +32,6 @@
         <div class="hero-visual">
           <img src="/images/sujan.png" alt="Profile placeholder" />
         </div>
-      </div>
-
-      <div class="hero-note">
-        <p>Currently building production-grade web apps for startups and teams.</p>
       </div>
     </section>
 
@@ -83,11 +80,11 @@ export default {
 
 <style scoped>
 .home-page {
-  padding: 1rem 0 2rem;
+  padding: 0 0 2rem;
 }
 
 .section-frame {
-  background: rgba(255, 255, 255, 0.94);
+  background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 2rem;
@@ -113,9 +110,10 @@ export default {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 44px 1fr 360px;
-  gap: 1.2rem;
+  grid-template-columns: 48px 1fr 420px;
+  gap: 1.5rem;
   align-items: center;
+  min-height: calc(100vh - 220px);
 }
 
 .hero-visual {
@@ -124,11 +122,11 @@ export default {
 }
 
 .hero-visual img {
-  width: 330px;
-  height: 330px;
+  width: 390px;
+  height: 390px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #1f1f1f;
+  border: 6px solid #1f1f1f;
   background: #e8dfd1;
 }
 
@@ -142,24 +140,24 @@ export default {
 }
 
 .hero-copy {
-  max-width: 440px;
+  max-width: 500px;
   color: var(--color-text-700);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.3rem;
 }
 
 .hero-actions {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0;
 }
 
 .btn-primary {
   border-radius: 999px;
-  width: 86px;
-  height: 86px;
+  width: 96px;
+  height: 96px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 600;
   text-transform: lowercase;
   line-height: 0.95;
@@ -172,13 +170,6 @@ export default {
 
 .btn-primary:hover {
   background: #e26d5c;
-}
-
-.hero-note {
-  border-top: 1px dashed var(--color-border);
-  padding-top: 0.75rem;
-  color: var(--color-text-500);
-  font-size: 0.92rem;
 }
 
 h2 {
@@ -228,19 +219,17 @@ h2 {
 .hero-socials {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.95rem;
 }
 
 .hero-socials a {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface-soft);
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--color-text-700);
+  font-size: 1.3rem;
 }
 
 .hero-socials a:hover {
@@ -258,11 +247,12 @@ h2 {
 
   .hero-layout {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .hero-socials {
     flex-direction: row;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-visual img {
@@ -272,6 +262,18 @@ h2 {
 
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1200px) {
+  .hero-layout {
+    grid-template-columns: 42px 1fr 330px;
+    min-height: calc(100vh - 240px);
+  }
+
+  .hero-visual img {
+    width: 310px;
+    height: 310px;
   }
 }
 </style>

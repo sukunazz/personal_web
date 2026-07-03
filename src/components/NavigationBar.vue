@@ -2,7 +2,7 @@
   <header class="site-header">
     <div class="container header-frame">
       <router-link to="/" class="brand">
-        <span class="brand-s">S</span><span class="brand-dot">•</span
+        <span class="brand-s">S</span><span class="brand-dot">/</span
         ><span class="brand-s">S</span>
       </router-link>
 
@@ -21,7 +21,7 @@
           <i class="fas fa-user-tie"></i> Resume
         </a>
         <router-link to="/contact" class="nav-link" active-class="active">
-          <i class="fas fa-book"></i> Shelf
+          <i class="fas fa-book"></i> Contact
         </router-link>
       </nav>
     </div>
@@ -38,68 +38,80 @@ export default {
 .site-header {
   position: relative;
   z-index: 10;
-  padding: 1rem 0 0;
+  padding: 1.25rem 0 0;
 }
 
 .header-frame {
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 0.8rem 1.1rem;
+  padding: 1rem 1.25rem;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.08rem;
-  font-size: 1rem;
+  gap: 0.12rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1f1f1f;
+  letter-spacing: 0.03em;
 }
 
 .brand-dot {
-  color: #c53e3e;
-  font-size: 0.8rem;
+  color: #be3f3f;
+  font-size: 0.92rem;
+  transform: translateY(-0.02rem);
 }
 
 .email-link {
   color: var(--color-text-500);
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+}
+
+.mini-icon {
+  color: var(--color-text-500);
+  font-size: 0.96rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-link {
+  text-transform: none;
+  font-size: 0.92rem;
+  color: var(--color-text-700);
+  padding: 0.32rem 0.45rem;
+  border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
 }
 
-.mini-icon {
-  color: var(--color-text-500);
-  font-size: 0.84rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 0.7rem;
-}
-
-.nav-link {
-  text-transform: none;
-  font-size: 0.88rem;
-  color: var(--color-text-700);
-  padding: 0.3rem 0.4rem;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-text-900);
-  background: var(--color-bg-200);
+  background: #f4ece2;
+}
+
+@media (max-width: 1180px) {
+  .header-frame {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .mini-icon {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
