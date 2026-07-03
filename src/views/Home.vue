@@ -115,17 +115,15 @@
 
     <section id="projects" class="container section-card projects-section">
       <h2 class="skills-title">My Works</h2>
-      <p class="skills-subtitle">Featured Projects</p>
+      <p class="skills-subtitle">Project Highlights</p>
       <span class="section-rule" aria-hidden="true"></span>
 
-      <div class="projects-panel">
+      <div class="projects-panel image-two-style">
         <article
           v-for="project in featuredProjects"
           :key="project.id"
           class="project-item"
         >
-          <img :src="project.image" :alt="project.title" />
-
           <div class="project-content">
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
@@ -138,6 +136,10 @@
             </div>
           </div>
         </article>
+
+        <div class="projects-figure" aria-hidden="true">
+          <img src="/images/p1.png" alt="Developer illustration" />
+        </div>
       </div>
     </section>
 
@@ -147,35 +149,124 @@
       <span class="section-rule" aria-hidden="true"></span>
 
       <div class="contact-panel">
-        <div class="contact-item">
-          <h3>Email</h3>
-          <a href="mailto:sujansigdel03@gmail.com">sujansigdel03@gmail.com</a>
-        </div>
-        <div class="contact-item">
-          <h3>Location</h3>
-          <p>Pokhara, Nepal</p>
-        </div>
-        <div class="contact-item">
-          <h3>Profiles</h3>
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/sujansigdel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/sukunazz" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://x.com/sigdelsujan03" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <a href="mailto:sujansigdel03@gmail.com">sujansigdel03@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <h3>Location</h3>
+            <p>Pokhara, Nepal</p>
+          </div>
+          <div class="contact-item">
+            <h3>Profiles</h3>
+            <div class="contact-links">
+              <a
+                href="https://www.linkedin.com/in/sujansigdel/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/sukunazz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://x.com/sigdelsujan03"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            </div>
           </div>
         </div>
+
+        <form class="contact-form" @submit.prevent="submitContactForm">
+          <h3>Send Message</h3>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" v-model="form.name" type="text" required />
+
+          <label for="contact-email">Email</label>
+          <input id="contact-email" v-model="form.email" type="email" required />
+
+          <label for="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            v-model="form.message"
+            rows="6"
+            required
+          ></textarea>
+
+          <button type="submit" :disabled="sending">
+            {{ sending ? "Sending..." : "Send Message" }}
+          </button>
+
+          <p v-if="successMessage" class="form-feedback success">
+            {{ successMessage }}
+          </p>
+          <p v-if="errorMessage" class="form-feedback error">
+            {{ errorMessage }}
+          </p>
+        </form>
       </div>
     </section>
   </main>
 </template>
 
 <script>
+import axios from "axios";
 import projectsData from "@/data.json";
 
 export default {
   name: "HomePage",
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        message: "",
+      },
+      sending: false,
+      successMessage: "",
+      errorMessage: "",
+    };
+  },
   computed: {
     featuredProjects() {
       return projectsData.projects.slice(0, 3);
+    },
+  },
+  methods: {
+    async submitContactForm() {
+      this.successMessage = "";
+      this.errorMessage = "";
+      this.sending = true;
+
+      try {
+        const response = await axios.post("/api/discord", {
+          message:
+            `New contact form submission\n\n` +
+            `Name: ${this.form.name}\n` +
+            `Email: ${this.form.email}\n` +
+            `Message:\n${this.form.message}`,
+        });
+
+        if (response.status === 200) {
+          this.successMessage = "Message sent successfully.";
+          this.form = { name: "", email: "", message: "" };
+        } else {
+          this.errorMessage = "Failed to send message.";
+        }
+      } catch (error) {
+        this.errorMessage = "Failed to send message.";
+      } finally {
+        this.sending = false;
+      }
     },
   },
 };
@@ -188,8 +279,9 @@ export default {
 
 .hero-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 50px 60px;
+  border-radius: 0 0 14px 14px;
+  margin-top: -2px;
+  padding: 44px 60px 50px;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
@@ -444,35 +536,30 @@ export default {
 .projects-panel {
   background: #f1efef;
   border-radius: 12px;
-  padding: 32px;
+  padding: 36px;
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .project-item {
-  background: #f8f7f7;
-  border: 1px solid #e7e4e4;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid #e3dfdf;
   border-radius: 10px;
-  padding: 14px;
+  padding: 16px 18px;
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 16px;
-}
-
-.project-item img {
-  width: 100%;
-  border-radius: 10px;
-  aspect-ratio: 16/10;
-  object-fit: cover;
+  max-width: min(640px, 100%);
 }
 
 .project-content h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 25px;
+  margin-bottom: 6px;
 }
 
 .project-content p {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   color: #626262;
 }
@@ -499,12 +586,31 @@ export default {
   text-decoration: none;
 }
 
+.projects-figure {
+  position: absolute;
+  right: 13%;
+  bottom: 44px;
+  width: min(190px, 24vw);
+  pointer-events: none;
+  opacity: 0.98;
+}
+
+.projects-figure img {
+  width: 100%;
+  object-fit: contain;
+}
+
 .contact-panel {
   background: #f1efef;
   border-radius: 12px;
   padding: 32px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
+  gap: 18px;
+}
+
+.contact-info {
+  display: grid;
   gap: 16px;
 }
 
@@ -531,6 +637,78 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.contact-form {
+  background: #f8f7f7;
+  border: 1px solid #e7e4e4;
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.contact-form h3 {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.contact-form label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #333;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form button {
+  margin-top: 4px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #e5524c;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact-form button:hover {
+  background: #d44843;
+}
+
+.contact-form button:disabled {
+  background: #c9a4a2;
+  cursor: not-allowed;
+}
+
+.form-feedback {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.form-feedback.success {
+  color: #1c8f59;
+}
+
+.form-feedback.error {
+  color: #bf3f3f;
 }
 
 @media (max-width: 1550px) {
@@ -576,6 +754,15 @@ export default {
   }
 
   .project-item {
+    max-width: min(560px, 100%);
+  }
+
+  .projects-figure {
+    right: 8%;
+    width: min(170px, 26vw);
+  }
+
+  .contact-panel {
     grid-template-columns: 1fr;
   }
 }
@@ -613,6 +800,16 @@ export default {
 
   .contact-panel {
     grid-template-columns: 1fr;
+  }
+
+  .projects-panel {
+    min-height: 520px;
+  }
+
+  .projects-figure {
+    width: 140px;
+    right: 6%;
+    bottom: 24px;
   }
 
   .skill-block p {
@@ -674,6 +871,16 @@ export default {
   .projects-panel,
   .contact-panel {
     padding: 20px;
+  }
+
+  .projects-panel {
+    min-height: 480px;
+  }
+
+  .projects-figure {
+    width: 108px;
+    right: 12px;
+    bottom: 14px;
   }
 }
 

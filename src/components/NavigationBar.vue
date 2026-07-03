@@ -52,24 +52,25 @@ export default {
 
 <style scoped>
 .site-header {
-  padding-top: 32px;
-  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 0;
 }
 
 .header-frame {
-  height: 82px;
+  min-height: 82px;
 
   background: #ffffff;
 
-  border-radius: 14px;
+  border-radius: 14px 14px 0 0;
 
   padding: 0 34px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
 
   align-items: center;
 
-  justify-content: space-between;
+  column-gap: 26px;
 
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
@@ -124,6 +125,8 @@ export default {
   text-decoration: none;
 
   transition: 0.25s;
+
+  margin-left: 6px;
 }
 
 .email-link i {
@@ -142,6 +145,8 @@ export default {
   align-items: center;
 
   gap: 28px;
+
+  justify-self: end;
 }
 
 .nav-link {
@@ -178,11 +183,14 @@ export default {
 
 @media (max-width: 950px) {
   .header-frame {
+    display: flex;
     flex-direction: column;
 
     height: auto;
 
     gap: 18px;
+
+    border-radius: 14px;
 
     padding: 22px;
   }
