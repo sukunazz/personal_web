@@ -4,17 +4,21 @@
       <router-link to="/" class="brand">SS</router-link>
 
       <a href="mailto:sujansigdel03@gmail.com" class="email-link">
+        <i class="fas fa-envelope"></i>
         sujansigdel03@gmail.com
       </a>
 
       <nav class="nav-links">
-        <router-link to="/projects" class="nav-link" active-class="active">
+        <router-link to="/#works" class="nav-link" active-class="active">
+          <i class="fas fa-file-alt"></i>
           works
         </router-link>
-        <router-link to="/" class="nav-link" active-class="active">
+        <a href="/sujan_resume.pdf" class="nav-link" download>
+          <i class="fas fa-user-tie"></i>
           resume
-        </router-link>
-        <router-link to="/contact" class="nav-link" active-class="active">
+        </a>
+        <router-link to="/#contact" class="nav-link" active-class="active">
+          <i class="fas fa-address-book"></i>
           contact
         </router-link>
       </nav>
@@ -64,6 +68,9 @@ export default {
   color: var(--color-text-500);
   font-size: 0.86rem;
   letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .nav-links {
@@ -77,6 +84,9 @@ export default {
   color: var(--color-text-700);
   padding: 0.3rem 0.45rem;
   border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .nav-link:hover,
