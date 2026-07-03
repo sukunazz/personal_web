@@ -118,28 +118,26 @@
       <p class="skills-subtitle">Project Highlights</p>
       <span class="section-rule" aria-hidden="true"></span>
 
-      <div class="projects-panel image-two-style">
-        <article
-          v-for="project in featuredProjects"
+      <div class="projects-panel">
+        <router-link
+          v-for="project in showcaseProjects"
           :key="project.id"
-          class="project-item"
+          class="project-card"
+          :to="{ name: 'ProjectDetails', params: { id: project.id } }"
         >
+          <div class="project-thumb">
+            <img :src="project.image" :alt="project.title" />
+          </div>
+
           <div class="project-content">
             <h3>{{ project.title }}</h3>
-            <p>{{ project.description }}</p>
-
             <div class="project-meta">
               <span>{{ project.category }}</span>
-              <router-link :to="{ name: 'ProjectDetails', params: { id: project.id } }">
-                View Details
-              </router-link>
+              <strong>Open</strong>
             </div>
+            <p>{{ project.description }}</p>
           </div>
-        </article>
-
-        <div class="projects-figure" aria-hidden="true">
-          <img src="/images/p1.png" alt="Developer illustration" />
-        </div>
+        </router-link>
       </div>
     </section>
 
@@ -237,8 +235,8 @@ export default {
     };
   },
   computed: {
-    featuredProjects() {
-      return projectsData.projects.slice(0, 3);
+    showcaseProjects() {
+      return projectsData.projects;
     },
   },
   methods: {
@@ -492,8 +490,8 @@ export default {
 
 .skill-block p {
   color: #60656e;
-  font-size: 26px;
-  line-height: 1.52;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .works-link {
@@ -536,36 +534,60 @@ export default {
 .projects-panel {
   background: #f1efef;
   border-radius: 12px;
-  padding: 36px;
-  min-height: 620px;
-  position: relative;
-  overflow: hidden;
+  padding: 28px;
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.project-item {
-  background: rgba(255, 255, 255, 0.78);
+.project-card {
+  background: #ffffff;
   border: 1px solid #e3dfdf;
   border-radius: 10px;
-  padding: 16px 18px;
-  display: grid;
-  max-width: min(640px, 100%);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 22px rgba(44, 41, 38, 0.09);
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .project-content h3 {
-  font-size: 25px;
+  font-size: 22px;
   margin-bottom: 6px;
 }
 
+.project-content {
+  padding: 14px;
+}
+
 .project-content p {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.65;
   color: #626262;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .project-meta {
-  margin-top: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -573,31 +595,16 @@ export default {
 }
 
 .project-meta span {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #666;
 }
 
-.project-meta a {
-  font-size: 13px;
+.project-meta strong {
+  font-size: 12px;
   color: #e5524c;
   font-weight: 700;
-  text-decoration: none;
-}
-
-.projects-figure {
-  position: absolute;
-  right: 13%;
-  bottom: 44px;
-  width: min(190px, 24vw);
-  pointer-events: none;
-  opacity: 0.98;
-}
-
-.projects-figure img {
-  width: 100%;
-  object-fit: contain;
 }
 
 .contact-panel {
@@ -725,7 +732,7 @@ export default {
   }
 
   .skill-block p {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .works-link {
@@ -753,13 +760,8 @@ export default {
     grid-template-columns: 1fr;
   }
 
-  .project-item {
-    max-width: min(560px, 100%);
-  }
-
-  .projects-figure {
-    right: 8%;
-    width: min(170px, 26vw);
+  .projects-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-panel {
@@ -802,18 +804,8 @@ export default {
     grid-template-columns: 1fr;
   }
 
-  .projects-panel {
-    min-height: 520px;
-  }
-
-  .projects-figure {
-    width: 140px;
-    right: 6%;
-    bottom: 24px;
-  }
-
   .skill-block p {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -858,8 +850,8 @@ export default {
   }
 
   .skill-block p {
-    font-size: 17px;
-    line-height: 1.58;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   .works-link {
@@ -874,13 +866,7 @@ export default {
   }
 
   .projects-panel {
-    min-height: 480px;
-  }
-
-  .projects-figure {
-    width: 108px;
-    right: 12px;
-    bottom: 14px;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -918,7 +904,7 @@ export default {
   }
 
   .skill-block p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .works-link {
