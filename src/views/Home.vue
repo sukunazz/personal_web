@@ -93,7 +93,11 @@
         </div>
 
         <div class="skills-illustration" aria-hidden="true">
-          <img src="/images/p1.png" alt="Developer working illustration" />
+          <img
+            class="what-i-do-image"
+            src="/images/p1.png"
+            alt="Developer working illustration"
+          />
         </div>
       </div>
     </section>
@@ -164,21 +168,24 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
               </a>
               <a
                 href="https://github.com/sukunazz"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
               </a>
               <a
                 href="https://x.com/sigdelsujan03"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Twitter
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
               </a>
             </div>
           </div>
@@ -515,12 +522,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .skills-illustration img {
-  width: min(100%, 560px);
-  border-radius: 18px;
-  object-fit: cover;
+  width: min(100%, 500px);
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.what-i-do-image {
+  filter: saturate(0.95) contrast(1.02);
+  transform: translateY(6px);
 }
 
 .readme-text {
@@ -646,6 +659,24 @@ export default {
   gap: 10px;
 }
 
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2dddd;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4e4e4e;
+}
+
+.contact-links i {
+  font-size: 16px;
+  color: #e5524c;
+}
+
 .contact-form {
   background: #f8f7f7;
   border: 1px solid #e7e4e4;
@@ -760,6 +791,10 @@ export default {
     grid-template-columns: 1fr;
   }
 
+  .skills-illustration img {
+    width: min(100%, 420px);
+  }
+
   .projects-panel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -806,6 +841,10 @@ export default {
 
   .skill-block p {
     font-size: 16px;
+  }
+
+  .skills-illustration img {
+    width: min(100%, 360px);
   }
 }
 
@@ -858,6 +897,10 @@ export default {
     width: 148px;
     height: 148px;
     font-size: 24px;
+  }
+
+  .skills-illustration img {
+    width: min(100%, 320px);
   }
 
   .projects-panel,
