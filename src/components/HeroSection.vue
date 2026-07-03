@@ -13,7 +13,7 @@
         </p>
         <div class="cta-buttons">
           <a href="/projects" class="primary-btn">View Projects</a>
-          <a href="/images/sujan_resume.pdf" class="secondary-btn" download>
+          <a href="/sujan_resume.pdf" class="secondary-btn" download>
             Download CV
           </a>
         </div>
