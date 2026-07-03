@@ -66,30 +66,32 @@
 
     <!-- ================= SKILLS ================= -->
 
-    <section class="container section-card">
-      <h2 class="section-title">What I Can Do</h2>
+    <section class="container section-card skills-reference">
+      <h2 class="skills-title">my top skills</h2>
 
-      <p class="section-subtitle">Service Offers</p>
+      <p class="skills-subtitle">what i do</p>
 
-      <div class="skills-grid">
-        <article class="skill-card">
-          <h3>Backend Development</h3>
+      <div class="skills-list">
+        <article class="skill-block">
+          <h3>backend</h3>
 
           <p>
-            REST APIs, FastAPI, Django, Node.js, Express, NestJS, PostgreSQL,
-            MongoDB and scalable backend architectures.
+            I build scalable and maintainable backend applications using modern
+            technologies like Nest.js, Docker, Redis, PostgreSQL and MongoDB.
           </p>
         </article>
 
-        <article class="skill-card">
-          <h3>Frontend Development</h3>
+        <article class="skill-block">
+          <h3>frontend</h3>
 
           <p>
-            Vue.js, React, JavaScript, TypeScript, TailwindCSS and responsive UI
-            development.
+            I build client-side applications with semantic structure and modern
+            features such as SPA using Vue.js, React, TailwindCSS and Pinia.
           </p>
         </article>
       </div>
+
+      <router-link to="/projects" class="works-link">SEE MY WORKS</router-link>
     </section>
 
     <!-- ================= README ================= -->
@@ -174,7 +176,7 @@ export default {
 }
 
 .hero-socials a {
-  font-size: 28px;
+  font-size: 34px;
 
   color: #555;
 
@@ -440,6 +442,64 @@ export default {
   font-size: 15px;
 }
 
+.skills-reference .section-title {
+  margin-bottom: 0;
+}
+
+.skills-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: lowercase;
+}
+
+.skills-subtitle {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 24px;
+  text-transform: lowercase;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.skill-block h3 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: lowercase;
+  color: #3d3d3d;
+  margin-bottom: 10px;
+}
+
+.skill-block p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.works-link {
+  margin-top: 26px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #3f3f3f;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.works-link::after {
+  content: "";
+  width: 56px;
+  height: 2px;
+  background: #ef6b61;
+  margin-left: 10px;
+}
+
 /* ==========================
    README
 ========================== */
@@ -537,7 +597,8 @@ a {
     width: 380px;
   }
 
-  .skills-grid {
+  .skills-grid,
+  .skills-list {
     grid-template-columns: 1fr;
   }
 }
@@ -556,8 +617,16 @@ a {
     font-size: 28px;
   }
 
+  .skills-title {
+    font-size: 32px;
+  }
+
   .hero-description {
     font-size: 14px;
+  }
+
+  .hero-socials a {
+    font-size: 30px;
   }
 
   .talk-button {
@@ -586,8 +655,16 @@ a {
     font-size: 24px;
   }
 
+  .skills-title {
+    font-size: 28px;
+  }
+
   .skill-card {
     padding: 20px;
+  }
+
+  .hero-socials a {
+    font-size: 28px;
   }
 }
 </style>

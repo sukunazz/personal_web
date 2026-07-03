@@ -15,16 +15,11 @@
         <span>sujansigdel03@gmail.com</span>
       </a>
 
-      <!-- Theme Icon -->
-      <button class="theme-btn">
-        <i class="fas fa-sun"></i>
-      </button>
-
       <!-- Navigation -->
       <nav class="nav-links">
         <router-link to="/projects" class="nav-link" active-class="active">
           <i class="fas fa-file-alt"></i>
-          <span>Works</span>
+          <span>Projects</span>
         </router-link>
 
         <a href="/sujan_resume.pdf" class="nav-link" download>
@@ -129,34 +124,6 @@ export default {
 
 .email-link:hover {
   color: #ef6b61;
-}
-
-/* ---------------- Theme ---------------- */
-
-.theme-btn {
-  width: 36px;
-
-  height: 36px;
-
-  border: none;
-
-  background: transparent;
-
-  border-radius: 50%;
-
-  cursor: pointer;
-
-  color: #555;
-
-  transition: 0.25s;
-}
-
-.theme-btn:hover {
-  background: #f4f4f4;
-
-  color: #ef6b61;
-
-  transform: rotate(20deg);
 }
 
 /* ---------------- Navigation ---------------- */
