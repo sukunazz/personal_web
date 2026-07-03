@@ -1,76 +1,113 @@
 <template>
   <main class="home-page">
-    <section class="container section-frame hero">
+    <!-- ================= HERO ================= -->
+
+    <section class="container hero-card">
       <div class="hero-layout">
-        <div class="hero-socials">
+        <!-- Left Social Icons -->
+
+        <aside class="hero-socials">
           <a
             href="https://www.linkedin.com/in/sujansigdel/"
+            target="_blank"
             aria-label="LinkedIn"
           >
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="https://github.com/sukunazz" aria-label="GitHub">
+
+          <a
+            href="https://github.com/sukunazz"
+            target="_blank"
+            aria-label="Github"
+          >
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://x.com/sigdelsujan03" aria-label="Twitter">
+
+          <a
+            href="https://x.com/sigdelsujan03"
+            target="_blank"
+            aria-label="Twitter"
+          >
             <i class="fab fa-twitter"></i>
           </a>
-        </div>
+        </aside>
 
-        <div class="hero-main">
-          <p class="eyebrow">It's me</p>
-          <h1 class="hero-name">Sujan<br />Sigdel</h1>
-          <p class="hero-role">FRONTEND DEVELOPER</p>
-          <p class="hero-copy">
-            AKA Sukunazz. Software Developer from Pokhara, Nepal with experience
-            in building practical applications with modern web technologies.
+        <!-- Hero Text -->
+
+        <section class="hero-content">
+          <div class="speech-bubble">It's me</div>
+
+          <h1 class="hero-title">
+            Sujan <br />
+            Sigdel
+          </h1>
+
+          <h4 class="hero-role">SOFTWARE ENGINEER</h4>
+
+          <p class="hero-description">
+            AKA <strong>Sukunazz</strong>. Software Developer from Pokhara,
+            Nepal with experience building modern web applications, scalable
+            backend systems, AI applications, and practical software solutions.
           </p>
 
-          <div class="hero-actions">
-            <router-link to="/contact" class="btn-primary"
-              >let's talk</router-link
-            >
-          </div>
-        </div>
+          <router-link to="/contact" class="talk-button">
+            let's<br />
+            talk
+          </router-link>
+        </section>
 
-        <div class="hero-visual">
-          <img src="/images/sujan.png" alt="Profile placeholder" />
-        </div>
+        <!-- Hero Image -->
+
+        <section class="hero-image">
+          <img src="/images/sujan.png" alt="Sujan Sigdel" />
+        </section>
       </div>
     </section>
 
-    <section class="container section-frame skills">
-      <h2>my top skills</h2>
-      <p class="section-subtitle">what i do</p>
+    <!-- ================= SKILLS ================= -->
+
+    <section class="container section-card">
+      <h2 class="section-title">What I Can Do</h2>
+
+      <p class="section-subtitle">Service Offers</p>
+
       <div class="skills-grid">
-        <article>
-          <h3>backend</h3>
+        <article class="skill-card">
+          <h3>Backend Development</h3>
+
           <p>
-            I build scalable APIs and service layers using Node.js, Express,
-            NestJS, MongoDB, and PostgreSQL.
+            REST APIs, FastAPI, Django, Node.js, Express, NestJS, PostgreSQL,
+            MongoDB and scalable backend architectures.
           </p>
         </article>
-        <article>
-          <h3>frontend</h3>
+
+        <article class="skill-card">
+          <h3>Frontend Development</h3>
+
           <p>
-            I build fast and clean interfaces with Vue.js, React, JavaScript,
-            and CSS focused on accessibility and usability.
+            Vue.js, React, JavaScript, TypeScript, TailwindCSS and responsive UI
+            development.
           </p>
         </article>
       </div>
-      <router-link to="/projects" class="text-link">see my works</router-link>
     </section>
 
-    <section class="container section-frame readme">
-      <h2>README</h2>
-      <p>
-        I am a disciplined software engineer with a strong habit of learning and
-        shipping. My work style is simple: clarify the problem, design the
-        cleanest implementation path, and deliver code that teams can maintain.
+    <!-- ================= README ================= -->
+
+    <section class="container section-card">
+      <h2 class="section-title">README</h2>
+
+      <p class="readme-text">
+        I enjoy building software that solves real problems. Whether it's AI
+        Engineering, backend APIs, authentication systems, frontend applications
+        or full-stack products, I focus on writing clean, maintainable and
+        scalable code.
       </p>
-      <p>
-        Outside coding, I enjoy chess, football, and continuous upskilling
-        through newsletters and technical writing.
+
+      <p class="readme-text">
+        Outside programming I enjoy learning new technologies, reading
+        documentation, playing chess and constantly improving my software
+        engineering skills.
       </p>
     </section>
   </main>
@@ -84,186 +121,420 @@ export default {
 
 <style scoped>
 .home-page {
-  padding: 0 0 2rem;
+  padding-bottom: 70px;
 }
 
-.section-frame {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 2rem;
-  margin-bottom: 1rem;
+/* ==========================
+   HERO CARD
+========================== */
+
+.hero-card {
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 50px 60px;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.05);
 }
 
-.eyebrow {
-  font-size: 0.86rem;
-  display: inline-flex;
-  align-items: center;
-  background: #2f2c2a;
-  color: #fff;
-  padding: 0.34rem 0.56rem;
-  border-radius: var(--radius-sm);
-  margin-bottom: 1rem;
-}
-
-.hero-name {
-  font-size: clamp(2.2rem, 5.4vw, 3.9rem);
-  line-height: 0.96;
-  margin-bottom: 0.4rem;
-}
+/* ==========================
+   LAYOUT
+========================== */
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 48px 1fr 420px;
-  gap: 1.5rem;
+
+  grid-template-columns:
+    70px
+    430px
+    1fr;
+
   align-items: center;
-  min-height: calc(100vh - 220px);
-  padding: 0.5rem 0 3.5rem;
+
+  column-gap: 40px;
+
+  min-height: 680px;
 }
 
-.hero-visual {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-visual img {
-  width: 390px;
-  height: 390px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid #1f1f1f;
-  background: #e8dfd1;
-}
-
-.hero-role {
-  text-transform: none;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  font-size: 0.78rem;
-  color: var(--color-accent-600);
-  margin-bottom: 1.1rem;
-}
-
-.hero-copy {
-  max-width: 500px;
-  color: var(--color-text-700);
-  margin-bottom: 1.8rem;
-}
-
-.hero-actions {
-  margin-bottom: 0;
-}
-
-.btn-primary {
-  border-radius: 999px;
-  width: 96px;
-  height: 96px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1.08rem;
-  font-weight: 600;
-  text-transform: lowercase;
-  line-height: 0.95;
-}
-
-.btn-primary {
-  background: #ed7e6e;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #e26d5c;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.2rem;
-}
-
-.section-subtitle {
-  color: var(--color-text-500);
-  margin-bottom: 0.9rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
-  margin-bottom: 0.9rem;
-}
-
-.skills-grid article {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem;
-  background: var(--color-surface-soft);
-}
-
-.skills-grid h3 {
-  text-transform: lowercase;
-  font-size: 1.04rem;
-  margin-bottom: 0.35rem;
-}
-
-.text-link {
-  display: inline-flex;
-  color: var(--color-brand-700);
-  font-size: 0.92rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.readme p {
-  max-width: 850px;
-  margin-bottom: 0.7rem;
-}
+/* ==========================
+   SOCIALS
+========================== */
 
 .hero-socials {
   display: flex;
+
   flex-direction: column;
-  gap: 0.95rem;
-  padding-top: 0.3rem;
+
+  gap: 26px;
+
+  align-self: center;
 }
 
 .hero-socials a {
-  width: 30px;
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-700);
-  font-size: 1.3rem;
+  font-size: 28px;
+
+  color: #555;
+
+  transition: 0.25s;
 }
 
 .hero-socials a:hover {
-  color: var(--color-brand-700);
+  color: #ef6b61;
+
+  transform: translateX(5px);
 }
 
-.hero-main {
-  padding-left: 0.15rem;
+/* ==========================
+   CONTENT
+========================== */
+
+.hero-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
 }
 
-@media (max-width: 720px) {
-  .section-frame {
-    padding: 1.2rem;
+/* ==========================
+   SPEECH BUBBLE
+========================== */
+
+.speech-bubble {
+  position: relative;
+
+  display: inline-block;
+
+  width: max-content;
+
+  background: #2d2d2d;
+
+  color: white;
+
+  padding: 10px 18px;
+
+  font-size: 15px;
+
+  border-radius: 5px;
+
+  margin-bottom: 28px;
+}
+
+.speech-bubble::after {
+  content: "";
+
+  position: absolute;
+
+  left: 20px;
+
+  bottom: -8px;
+
+  border-top: 8px solid #2d2d2d;
+
+  border-left: 8px solid transparent;
+
+  border-right: 8px solid transparent;
+}
+
+/* ==========================
+   NAME
+========================== */
+
+.hero-title {
+  font-size: 72px;
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  color: #444;
+
+  margin: 0 0 22px;
+}
+
+/* ==========================
+   ROLE
+========================== */
+
+.hero-role {
+  font-size: 16px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #444;
+
+  margin-bottom: 28px;
+}
+
+/* ==========================
+   DESCRIPTION
+========================== */
+
+.hero-description {
+  width: 310px;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #666;
+
+  margin-bottom: 40px;
+}
+
+/* ==========================
+   TALK BUTTON
+========================== */
+
+.talk-button {
+  width: 92px;
+
+  height: 92px;
+
+  border-radius: 50%;
+
+  background: #ef7b71;
+
+  color: white;
+
+  text-decoration: none;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  box-shadow: 0 10px 25px rgba(239, 123, 113, 0.35);
+
+  transition: 0.3s;
+}
+
+.talk-button:hover {
+  transform: translateY(-6px);
+
+  background: #eb6a5e;
+
+  box-shadow: 0 18px 35px rgba(239, 123, 113, 0.45);
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+.hero-image {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+.hero-image img {
+  width: 540px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+}
+/* ==========================
+   SECTION CARD
+========================== */
+
+.section-card {
+  margin-top: 30px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 50px 60px;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================
+   SECTION TITLES
+========================== */
+
+.section-title {
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: #3f3f3f;
+
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #888;
+
+  font-size: 15px;
+
+  margin-bottom: 40px;
+}
+
+/* ==========================
+   SKILLS
+========================== */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.skill-card {
+  background: #fafafa;
+
+  border: 1px solid #ececec;
+
+  border-radius: 12px;
+
+  padding: 28px;
+
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card h3 {
+  font-size: 22px;
+
+  color: #444;
+
+  margin-bottom: 15px;
+}
+
+.skill-card p {
+  color: #666;
+
+  line-height: 1.8;
+
+  font-size: 15px;
+}
+
+/* ==========================
+   README
+========================== */
+
+.readme-text {
+  font-size: 16px;
+
+  line-height: 2;
+
+  color: #666;
+
+  max-width: 850px;
+
+  margin-bottom: 24px;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a {
+  text-decoration: none;
+}
+
+/* ==========================
+   IMAGE EFFECT
+========================== */
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  transition: 0.4s;
+}
+
+.hero-image img:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1200px) {
+  .hero-layout {
+    grid-template-columns:
+      60px
+      1fr
+      420px;
+
+    gap: 30px;
   }
 
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-image img {
+    width: 430px;
+  }
+}
+
+@media (max-width: 992px) {
   .hero-layout {
     grid-template-columns: 1fr;
-    min-height: auto;
+
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 550px;
   }
 
   .hero-socials {
     flex-direction: row;
-    margin-bottom: 0.5rem;
+
+    justify-content: center;
+
+    margin-bottom: 30px;
   }
 
-  .hero-visual img {
-    width: min(100%, 260px);
-    height: min(100%, 260px);
+  .hero-image {
+    justify-content: center;
+
+    margin-top: 50px;
+  }
+
+  .hero-image img {
+    width: 380px;
   }
 
   .skills-grid {
@@ -271,15 +542,52 @@ h2 {
   }
 }
 
-@media (min-width: 721px) and (max-width: 1200px) {
-  .hero-layout {
-    grid-template-columns: 42px 1fr 330px;
-    min-height: calc(100vh - 240px);
+@media (max-width: 768px) {
+  .hero-card,
+  .section-card {
+    padding: 35px 25px;
   }
 
-  .hero-visual img {
-    width: 310px;
-    height: 310px;
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .talk-button {
+    width: 82px;
+
+    height: 82px;
+
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-role {
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    width: 300px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .skill-card {
+    padding: 20px;
   }
 }
 </style>

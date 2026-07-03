@@ -1,27 +1,40 @@
 <template>
   <header class="site-header">
     <div class="container header-frame">
+      <!-- Logo -->
       <router-link to="/" class="brand">
-        <span class="brand-s">S</span><span class="brand-dot">/</span
-        ><span class="brand-s">S</span>
+        <span class="logo-red">&lt;</span>
+        <span class="logo-black">S</span>
+        <span class="logo-red">/</span>
+        <span class="logo-black">S</span>
       </router-link>
 
+      <!-- Email -->
       <a href="mailto:sujansigdel03@gmail.com" class="email-link">
         <i class="fas fa-envelope"></i>
-        sujansigdel03@gmail.com
+        <span>sujansigdel03@gmail.com</span>
       </a>
 
-      <i class="fas fa-sun mini-icon" aria-hidden="true"></i>
+      <!-- Theme Icon -->
+      <button class="theme-btn">
+        <i class="fas fa-sun"></i>
+      </button>
 
+      <!-- Navigation -->
       <nav class="nav-links">
         <router-link to="/projects" class="nav-link" active-class="active">
-          <i class="fas fa-file-alt"></i> Works
+          <i class="fas fa-file-alt"></i>
+          <span>Works</span>
         </router-link>
+
         <a href="/sujan_resume.pdf" class="nav-link" download>
-          <i class="fas fa-user-tie"></i> Resume
+          <i class="fas fa-user"></i>
+          <span>Resume</span>
         </a>
+
         <router-link to="/contact" class="nav-link" active-class="active">
-          <i class="fas fa-book"></i> Contact
+          <i class="fas fa-book"></i>
+          <span>Contact</span>
         </router-link>
       </nav>
     </div>
@@ -36,102 +49,193 @@ export default {
 
 <style scoped>
 .site-header {
-  position: relative;
-  z-index: 10;
-  padding: 1.25rem 0 1.25rem;
+  padding-top: 32px;
+  padding-bottom: 20px;
 }
 
 .header-frame {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.25rem;
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  height: 82px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 0 34px;
+
+  display: flex;
+
   align-items: center;
-  gap: 1rem;
+
+  justify-content: space-between;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 12px 30px rgba(0, 0, 0, 0.05);
 }
+
+/* ---------------- Logo ---------------- */
 
 .brand {
-  display: inline-flex;
+  display: flex;
+
   align-items: center;
-  gap: 0.12rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1f1f1f;
-  letter-spacing: 0.03em;
+
+  text-decoration: none;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  transition: 0.25s;
 }
 
-.brand-dot {
-  color: #be3f3f;
-  font-size: 0.92rem;
-  transform: translateY(-0.02rem);
+.logo-red {
+  color: #ef6b61;
 }
+
+.logo-black {
+  color: #333;
+}
+
+.brand:hover {
+  transform: scale(1.03);
+}
+
+/* ---------------- Email ---------------- */
 
 .email-link {
-  color: var(--color-text-500);
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
-  display: inline-flex;
+  display: flex;
+
   align-items: center;
-  gap: 0.48rem;
+
+  gap: 10px;
+
+  color: #4f4f4f;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: 0.25s;
 }
 
-.mini-icon {
-  color: var(--color-text-500);
-  font-size: 0.96rem;
+.email-link i {
+  font-size: 14px;
 }
+
+.email-link:hover {
+  color: #ef6b61;
+}
+
+/* ---------------- Theme ---------------- */
+
+.theme-btn {
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  background: transparent;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  color: #555;
+
+  transition: 0.25s;
+}
+
+.theme-btn:hover {
+  background: #f4f4f4;
+
+  color: #ef6b61;
+
+  transform: rotate(20deg);
+}
+
+/* ---------------- Navigation ---------------- */
 
 .nav-links {
   display: flex;
-  gap: 0.8rem;
+
+  align-items: center;
+
+  gap: 28px;
 }
 
 .nav-link {
-  text-transform: none;
-  font-size: 0.92rem;
-  color: var(--color-text-700);
-  padding: 0.32rem 0.45rem;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
+  display: flex;
+
   align-items: center;
-  gap: 0.42rem;
+
+  gap: 8px;
+
+  text-decoration: none;
+
+  color: #4b4b4b;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  transition: 0.25s;
 }
 
-.nav-link:hover,
+.nav-link i {
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  color: #ef6b61;
+}
+
 .nav-link.active {
-  color: var(--color-text-900);
-  background: #f4ece2;
+  color: #ef6b61;
 }
 
-@media (max-width: 1180px) {
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 950px) {
   .header-frame {
-    grid-template-columns: auto 1fr auto;
+    flex-direction: column;
+
+    height: auto;
+
+    gap: 18px;
+
+    padding: 22px;
   }
 
-  .mini-icon {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .header-frame {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .brand {
-    margin: 0 auto;
+  .email-link {
+    order: 3;
   }
 
   .nav-links {
-    justify-content: center;
     flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand {
+    font-size: 24px;
   }
 
-  .email-link,
-  .mini-icon {
-    justify-content: center;
+  .email-link {
+    font-size: 13px;
+  }
+
+  .nav-link {
+    font-size: 14px;
   }
 }
 </style>
