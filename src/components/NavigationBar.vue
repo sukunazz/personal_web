@@ -78,18 +78,17 @@ export default {
   top: 0;
   inset-inline: 0;
   z-index: 1000;
-  padding: 1rem 0;
-  backdrop-filter: blur(10px);
+  padding: 0.9rem 0;
 }
 
 .nav-shell {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(204, 218, 232, 0.8);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  border-radius: 999px;
+  border-radius: var(--radius-lg);
   padding: 0.7rem 0.9rem 0.7rem 1.25rem;
   position: relative;
 }
@@ -120,35 +119,32 @@ export default {
   color: var(--color-text-700);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.45rem 0.3rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  padding: 0.42rem 0.55rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.25s ease, background-color 0.25s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-brand-700);
-  border-bottom-color: var(--color-brand-600);
+  background: var(--color-bg-200);
 }
 
 .hire-btn {
-  background: linear-gradient(
-    135deg,
-    var(--color-brand-700),
-    var(--color-accent-600)
-  );
+  background: var(--color-brand-700);
   color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.58rem 1rem;
-  border-radius: 999px;
+  border-radius: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 10px 20px rgba(15, 76, 129, 0.25);
+  box-shadow: 0 6px 14px rgba(20, 80, 132, 0.24);
 }
 
 .hire-btn:hover {
+  background: var(--color-brand-600);
   transform: translateY(-1px);
-  box-shadow: 0 14px 24px rgba(15, 76, 129, 0.3);
+  box-shadow: 0 10px 18px rgba(20, 80, 132, 0.26);
 }
 
 .mobile-backdrop {
@@ -162,7 +158,7 @@ export default {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 10px;
     background: var(--color-surface-soft);
     border: 1px solid var(--color-border);
   }
@@ -175,7 +171,7 @@ export default {
     border-radius: var(--radius-md);
     background: #fff;
     border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-strong);
+    box-shadow: var(--shadow-soft);
     padding: 0.9rem;
     display: none;
     flex-direction: column;

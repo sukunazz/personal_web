@@ -32,7 +32,7 @@
             <i class="fab fa-github"></i>
           </a>
           <a href="https://x.com/sigdelsujan03" aria-label="X">
-            <i class="fab fa-x-twitter"></i>
+            <i class="fab fa-twitter"></i>
           </a>
           <a href="https://www.linkedin.com/in/sujansigdel/" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
@@ -96,7 +96,7 @@ export default {
 
 <style scoped>
 .hero-container {
-  padding: 8.6rem 0 4.5rem;
+  padding: 8.2rem 0 3.4rem;
 }
 
 .hero-content {
@@ -107,32 +107,32 @@ export default {
 }
 
 .hero-copy {
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(204, 218, 232, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
-  padding: 2.2rem;
+  padding: 2rem;
 }
 
 .eyebrow {
   text-transform: uppercase;
   font-size: 0.78rem;
   letter-spacing: 0.09em;
-  color: var(--color-accent-600);
+  color: var(--color-brand-700);
   font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
 h1 {
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
-  line-height: 1.08;
-  margin-bottom: 1.1rem;
+  font-size: clamp(1.9rem, 3.3vw, 3rem);
+  line-height: 1.14;
+  margin-bottom: 1rem;
 }
 
 .description {
-  font-size: 1.12rem;
+  font-size: 1.04rem;
   color: var(--color-text-700);
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
 }
 
 .quick-points {
@@ -164,7 +164,7 @@ h1 {
 .ghost-btn {
   min-width: 150px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 0.74rem 1.1rem;
   font-weight: 700;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
@@ -172,12 +172,8 @@ h1 {
 
 .primary-btn {
   color: #fff;
-  background: linear-gradient(
-    135deg,
-    var(--color-brand-700),
-    var(--color-accent-600)
-  );
-  box-shadow: 0 12px 24px rgba(15, 76, 129, 0.22);
+  background: var(--color-brand-700);
+  box-shadow: 0 8px 16px rgba(20, 80, 132, 0.2);
 }
 
 .secondary-btn {
@@ -196,6 +192,10 @@ h1 {
 .secondary-btn:hover,
 .ghost-btn:hover {
   transform: translateY(-2px);
+}
+
+.primary-btn:hover {
+  background: var(--color-brand-600);
 }
 
 .social-links {
@@ -222,24 +222,26 @@ h1 {
 }
 
 .hero-panel {
-  padding: 2rem;
+  padding: 1.8rem;
   border-radius: var(--radius-xl);
-  background: linear-gradient(145deg, #0f4c81, #1f8f8b);
-  box-shadow: var(--shadow-strong);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-text-900);
 }
 
 .status-chip {
   display: inline-block;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: var(--color-bg-200);
+  border: 1px solid var(--color-border);
   padding: 0.4rem 0.72rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: var(--color-brand-700);
 }
 
 .panel-grid {
@@ -248,29 +250,29 @@ h1 {
 }
 
 .panel-card {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--color-surface-soft);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  padding: 1rem;
+  border: 1px solid var(--color-border);
+  padding: 0.9rem;
 }
 
 .panel-card h3 {
   font-size: 1.05rem;
   margin-bottom: 0.45rem;
-  color: #fff;
+  color: var(--color-text-900);
 }
 
 .panel-card p {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.95rem;
+  color: var(--color-text-700);
+  font-size: 0.93rem;
 }
 
 .availability-box {
   margin-top: 1rem;
-  background: rgba(8, 28, 44, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #fff;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 1rem;
+  padding: 0.95rem;
 }
 
 .availability-box h4 {
@@ -294,11 +296,11 @@ h1 {
 }
 
 .availability-box span {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-text-500);
 }
 
 .availability-box strong {
-  color: #fff;
+  color: var(--color-text-900);
 }
 
 @media (max-width: 980px) {

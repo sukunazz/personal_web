@@ -346,26 +346,29 @@ h1 {
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--color-border);
-  background: linear-gradient(
-    135deg,
-    rgba(15, 76, 129, 0.95),
-    rgba(31, 143, 139, 0.95)
-  );
-  color: #fff;
+  background: #fff;
+  color: var(--color-text-900);
   border-radius: var(--radius-lg);
   padding: 0.85rem 1rem;
   box-shadow: var(--shadow-soft);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.next-project:hover {
+  border-color: var(--color-brand-700);
+  box-shadow: var(--shadow-strong);
 }
 
 .next-project span {
   text-transform: uppercase;
   letter-spacing: 0.07em;
   font-size: 0.72rem;
-  opacity: 0.88;
+  color: var(--color-text-500);
 }
 
 .next-project strong {
   font-size: 1.1rem;
+  color: var(--color-brand-700);
 }
 
 .not-found {

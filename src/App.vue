@@ -20,21 +20,21 @@ export default {
 h1,
 h2,
 h3 {
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--color-text-900);
 }
 
 p {
-  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   color: var(--color-text-700);
 }
 
 .nav-brand,
 .nav-link {
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
 }
 
 .container {

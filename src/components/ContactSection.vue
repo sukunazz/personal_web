@@ -47,7 +47,7 @@
       </div>
 
       <div class="form-card">
-        <h3>Send A Message</h3>
+        <h3>Send a message</h3>
         <form @submit.prevent="submitForm">
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -257,12 +257,13 @@ textarea:focus {
   padding: 0.72rem 1rem;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(
-    135deg,
-    var(--color-brand-700),
-    var(--color-accent-600)
-  );
+  background: var(--color-brand-700);
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: var(--color-brand-600);
 }
 
 .success-message,
