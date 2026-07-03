@@ -38,14 +38,15 @@ p {
 }
 
 .container {
-  max-width: var(--site-max-width);
+  width: min(97vw, var(--site-max-width));
+  max-width: none;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 16px;
+    width: min(95vw, var(--site-max-width));
   }
 }
 </style>

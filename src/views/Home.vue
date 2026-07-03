@@ -2,19 +2,29 @@
   <main class="home-page">
     <section class="container section-frame hero">
       <div class="hero-layout">
-        <div>
-          <p class="eyebrow">It is me</p>
-          <h1 class="hero-name">S u j a n<br />S i g d e l</h1>
-          <p class="hero-role">Frontend Developer</p>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/sujansigdel/" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/sukunazz" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://x.com/sigdelsujan03" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+
+        <div class="hero-main">
+          <p class="eyebrow">It's me</p>
+          <h1 class="hero-name">Sujan<br />Sigdel</h1>
+          <p class="hero-role">FRONTEND DEVELOPER</p>
           <p class="hero-copy">
-            Software developer from Pokhara, Nepal. I build practical web
-            products with strong frontend architecture, reliable backend
-            integration, and a focus on maintainability.
+            AKA Sukunazz. Software Developer from Pokhara, Nepal with experience
+            in building practical applications with modern web technologies.
           </p>
 
           <div class="hero-actions">
-            <router-link to="/contact" class="btn-primary">let us talk</router-link>
-            <a href="/sujan_resume.pdf" download class="btn-ghost">my resume</a>
+            <router-link to="/contact" class="btn-primary">let's talk</router-link>
           </div>
         </div>
 
@@ -86,20 +96,24 @@ export default {
 
 .eyebrow {
   font-size: 0.86rem;
-  color: var(--color-text-500);
+  display: inline-flex;
+  align-items: center;
+  background: #2f2c2a;
+  color: #fff;
+  padding: 0.34rem 0.56rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 0.6rem;
 }
 
 .hero-name {
-  font-size: clamp(2.1rem, 7vw, 4.2rem);
-  line-height: 1;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.75rem;
+  font-size: clamp(2.2rem, 5.4vw, 3.9rem);
+  line-height: 0.96;
+  margin-bottom: 0.55rem;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 44px 1fr 360px;
   gap: 1.2rem;
   align-items: center;
 }
@@ -110,58 +124,54 @@ export default {
 }
 
 .hero-visual img {
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 330px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #1f1f1f;
+  border: 5px solid #1f1f1f;
   background: #e8dfd1;
 }
 
 .hero-role {
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.08em;
   font-weight: 600;
-  font-size: 0.83rem;
+  font-size: 0.78rem;
   color: var(--color-accent-600);
   margin-bottom: 0.8rem;
 }
 
 .hero-copy {
-  max-width: 760px;
+  max-width: 440px;
   color: var(--color-text-700);
   margin-bottom: 1.1rem;
 }
 
 .hero-actions {
-  display: flex;
-  gap: 0.65rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.btn-primary,
-.btn-ghost {
-  padding: 0.62rem 0.92rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-transform: lowercase;
+  margin-bottom: 0.6rem;
 }
 
 .btn-primary {
-  background: var(--color-brand-700);
+  border-radius: 999px;
+  width: 86px;
+  height: 86px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  line-height: 0.95;
+}
+
+.btn-primary {
+  background: #ed7e6e;
   color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--color-brand-600);
-}
-
-.btn-ghost {
-  border: 1px solid var(--color-border);
-  color: var(--color-text-700);
-  background: var(--color-surface-soft);
+  background: #e26d5c;
 }
 
 .hero-note {
@@ -215,6 +225,32 @@ h2 {
   margin-bottom: 0.7rem;
 }
 
+.hero-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.hero-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-700);
+}
+
+.hero-socials a:hover {
+  color: var(--color-brand-700);
+}
+
+.hero-main {
+  padding-left: 0.15rem;
+}
+
 @media (max-width: 720px) {
   .section-frame {
     padding: 1.2rem;
@@ -222,6 +258,11 @@ h2 {
 
   .hero-layout {
     grid-template-columns: 1fr;
+  }
+
+  .hero-socials {
+    flex-direction: row;
+    margin-bottom: 0.3rem;
   }
 
   .hero-visual img {
