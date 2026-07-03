@@ -47,14 +47,22 @@
             backend systems, AI applications, and practical software solutions.
           </p>
 
-          <router-link :to="{ path: '/', hash: '#contact' }" class="talk-button">
+          <button
+            type="button"
+            class="talk-button"
+            @click="scrollToSection('contact')"
+          >
             let's<br />
             talk
-          </router-link>
+          </button>
         </section>
 
         <section class="hero-image">
-          <img src="/images/sujan.png" alt="Sujan Sigdel" />
+          <img
+            class="hero-avatar"
+            src="/images/penguin-cute.png"
+            alt="Cute penguin character"
+          />
         </section>
       </div>
     </section>
@@ -84,12 +92,13 @@
             </p>
           </article>
 
-          <router-link
-            :to="{ path: '/', hash: '#projects' }"
+          <button
+            type="button"
             class="works-link"
+            @click="scrollToSection('projects')"
           >
             SEE MY PROJECTS
-          </router-link>
+          </button>
         </div>
 
         <div class="skills-illustration" aria-hidden="true">
@@ -246,7 +255,25 @@ export default {
       return projectsData.projects;
     },
   },
+  mounted() {
+    if (window.location.hash) {
+      const cleanPath = window.location.pathname + window.location.search;
+      window.history.replaceState(null, "", cleanPath);
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  },
   methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      if (window.location.hash) {
+        const cleanPath = window.location.pathname + window.location.search;
+        window.history.replaceState(null, "", cleanPath);
+      }
+    },
     async submitContactForm() {
       this.successMessage = "";
       this.errorMessage = "";
@@ -374,9 +401,9 @@ export default {
   width: 92px;
   height: 92px;
   border-radius: 50%;
+  border: none;
   background: #ef7b71;
   color: #ffffff;
-  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -384,6 +411,7 @@ export default {
   font-size: 21px;
   font-weight: 500;
   line-height: 1.05;
+  cursor: pointer;
   box-shadow: 0 10px 25px rgba(239, 123, 113, 0.35);
   transition: 0.3s;
 }
@@ -401,17 +429,24 @@ export default {
   position: relative;
 }
 
-.hero-image img {
-  width: 540px;
+.hero-avatar {
+  width: 430px;
   max-width: 100%;
+  aspect-ratio: 1 / 1;
   height: auto;
+  padding: 18px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #f7fbff 0%, #eef4fa 100%);
   object-fit: contain;
   user-select: none;
+  box-shadow:
+    0 12px 24px rgba(44, 62, 80, 0.08),
+    inset 0 0 0 1px rgba(100, 120, 140, 0.08);
   transition: 0.4s;
 }
 
-.hero-image img:hover {
-  transform: translateY(-8px) scale(1.02);
+.hero-avatar:hover {
+  transform: translateY(-6px) scale(1.01);
 }
 
 .section-card {
@@ -506,6 +541,7 @@ export default {
   width: 206px;
   height: 206px;
   border-radius: 50%;
+  border: none;
   background: #efb8b3;
   display: flex;
   align-items: center;
@@ -515,7 +551,7 @@ export default {
   font-size: 36px;
   line-height: 1.1;
   font-weight: 700;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .skills-illustration {
@@ -526,14 +562,15 @@ export default {
 }
 
 .skills-illustration img {
-  width: min(100%, 500px);
-  border-radius: 14px;
+  width: min(100%, 470px);
+  border-radius: 16px;
   object-fit: contain;
 }
 
 .what-i-do-image {
-  filter: saturate(0.95) contrast(1.02);
-  transform: translateY(6px);
+  filter: saturate(0.92) contrast(1.03);
+  transform: translateY(0);
+  opacity: 0.96;
 }
 
 .readme-text {
@@ -783,8 +820,8 @@ export default {
     font-size: 60px;
   }
 
-  .hero-image img {
-    width: 430px;
+  .hero-avatar {
+    width: 360px;
   }
 
   .skills-panel {
@@ -792,7 +829,7 @@ export default {
   }
 
   .skills-illustration img {
-    width: min(100%, 420px);
+    width: min(100%, 390px);
   }
 
   .projects-panel {
@@ -831,8 +868,8 @@ export default {
     margin-top: 20px;
   }
 
-  .hero-image img {
-    width: 380px;
+  .hero-avatar {
+    width: 330px;
   }
 
   .contact-panel {
@@ -844,7 +881,7 @@ export default {
   }
 
   .skills-illustration img {
-    width: min(100%, 360px);
+    width: min(100%, 330px);
   }
 }
 
@@ -900,7 +937,7 @@ export default {
   }
 
   .skills-illustration img {
-    width: min(100%, 320px);
+    width: min(100%, 300px);
   }
 
   .projects-panel,
@@ -922,8 +959,8 @@ export default {
     font-size: 14px;
   }
 
-  .hero-image img {
-    width: 300px;
+  .hero-avatar {
+    width: 260px;
   }
 
   .section-title {

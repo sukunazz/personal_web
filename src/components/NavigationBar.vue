@@ -17,28 +17,28 @@
 
       <!-- Navigation -->
       <nav class="nav-links">
-        <router-link
-          :to="{ path: '/', hash: '#projects' }"
+        <a
+          href="#projects"
           class="nav-link"
-          active-class="active"
+          @click.prevent="goToSection('projects')"
         >
           <i class="fas fa-file-alt"></i>
           <span>Projects</span>
-        </router-link>
+        </a>
 
         <a href="/sujan_resume.pdf" class="nav-link" download>
           <i class="fas fa-user"></i>
           <span>Resume</span>
         </a>
 
-        <router-link
-          :to="{ path: '/', hash: '#contact' }"
+        <a
+          href="#contact"
           class="nav-link"
-          active-class="active"
+          @click.prevent="goToSection('contact')"
         >
           <i class="fas fa-book"></i>
           <span>Contact</span>
-        </router-link>
+        </a>
       </nav>
     </div>
   </header>
@@ -47,6 +47,31 @@
 <script>
 export default {
   name: "NavigationBar",
+  methods: {
+    async goToSection(sectionId) {
+      const scroll = () => {
+        const target = document.getElementById(sectionId);
+        if (!target) return;
+
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (window.location.hash) {
+          const cleanPath = window.location.pathname + window.location.search;
+          window.history.replaceState(null, "", cleanPath);
+        }
+      };
+
+      if (this.$route.path !== "/") {
+        await this.$router.push("/");
+        this.$nextTick(() => {
+          setTimeout(scroll, 80);
+        });
+        return;
+      }
+
+      scroll();
+    },
+  },
 };
 </script>
 
