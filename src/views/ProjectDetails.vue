@@ -1,260 +1,152 @@
 <template>
-  <div class="project-details-page">
-    <div class="container">
-      <!-- Header with project navigation -->
-      <div class="navigation">
-        <p class="document-icon">
-          📄 Project Details: {{ project?.title || "Loading..." }}
-        </p>
-        <router-link to="/projects" class="back-link"
-          >← Back to Projects</router-link
-        >
-      </div>
+  <main class="project-details-page">
+    <div class="container page-body">
+      <router-link to="/projects" class="back-link">Back to projects</router-link>
 
-      <div v-if="loading" class="loading-state">Loading project details...</div>
-
-      <div v-else-if="!project" class="error-state">
-        Project not found.
-        <router-link to="/projects">Return to projects</router-link>
-      </div>
-
-      <div v-else>
-        <!-- Project Title and Meta -->
-        <div class="project-header">
-          <h1 class="project-title">{{ project.title }}</h1>
-
-          <div class="project-meta">
-            <div class="tag web-tag">
-              {{ project.category || "Web" }}
+      <section v-if="project" class="content">
+        <header class="project-header">
+          <p class="category-tag">{{ project.category }}</p>
+          <h1>{{ project.title }}</h1>
+          <p class="intro">{{ project.description }}</p>
+          <div class="meta-grid">
+            <div>
+              <span>Role</span>
+              <strong>{{ project.role || "Frontend Developer" }}</strong>
             </div>
-            <div class="completion-date">
-              Completed: {{ project.completedDate || "November 2024" }}
+            <div>
+              <span>Team</span>
+              <strong>{{ project.teamSize || "Small Team" }}</strong>
+            </div>
+            <div>
+              <span>Completed</span>
+              <strong>{{ project.completedDate || "Recent" }}</strong>
             </div>
           </div>
-        </div>
+        </header>
 
-        <!-- Project Preview Image -->
-        <div class="project-preview">
+        <div class="preview">
           <img
-            :src="project.previewImage || '/placeholder-project.jpg'"
-            :alt="`${project.title} Preview`"
-            class="preview-image"
+            :src="project.previewImage || project.image"
+            :alt="`${project.title} preview`"
           />
         </div>
 
-        <!-- Details Section Grid -->
-        <div class="details-section">
-          <div class="details-grid">
-            <!-- Left Column - Project Information -->
-            <div class="details-column">
-              <!-- Role Section -->
-              <div class="info-card">
-                <h3 class="info-title">Role</h3>
-                <p class="info-content highlight">
-                  {{ project.role || "Frontend Developer" }}
-                </p>
-              </div>
+        <div class="details-grid">
+          <section class="main-column">
+            <article class="card" v-if="project.overview">
+              <h2>Project Overview</h2>
+              <p>{{ project.overview }}</p>
+            </article>
 
-              <!-- Overview Section -->
-              <div class="overview-section" v-if="project.overview">
-                <h2 class="section-title">Project Overview</h2>
-                <p class="overview-text">{{ project.overview }}</p>
-              </div>
-
-              <!-- Challenges & Solutions -->
-              <div
-                class="challenges-section"
-                v-if="project.challenges && project.challenges.length > 0"
-              >
-                <h2 class="section-title">Challenges & Solutions</h2>
-                <div
-                  v-for="(challenge, index) in project.challenges"
-                  :key="index"
-                  class="challenge-card"
-                >
-                  <h3 class="challenge-title highlight">
-                    {{ challenge.title }}
-                  </h3>
-                  <p class="challenge-solution">{{ challenge.solution }}</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column - Project Details -->
-            <div class="details-column sidebar">
-              <!-- Team Size Section -->
-              <div class="info-card">
-                <h3 class="info-title">Team Size</h3>
-                <p class="info-content highlight">
-                  {{ project.teamSize || "2 members" }}
-                </p>
-              </div>
-
-              <!-- Technologies Used -->
-              <div
-                class="info-card"
-                v-if="project.technologies && project.technologies.length > 0"
-              >
-                <h3 class="info-title">Technologies Used</h3>
-                <ul class="tech-list">
-                  <li
-                    v-for="(tech, index) in project.technologies"
-                    :key="index"
-                  >
-                    {{ tech }}
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Project Links -->
-              <div
-                class="info-card"
-                v-if="project.links && project.links.length > 0"
-              >
-                <h3 class="info-title">Project Links</h3>
-                <div class="links-list">
-                  <a
-                    v-for="(link, index) in project.links"
-                    :key="index"
-                    :href="link.url"
-                    class="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {{ link.text }} <span class="arrow-icon">→</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Key Achievements -->
-              <div
-                class="info-card"
-                v-if="project.achievements && project.achievements.length > 0"
-              >
-                <h3 class="info-title">Key Achievements</h3>
-                <ul class="achievements-list">
-                  <li
-                    v-for="(achievement, index) in project.achievements"
-                    :key="index"
-                  >
-                    {{ achievement }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Gallery Section -->
-        <div
-          class="gallery-section"
-          v-if="project.gallery && project.gallery.length > 0"
-        >
-          <h2 class="section-title">Project Gallery</h2>
-          <div class="gallery-grid">
-            <div
-              v-for="(image, index) in project.gallery"
-              :key="index"
-              class="gallery-item"
+            <article
+              class="card"
+              v-if="project.challenges && project.challenges.length > 0"
             >
-              <img :src="image.src" :alt="image.alt" class="gallery-image" />
-            </div>
-          </div>
+              <h2>Challenges And Solutions</h2>
+              <div
+                v-for="(challenge, index) in project.challenges"
+                :key="index"
+                class="challenge-item"
+              >
+                <h3>{{ challenge.title }}</h3>
+                <p>{{ challenge.solution }}</p>
+              </div>
+            </article>
+
+            <article class="card" v-if="project.gallery && project.gallery.length > 0">
+              <h2>Gallery</h2>
+              <div class="gallery-grid">
+                <div
+                  v-for="(image, index) in project.gallery"
+                  :key="index"
+                  class="gallery-item"
+                >
+                  <img :src="image.src" :alt="image.alt" />
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <aside class="side-column">
+            <article
+              class="card"
+              v-if="project.technologies && project.technologies.length > 0"
+            >
+              <h2>Tech Stack</h2>
+              <ul class="list">
+                <li v-for="(tech, index) in project.technologies" :key="index">
+                  {{ tech }}
+                </li>
+              </ul>
+            </article>
+
+            <article class="card" v-if="project.links && project.links.length > 0">
+              <h2>Project Links</h2>
+              <div class="links-list">
+                <a
+                  v-for="(link, index) in project.links"
+                  :key="index"
+                  :href="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ link.text }}
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="card"
+              v-if="project.achievements && project.achievements.length > 0"
+            >
+              <h2>Key Achievements</h2>
+              <ul class="list">
+                <li v-for="(achievement, index) in project.achievements" :key="index">
+                  {{ achievement }}
+                </li>
+              </ul>
+            </article>
+          </aside>
         </div>
 
-        <!-- Next Project Navigation -->
-        <div v-if="nextProject" class="next-project-card">
-          <div class="next-project-info">
-            <p class="next-label">Next Project</p>
-            <p class="next-title highlight">{{ nextProject.title }}</p>
-          </div>
-          <router-link :to="`/projects/${nextProject.id}`" class="next-arrow"
-            >→</router-link
-          >
-        </div>
-      </div>
+        <router-link
+          v-if="nextProject"
+          :to="`/projects/${nextProject.id}`"
+          class="next-project"
+        >
+          <span>Next project</span>
+          <strong>{{ nextProject.title }}</strong>
+        </router-link>
+      </section>
+
+      <section v-else class="not-found">
+        <h2>Project not found.</h2>
+        <p>The requested project is not available in the portfolio.</p>
+      </section>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
+import projectsData from "@/data.json";
+
 export default {
   name: "ProjectDetails",
-  data() {
-    return {
-      project: null,
-      projects: [],
-      loading: true,
-      error: null,
-    };
-  },
   computed: {
+    projects() {
+      return projectsData.projects;
+    },
+    project() {
+      const projectId = this.$route.params.id;
+      return this.projects.find((p) => String(p.id) === String(projectId));
+    },
     nextProject() {
-      if (!this.project || !this.projects.length) return null;
-
+      if (!this.project) return null;
       const currentIndex = this.projects.findIndex(
         (p) => String(p.id) === String(this.project.id)
       );
-
-      if (currentIndex === -1 || currentIndex === this.projects.length - 1) {
-        // If current project is the last one, go to the first project
-        return this.projects[0];
-      }
-
-      return this.projects[currentIndex + 1];
-    },
-  },
-  async created() {
-    try {
-      this.loading = true;
-
-      // Import the JSON file dynamically
-      const response = await import("@/data.json");
-
-      // Access the projects array from the imported data
-      // Handle both possible formats: direct array or nested in projects property
-      if (
-        response.default.projects &&
-        Array.isArray(response.default.projects)
-      ) {
-        this.projects = response.default.projects;
-      } else if (Array.isArray(response.default)) {
-        this.projects = response.default;
-      } else {
-        throw new Error("Invalid data format in data.json");
-      }
-
-      const projectId = this.$route.params.id;
-
-      if (!projectId) {
-        throw new Error("Project ID is missing from route params");
-      }
-
-      this.project = this.projects.find(
-        (p) => String(p.id) === String(projectId)
-      );
-
-      if (!this.project) {
-        console.warn(`Project with ID ${projectId} not found.`);
-      }
-    } catch (error) {
-      console.error("Error loading project data:", error);
-      this.error = error.message;
-    } finally {
-      this.loading = false;
-    }
-  },
-  watch: {
-    // Watch for route changes to update the project
-    "$route.params.id": {
-      handler(newId) {
-        if (newId && this.projects.length) {
-          this.project = this.projects.find(
-            (p) => String(p.id) === String(newId)
-          );
-        }
-      },
-      immediate: true,
+      if (currentIndex === -1) return null;
+      return this.projects[(currentIndex + 1) % this.projects.length];
     },
   },
 };
@@ -262,392 +154,245 @@ export default {
 
 <style scoped>
 .project-details-page {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  background-color: #fff;
-  padding-bottom: 60px;
   min-height: 100vh;
+  padding-bottom: 2.8rem;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 80px auto;
-  padding: 0 30px;
-}
-
-.navigation {
-  padding-top: 10px;
-  border-bottom: 1px solid #eaeaea;
-  /* margin-bottom: 40px; */
-}
-
-.document-icon {
-  color: #666;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin: 0 0 15px 0;
+.page-body {
+  padding-top: 7.9rem;
 }
 
 .back-link {
-  color: #666;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.back-link:hover {
-  color: #4caf50;
-}
-
-.loading-state,
-.error-state {
-  text-align: center;
-  padding: 40px;
-  background: white;
-  border-radius: 8px;
-  margin-top: 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--color-brand-700);
+  font-weight: 700;
 }
 
 .project-header {
-  /* margin: 40px 0; */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+  padding: 1.4rem;
+  margin-bottom: 1rem;
 }
 
-.project-title {
-  font-size: 2.5rem;
+.category-tag {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-200);
+  color: var(--color-brand-700);
+  font-size: 0.76rem;
   font-weight: 700;
-  color: #4caf50;
-  /* margin: 0 0 20px 0; */
+  padding: 0.28rem 0.62rem;
 }
 
-.project-meta {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 10px 0 25px 0;
+h1 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
 }
 
-.tag {
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
+.intro {
+  color: var(--color-text-700);
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
 }
 
-.web-tag {
-  background-color: #4caf50;
-  color: #333;
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
 }
 
-.completion-date {
-  color: #666;
-  font-size: 0.9rem;
+.meta-grid div {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-soft);
+  padding: 0.55rem 0.7rem;
 }
 
-.project-preview {
-  background-color: #f8f9fa;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 50px;
-  width: 100%;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  height: 450px;
-  position: relative;
-}
-
-.preview-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.meta-grid span {
   display: block;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-500);
+  font-weight: 700;
+  margin-bottom: 0.15rem;
 }
 
-.details-section {
-  margin: 50px 0;
+.meta-grid strong {
+  color: var(--color-text-900);
+  font-size: 0.95rem;
+}
+
+.preview {
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.preview img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
 }
 
 .details-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
 }
 
-.info-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.main-column,
+.side-column {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
 }
 
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
 }
 
-.info-title {
-  color: #555;
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-
-.info-content {
-  margin: 0;
+.card h2 {
   font-size: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
-.highlight {
-  color: #4caf50;
-  font-weight: 600;
+.card p {
+  color: var(--color-text-700);
 }
 
-.section-title {
-  font-size: 1.6rem;
-  margin-bottom: 25px;
-  color: #333;
-  position: relative;
-  padding-bottom: 12px;
+.challenge-item + .challenge-item {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
 }
 
-.overview-section {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-.overview-text {
-  line-height: 1.7;
-  color: #555;
-  font-size: 1.05rem;
-}
-
-.challenge-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.challenge-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.challenge-title {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.challenge-solution {
-  margin: 0;
-  color: #555;
-  line-height: 1.6;
-}
-
-.tech-list,
-.achievements-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.tech-list li,
-.achievements-list li {
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-  color: #555;
-  transition: all 0.2s ease;
-}
-
-.tech-list li:hover,
-.achievements-list li:hover {
-  background-color: #f9f9f9;
-  padding-left: 8px;
-}
-
-.tech-list li:last-child,
-.achievements-list li:last-child {
-  border-bottom: none;
-}
-
-.links-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.project-link {
-  display: flex;
-  justify-content: space-between;
-  text-decoration: none;
-  color: #333;
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-  transition: all 0.2s ease;
-}
-
-.project-link:hover {
-  color: #4caf50;
-  padding-left: 8px;
-}
-
-.project-link:last-child {
-  border-bottom: none;
-}
-
-.arrow-icon {
-  color: #4caf50;
-}
-
-.gallery-section {
-  margin: 50px 0;
-  background-color: #fff;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+.challenge-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
 }
 
 .gallery-item {
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
 }
 
-.gallery-image {
+.gallery-item img {
   width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.4s ease;
+  height: 100%;
+  object-fit: cover;
 }
 
-.gallery-image:hover {
-  transform: scale(1.05);
+.list {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--color-text-700);
 }
 
-.next-project-card {
+.list li {
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.58rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent-600);
+}
+
+.links-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.links-list a {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.65rem;
+  font-weight: 600;
+  color: var(--color-brand-700);
+  background: var(--color-surface-soft);
+}
+
+.next-project {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 25px 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 50px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 76, 129, 0.95),
+    rgba(31, 143, 139, 0.95)
+  );
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1rem;
+  box-shadow: var(--shadow-soft);
 }
 
-.next-project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.next-project span {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.72rem;
+  opacity: 0.88;
 }
 
-.next-label {
-  color: #666;
-  font-size: 0.95rem;
-  margin: 0 0 8px 0;
+.next-project strong {
+  font-size: 1.1rem;
 }
 
-.next-title {
-  font-size: 1.3rem;
-  margin: 0;
+.not-found {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
 }
 
-.next-arrow {
-  font-size: 1.6rem;
-  color: #4caf50;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #f5f5f5;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.next-arrow:hover {
-  transform: translateX(8px);
-  background-color: #e9e9e9;
-}
-
-/* Responsive Styles */
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .details-grid {
     grid-template-columns: 1fr;
   }
-
-  .project-title {
-    font-size: 2rem;
-  }
-
-  .project-preview {
-    height: 350px;
-  }
 }
 
-@media (max-width: 600px) {
-  .gallery-grid {
+@media (max-width: 680px) {
+  .page-body {
+    padding-top: 7.2rem;
+  }
+
+  .meta-grid {
     grid-template-columns: 1fr;
   }
 
-  .navigation {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .project-meta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .project-title {
-    font-size: 1.75rem;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-  }
-
-  .next-project-card {
-    padding: 20px;
-  }
-
-  .project-preview {
-    height: 250px;
-  }
-}
-
-@media (max-width: 400px) {
-  .container {
-    padding: 0 20px;
-  }
-  .navigation {
-    margin-top: 7rem;
-  }
-  .project-preview {
-    margin-left: -20px;
-    margin-right: -20px;
-    width: calc(100% + 40px);
-    border-radius: 0;
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

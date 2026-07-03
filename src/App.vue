@@ -17,46 +17,35 @@ export default {
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Manrope", "Segoe UI", sans-serif;
-  line-height: 1.7;
-}
-
 h1,
 h2,
 h3 {
-  font-family: "Fraunces", "Times New Roman", serif;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-ink);
+  color: var(--color-text-900);
 }
 
 p {
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
   font-weight: 400;
-  color: var(--color-ink-muted);
+  color: var(--color-text-700);
 }
 
 .nav-brand,
 .nav-link {
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: var(--site-max-width);
   margin: 0 auto;
   padding: 0 24px;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 18px;
+    padding: 0 16px;
   }
 }
 </style>

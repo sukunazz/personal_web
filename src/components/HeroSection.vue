@@ -1,57 +1,87 @@
 <template>
   <section class="hero-container">
-    <div class="hero-content">
-      <div class="left-section">
-        <h1 class="title">
-          <span class="greeting">Hi, I'm Sujan Sigdel</span>
-          <span class="role">Frontend Developer</span>
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow">Frontend Developer | Vue.js, React, JavaScript</p>
+        <h1>
+          I build reliable product interfaces that are easy to use and easy to
+          maintain.
         </h1>
         <p class="description">
-          Crafting beautiful digital experiences through clean and efficient
-          code. Specialized in creating modern web applications with attention
-          to detail.
+          I am Sujan Sigdel, a frontend-focused full stack developer based in
+          Nepal. I deliver fast, responsive web applications with clean code,
+          clear communication, and attention to business goals.
         </p>
-        <div class="cta-buttons">
-          <a href="/projects" class="primary-btn">View Projects</a>
-          <a href="/sujan_resume.pdf" class="secondary-btn" download>
-            Download CV
-          </a>
+
+        <div class="quick-points">
+          <span>2+ Years Experience</span>
+          <span>4 Production Projects</span>
+          <span>Available for Hiring</span>
         </div>
+
+        <div class="cta-buttons">
+          <router-link to="/projects" class="primary-btn">View Projects</router-link>
+          <a href="/sujan_resume.pdf" class="secondary-btn" download>
+            Download Resume
+          </a>
+          <router-link to="/contact" class="ghost-btn">Let's Talk</router-link>
+        </div>
+
         <div class="social-links">
-          <a href="https://github.com/sukunazz" aria-label="Github"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a href="https://x.com/sigdelsujan03" aria-label="Twitter"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/sujansigdel/"
-            aria-label="LinkedIn"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+          <a href="https://github.com/sukunazz" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://x.com/sigdelsujan03" aria-label="X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/sujansigdel/" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
 
-      <div class="right-section">
-        <div class="glowing-ring"></div>
-        <div class="floating-dots">
-          <span class="dot dot1"></span>
-          <span class="dot dot2"></span>
-          <span class="dot dot3"></span>
+      <div class="hero-panel">
+        <p class="status-chip">Open To Full-time And Contract Roles</p>
+        <div class="panel-grid">
+          <article class="panel-card">
+            <h3>Product-Ready Frontend</h3>
+            <p>
+              Component architecture, API integration, clean state management,
+              and consistent UI behavior across pages.
+            </p>
+          </article>
+          <article class="panel-card">
+            <h3>Performance + UX</h3>
+            <p>
+              Focus on load speed, responsive layouts, accessibility basics, and
+              smooth user journeys from landing to conversion.
+            </p>
+          </article>
+          <article class="panel-card">
+            <h3>Delivery Discipline</h3>
+            <p>
+              Clear milestones, practical tradeoff decisions, and reliable
+              communication during implementation.
+            </p>
+          </article>
         </div>
-        <div class="image-container">
-          <img
-            src="@/assets/images/sujan1.png"
-            alt="Profile"
-            class="profile-image"
-          />
-          <div class="decorative-circle"></div>
-        </div>
-        <div class="orbiting-icons">
-          <i class="fab fa-react icon icon1"></i>
-          <i class="fab fa-js icon icon2"></i>
-          <i class="fab fa-css3-alt icon icon3"></i>
+
+        <div class="availability-box">
+          <h4>Hiring Snapshot</h4>
+          <ul>
+            <li>
+              <span>Location</span>
+              <strong>Pokhara, Nepal</strong>
+            </li>
+            <li>
+              <span>Preferred Work</span>
+              <strong>Remote / Hybrid</strong>
+            </li>
+            <li>
+              <span>Primary Stack</span>
+              <strong>Vue, React, Node.js</strong>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -64,485 +94,231 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .hero-container {
-  min-height: 100vh;
-  background: radial-gradient(circle at top, rgba(248, 245, 239, 0.95), rgba(236, 246, 239, 0.85));
-  padding: 3.5rem 6rem;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(31, 111, 92, 0.12), transparent 55%);
-  pointer-events: none;
-}
-
-.hero-container::after {
-  content: "";
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(242, 197, 114, 0.5), transparent 70%);
-  top: -120px;
-  right: -160px;
-  opacity: 0.6;
-  pointer-events: none;
+  padding: 8.6rem 0 4.5rem;
 }
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 7rem;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 2.5rem;
+  align-items: start;
 }
 
-.left-section {
-  max-width: 620px;
-  animation: fadeUp 0.8s ease-out;
+.hero-copy {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(204, 218, 232, 0.9);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  padding: 2.2rem;
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 1.8rem;
-}
-
-.greeting {
-  font-size: 1.2rem;
-  color: var(--color-ink-muted);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+.eyebrow {
   text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  color: var(--color-accent-600);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
 }
 
-.role {
-  font-size: 3.3rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-forest);
-  letter-spacing: -0.03em;
-  font-family: "Fraunces", "Times New Roman", serif;
+h1 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 1.1rem;
 }
 
 .description {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--color-ink-soft);
-  margin-bottom: 2.2rem;
+  font-size: 1.12rem;
+  color: var(--color-text-700);
+  margin-bottom: 1.3rem;
+}
+
+.quick-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.quick-points span {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-bg-200);
+  border: 1px solid var(--color-border);
+  font-size: 0.83rem;
+  color: var(--color-text-700);
+  font-weight: 600;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
   flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.4rem;
 }
 
 .primary-btn,
-.secondary-btn {
-  padding: 0.95rem 2rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease,
-    background 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 160px;
+.secondary-btn,
+.ghost-btn {
+  min-width: 150px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 0.74rem 1.1rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #1f6f5c, #4b8f6f);
   color: #fff;
-  border: none;
-  box-shadow: 0 12px 24px rgba(31, 111, 92, 0.25);
-}
-
-.primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(31, 111, 92, 0.3);
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-700),
+    var(--color-accent-600)
+  );
+  box-shadow: 0 12px 24px rgba(15, 76, 129, 0.22);
 }
 
 .secondary-btn {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: var(--color-ink);
-  border: 1.5px solid rgba(31, 42, 29, 0.35);
-  box-shadow: 0 10px 18px rgba(31, 42, 29, 0.08);
+  color: var(--color-brand-700);
+  border: 1px solid var(--color-brand-700);
+  background: rgba(255, 255, 255, 0.92);
 }
 
-.secondary-btn:hover {
-  background-color: rgba(31, 111, 92, 0.12);
-  color: var(--color-forest);
+.ghost-btn {
+  color: var(--color-text-700);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.ghost-btn:hover {
   transform: translateY(-2px);
 }
 
 .social-links {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .social-links a {
-  color: var(--color-ink-muted);
-  font-size: 1.1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-  padding: 0.55rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 10px 18px rgba(31, 42, 29, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-700);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.88);
+  transition: all 0.25s ease;
 }
 
 .social-links a:hover {
-  color: var(--color-forest);
-  transform: translateY(-3px);
+  background: var(--color-brand-700);
+  color: #fff;
 }
 
-.right-section {
-  position: relative;
+.hero-panel {
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #0f4c81, #1f8f8b);
+  box-shadow: var(--shadow-strong);
+  color: #fff;
+}
+
+.status-chip {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  padding: 0.4rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.panel-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.panel-card {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 1rem;
+}
+
+.panel-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.45rem;
+  color: #fff;
+}
+
+.panel-card p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+}
+
+.availability-box {
+  margin-top: 1rem;
+  background: rgba(8, 28, 44, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.availability-box h4 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.65rem;
+}
+
+.availability-box ul {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.availability-box li {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: floatIn 0.9s ease-out;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
 }
 
-.image-container {
-  position: relative;
-  width: 340px;
-  height: 340px;
-  border-radius: 42% 58% 60% 40% / 48% 38% 62% 52%;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(31, 42, 29, 0.2);
-  border: 6px solid rgba(248, 245, 239, 0.9);
+.availability-box span {
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.profile-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+.availability-box strong {
+  color: #fff;
 }
 
-.profile-image:hover {
-  transform: scale(1.06);
-}
-
-/* Decorative Elements */
-.glowing-ring {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  border: 5px solid rgba(31, 111, 92, 0.35);
-  animation: pulse 2.6s infinite ease-in-out;
-}
-
-.floating-dots {
-  position: absolute;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: var(--color-sun);
-  border-radius: 50%;
-  position: absolute;
-  animation: float 4s infinite ease-in-out alternate;
-}
-
-.dot1 {
-  top: -30px;
-  left: 30px;
-  animation-delay: 0.5s;
-}
-
-.dot2 {
-  bottom: -40px;
-  right: 50px;
-  animation-delay: 1s;
-}
-
-.dot3 {
-  top: 60px;
-  right: -30px;
-  animation-delay: 1.5s;
-}
-
-.orbiting-icons {
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  animation: rotate 10s linear infinite;
-}
-
-.icon {
-  font-size: 1.8rem;
-  color: var(--color-moss);
-  position: absolute;
-}
-
-.icon1 {
-  top: 6%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.icon2 {
-  bottom: 8%;
-  right: 26%;
-}
-
-.icon3 {
-  top: 48%;
-  left: 6%;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-}
-
-@keyframes float {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1400px) {
-  .hero-container {
-    padding: 3rem 4rem;
-  }
-
-  .hero-content {
-    gap: 5rem;
-  }
-
-  .image-container {
-    width: 320px;
-    height: 320px;
-  }
-
-  .glowing-ring {
-    width: 380px;
-    height: 380px;
-  }
-
-  .orbiting-icons {
-    width: 340px;
-    height: 340px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero-container {
-    padding: 2.5rem 3rem;
-  }
-
-  .hero-content {
-    gap: 4rem;
-  }
-
-  .role {
-    font-size: 2.9rem;
-  }
-
-  .greeting {
-    font-size: 1.1rem;
-  }
-
-  .description {
-    font-size: 1.05rem;
-  }
-
-  .image-container {
-    width: 300px;
-    height: 300px;
-  }
-
-  .glowing-ring {
-    width: 350px;
-    height: 350px;
-  }
-
-  .orbiting-icons {
-    width: 320px;
-    height: 320px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-container {
-    padding: 2.5rem 2rem;
-  }
-
-  .hero-content {
-    gap: 3rem;
-  }
-
-  .role {
-    font-size: 2.6rem;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    padding: 0.85rem 1.6rem;
-  }
-
-  .image-container {
-    width: 280px;
-    height: 280px;
-  }
-
-  .glowing-ring {
-    width: 320px;
-    height: 320px;
-  }
-
-  .orbiting-icons {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .hero-content {
     grid-template-columns: 1fr;
-    text-align: center;
   }
 
-  .left-section {
-    margin: 0 auto;
-  }
-
-  .cta-buttons,
-  .social-links {
-    justify-content: center;
-  }
-
-  .right-section {
-    margin-top: 2rem;
+  .hero-container {
+    padding-top: 7.8rem;
   }
 }
 
 @media (max-width: 600px) {
-  .hero-container {
-    padding: 2rem 1.5rem 3rem;
+  .hero-copy,
+  .hero-panel {
+    padding: 1.25rem;
   }
 
-  .role {
-    font-size: 2.2rem;
-  }
-
-  .image-container {
-    width: 240px;
-    height: 240px;
-  }
-
-  .glowing-ring {
-    width: 280px;
-    height: 280px;
-  }
-
-  .orbiting-icons {
-    width: 260px;
-    height: 260px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-container {
-    padding: 1.8rem 1.2rem 3rem;
-  }
-
-  .title {
-    margin-bottom: 1.4rem;
-  }
-
-  .greeting {
-    font-size: 0.95rem;
-  }
-
-  .role {
-    font-size: 2rem;
-  }
-
-  .description {
-    font-size: 0.95rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
+  .cta-buttons > * {
     width: 100%;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
-    max-width: 240px;
   }
 }
 </style>

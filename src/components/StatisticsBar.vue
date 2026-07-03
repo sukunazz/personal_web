@@ -2,21 +2,26 @@
   <section class="statistics">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item">
-          <i class="fas fa-smile"></i>
-          <h3>10</h3>
-          <p>Happy Clients</p>
-        </div>
-        <div class="stat-item">
-          <i class="fas fa-camera"></i>
-          <h3>5</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div class="stat-item">
-          <i class="fas fa-calendar"></i>
-          <h3>400</h3>
-          <p>Working Days</p>
-        </div>
+        <article class="stat-item">
+          <span class="label">Production Projects</span>
+          <h3>4+</h3>
+          <p>Built and deployed full-featured web applications.</p>
+        </article>
+        <article class="stat-item">
+          <span class="label">Core Experience</span>
+          <h3>2+ yrs</h3>
+          <p>Frontend-first delivery with practical full stack capability.</p>
+        </article>
+        <article class="stat-item">
+          <span class="label">Tech Stack</span>
+          <h3>10+</h3>
+          <p>Modern tools across UI, API, database, and deployment.</p>
+        </article>
+        <article class="stat-item">
+          <span class="label">Work Style</span>
+          <h3>Fast + Clear</h3>
+          <p>Consistent updates, transparent tradeoffs, reliable handover.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -30,41 +35,52 @@ export default {
 
 <style scoped>
 .statistics {
-  padding: 60px 0;
-  /* background: #f9f9f9; */
-  background: #fff;
-  border-top: 1px solid #eee;
+  padding: 0.8rem 0 3rem;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  text-align: center;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
 }
 
 .stat-item {
-  color: #4caf50;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
 }
 
-.stat-item i {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.label {
+  display: inline-block;
+  color: var(--color-accent-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin-bottom: 0.28rem;
 }
 
-.stat-item h3 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.3rem;
 }
 
-.stat-item p {
-  color: #666;
+p {
+  color: var(--color-text-700);
+  font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 580px) {
   .stats-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
   }
 }
 </style>

@@ -1,31 +1,48 @@
 <template>
   <section class="about" id="about">
-    <div class="container">
-      <div class="about-content">
-        <div class="about-text-content">
-          <h2>Hi, I am Sujan Sigdel</h2>
-          <div class="about-text">
-            <p>
-              Hi, I am Sujan Sigdel, a Frontend Developer specializing in Vue.js
-              with 2 years of experience. I build responsive, dynamic, and
-              user-friendly web applications, focusing on clean code and
-              seamless functionality. My expertise includes Vue.js, JavaScript,
-              HTML, CSS, and modern frontend tools that bring ideas to life.
-            </p>
-            <p>
-              I have built interactive dashboards and e-commerce platforms,
-              ensuring seamless performance across all devices. Passionate about
-              UI/UX, I create smooth and engaging experiences. Excited to
-              collaborate—scroll down to explore my work and get in touch.
-            </p>
+    <div class="container about-layout">
+      <div class="about-copy">
+        <p class="section-kicker">Why Hire Me</p>
+        <h2>Clear communication, clean architecture, and practical delivery.</h2>
+        <p>
+          I work best with teams that value product quality and predictable
+          execution. My approach is simple: understand the problem, scope a
+          realistic solution, and ship with measurable improvements.
+        </p>
+        <p>
+          Beyond coding, I focus on maintainability, usability, and collaboration.
+          That helps teams move faster after release, not just at release.
+        </p>
+      </div>
+
+      <div class="about-panels">
+        <article class="panel">
+          <h3>Strengths Employers Notice</h3>
+          <ul>
+            <li>Structured component architecture for scalable frontend code</li>
+            <li>Reliable API integration and real-world state handling</li>
+            <li>Responsive design that works cleanly across devices</li>
+            <li>Consistent communication and milestone updates</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>How I Execute</h3>
+          <div class="execution-grid">
+            <div>
+              <span>01</span>
+              <p>Clarify requirements and define a lean implementation path.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <p>Build core flows first and validate behavior early.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <p>Polish UI details, optimize, and prepare for deployment.</p>
+            </div>
           </div>
-          <div class="about-buttons">
-            <a href="#" class="btn btn-secondary">LEARN MORE</a>
-          </div>
-        </div>
-        <div class="about-image">
-          <img src="@/assets/images/p2.png" alt="Julia Anderson" />
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -39,239 +56,96 @@ export default {
 
 <style scoped>
 .about {
-  padding: 90px 0;
-  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem 0 3.2rem;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1.2rem;
+}
+
+.about-copy,
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
   border-radius: var(--radius-lg);
-  margin: 0 2rem;
-  box-shadow: 0 24px 50px rgba(31, 42, 29, 0.1);
+  padding: 1.7rem;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
-.about-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-}
-
-.about-text-content {
-  flex: 1;
-  max-width: 560px;
+.section-kicker {
+  text-transform: uppercase;
+  color: var(--color-accent-600);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.55rem;
 }
 
 h2 {
-  font-size: 2.4rem;
-  color: var(--color-forest);
-  margin-bottom: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+  margin-bottom: 0.95rem;
 }
 
-.about-text {
-  margin-bottom: 2rem;
+.about-copy p {
+  color: var(--color-text-700);
+  margin-bottom: 0.7rem;
+  font-size: 1.04rem;
 }
 
-.about-text p {
-  color: var(--color-ink-muted);
-  line-height: 1.7;
-  font-size: 1.05rem;
-  margin-bottom: 1.25rem;
-}
-
-.about-buttons {
-  display: flex;
+.about-panels {
+  display: grid;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
-.btn {
-  padding: 0.75rem 1.8rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
+h3 {
+  margin-bottom: 0.65rem;
+  font-size: 1.2rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--color-text-700);
+}
+
+.execution-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.execution-grid div {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem;
+}
+
+.execution-grid span {
   display: inline-flex;
+  width: 28px;
+  height: 28px;
   align-items: center;
   justify-content: center;
-  min-width: 160px;
+  border-radius: 50%;
+  background: var(--color-brand-700);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-bottom: 0.4rem;
 }
 
-.btn-primary {
-  background: var(--color-forest);
-  /* color: #fff; */
-  border: none;
-  box-shadow: 0 10px 20px rgba(31, 111, 92, 0.2);
+.execution-grid p {
+  color: var(--color-text-700);
+  font-size: 0.95rem;
 }
 
-.btn-secondary {
-  background: #fff;
-  color: var(--color-forest);
-  border: 1px solid rgba(31, 111, 92, 0.4);
-  box-shadow: 0 8px 16px rgba(31, 42, 29, 0.08);
-}
-
-.btn-primary:hover {
-  background: #1a5b4c;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 22px rgba(31, 111, 92, 0.25);
-}
-
-.btn-secondary:hover {
-  background: rgba(31, 111, 92, 0.12);
-  transform: translateY(-1px);
-}
-
-.about-image {
-  flex: 1;
-  max-width: 360px;
-  position: relative;
-}
-
-.about-image::before {
-  content: "";
-  position: absolute;
-  inset: -18px;
-  border-radius: 40px;
-  border: 2px dashed rgba(31, 111, 92, 0.35);
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 28px;
-  box-shadow: 0 18px 35px rgba(31, 42, 29, 0.18);
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.about-image img:hover {
-  transform: translateY(-5px);
-}
-
-@media (max-width: 1100px) {
-  .about {
-    margin: 0 1.5rem;
-  }
-
-  .about-content {
-    gap: 40px;
-  }
-
-  .about-image {
-    max-width: 320px;
-  }
-
-  h2 {
-    font-size: 2.1rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .about {
-    padding: 70px 0;
-  }
-
-  .about-content {
-    flex-direction: column-reverse;
-    gap: 35px;
-  }
-
-  .about-text-content,
-  .about-image {
-    max-width: 100%;
-  }
-
-  .about-image::before {
-    inset: -10px;
-  }
-
-  .about-image img {
-    max-width: 360px;
-    margin: 0 auto;
-    display: block;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  .about-text p {
-    text-align: center;
-  }
-
-  .about-buttons {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .about {
-    padding: 60px 0;
-    margin: 0 1rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .about {
-    padding: 50px 0;
-  }
-
-  .about-content {
-    gap: 25px;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .about-text p {
-    font-size: 0.95rem;
-  }
-
-  .about-image img {
-    max-width: 280px;
-  }
-
-  .about-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 240px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .about {
-    margin: 0 0.75rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  .about-image img {
-    max-width: 240px;
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
   }
 }
 </style>

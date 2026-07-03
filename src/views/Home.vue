@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <HeroSection />
+    <StatisticsBar />
     <AboutSection />
     <ServicesSection />
     <PortfolioSection />
     <TestimonialSection />
-    <StatisticsBar />
     <ContactSection />
   </div>
 </template>

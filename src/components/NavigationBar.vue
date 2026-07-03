@@ -1,218 +1,215 @@
 <template>
-  <div>
-    <!-- Desktop/Tablet Navbar -->
-    <nav class="navbar desktop-navbar">
-      <div class="container nav-container">
-        <router-link to="/" class="nav-brand">Sujan Sigdel</router-link>
-        <div class="nav-links">
-          <router-link to="/" class="nav-link" active-class="active"
-            >Home</router-link
-          >
-          <router-link to="/projects" class="nav-link" active-class="active"
-            >Projects</router-link
-          >
-          <router-link to="/contact" class="nav-link" active-class="active"
-            >Contact</router-link
-          >
-        </div>
-      </div>
-    </nav>
+  <header class="navbar">
+    <div class="container nav-shell">
+      <router-link to="/" class="nav-brand">Sujan Sigdel</router-link>
 
-    <!-- Mobile Top Header for Name/Logo -->
-    <div class="mobile-header">
-      <router-link to="/" class="mobile-brand">Sujan Sigdel</router-link>
+      <button
+        class="menu-toggle"
+        type="button"
+        @click="isMenuOpen = !isMenuOpen"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav :class="['nav-links', { open: isMenuOpen }]">
+        <router-link
+          to="/"
+          class="nav-link"
+          active-class="active"
+          @click="closeMenu"
+        >
+          Home
+        </router-link>
+        <router-link
+          to="/projects"
+          class="nav-link"
+          active-class="active"
+          @click="closeMenu"
+        >
+          Projects
+        </router-link>
+        <router-link
+          to="/contact"
+          class="nav-link"
+          active-class="active"
+          @click="closeMenu"
+        >
+          Contact
+        </router-link>
+        <router-link to="/contact" class="hire-btn" @click="closeMenu">
+          Hire Me
+        </router-link>
+      </nav>
     </div>
-
-    <!-- Mobile Bottom Navbar -->
-    <nav class="mobile-navbar">
-      <router-link to="/" class="mobile-nav-item" active-class="active">
-        <i class="mobile-icon">🏠</i>
-        <span>Home</span>
-      </router-link>
-      <router-link to="/projects" class="mobile-nav-item" active-class="active">
-        <i class="mobile-icon">📂</i>
-        <span>Projects</span>
-      </router-link>
-      <router-link to="/contact" class="mobile-nav-item" active-class="active">
-        <i class="mobile-icon">✉️</i>
-        <span>Contact</span>
-      </router-link>
-    </nav>
-  </div>
+    <div
+      v-if="isMenuOpen"
+      class="mobile-backdrop"
+      aria-hidden="true"
+      @click="closeMenu"
+    ></div>
+  </header>
 </template>
 
 <script>
 export default {
   name: "NavigationBar",
+  data() {
+    return {
+      isMenuOpen: false,
+    };
+  },
+  watch: {
+    $route() {
+      this.isMenuOpen = false;
+    },
+  },
+  methods: {
+    closeMenu() {
+      this.isMenuOpen = false;
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Desktop/Tablet Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(248, 245, 239, 0.9);
-  padding: 1.1rem 4.5rem;
+  inset-inline: 0;
   z-index: 1000;
-  box-shadow: 0 12px 30px rgba(31, 42, 29, 0.12);
-  backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  backdrop-filter: blur(10px);
 }
 
-.nav-container {
+.nav-shell {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(204, 218, 232, 0.8);
+  box-shadow: var(--shadow-soft);
+  border-radius: 999px;
+  padding: 0.7rem 0.9rem 0.7rem 1.25rem;
+  position: relative;
 }
 
 .nav-brand {
-  font-size: 1.45rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-forest);
-  text-decoration: none;
-  letter-spacing: 0.02em;
+  color: var(--color-brand-700);
+  letter-spacing: 0.01em;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--color-brand-700);
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .nav-link {
-  position: relative;
-  color: var(--color-ink);
-  text-decoration: none;
+  color: var(--color-text-700);
   font-weight: 600;
-  transition: color 0.3s ease;
-  padding-bottom: 6px;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.3rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-forest);
-  transition: width 0.4s ease-in-out;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.nav-link:hover {
-  color: var(--color-forest);
-}
-
-.nav-link.active::after {
-  width: 100%;
-}
-
+.nav-link:hover,
 .nav-link.active {
-  color: var(--color-forest);
+  color: var(--color-brand-700);
+  border-bottom-color: var(--color-brand-600);
+}
+
+.hire-btn {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-700),
+    var(--color-accent-600)
+  );
+  color: #fff;
   font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.58rem 1rem;
+  border-radius: 999px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 20px rgba(15, 76, 129, 0.25);
 }
 
-/* Mobile Top Header for Name/Logo */
-.mobile-header {
+.hire-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(15, 76, 129, 0.3);
+}
+
+.mobile-backdrop {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(248, 245, 239, 0.95);
-  box-shadow: 0 10px 25px rgba(31, 42, 29, 0.12);
-  z-index: 1000;
-  height: 52px;
-  padding-left: 1rem;
-  backdrop-filter: blur(12px);
 }
 
-.mobile-brand {
-  display: block;
-  width: 100%;
-  height: 100%;
-  line-height: 52px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-forest);
-  text-decoration: none;
-}
-
-/* Mobile Bottom Navbar Styles */
-.mobile-navbar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(248, 245, 239, 0.95);
-  box-shadow: 0 -8px 20px rgba(31, 42, 29, 0.15);
-  z-index: 1000;
-  padding: 0.6rem 0;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid rgba(31, 42, 29, 0.08);
-}
-
-.mobile-nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--color-ink-muted);
-  font-size: 0.75rem;
-  padding: 0.5rem 0;
-  width: 33.33%;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-
-.mobile-icon {
-  font-size: 1.15rem;
-  margin-bottom: 0.25rem;
-  font-style: normal;
-}
-
-.mobile-nav-item.active {
-  color: var(--color-forest);
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 2rem;
+@media (max-width: 820px) {
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
   }
 
   .nav-links {
-    gap: 1rem;
-  }
-
-  .nav-brand {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 584px) {
-  .desktop-navbar {
+    position: absolute;
+    top: calc(100% + 0.7rem);
+    right: 0;
+    width: min(260px, 92vw);
+    border-radius: var(--radius-md);
+    background: #fff;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-strong);
+    padding: 0.9rem;
     display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+    z-index: 1100;
   }
 
-  .mobile-navbar {
+  .nav-links.open {
     display: flex;
   }
 
-  .mobile-header {
-    display: block;
+  .nav-link {
+    border-bottom: none;
+    padding: 0.55rem 0.7rem;
+    border-radius: var(--radius-sm);
   }
 
-  body {
-    padding-bottom: 72px;
-    padding-top: 64px;
+  .nav-link:hover,
+  .nav-link.active {
+    background: var(--color-bg-200);
+  }
+
+  .hire-btn {
+    text-align: center;
+    margin-top: 0.3rem;
+  }
+
+  .mobile-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 36, 58, 0.18);
+    z-index: 1050;
   }
 }
 </style>

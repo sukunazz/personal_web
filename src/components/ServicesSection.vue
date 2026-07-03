@@ -1,29 +1,35 @@
 <template>
-  <section class="services" id="services">
+  <section class="featured-work" id="projects">
     <div class="container">
-      <h2>Featured Projects</h2>
-      <p class="subtitle">A selection of builds that blend craft and utility.</p>
-      <div class="services-grid">
-        <div
-          class="service-card"
-          v-for="project in limitedProjects"
+      <div class="section-header">
+        <p class="kicker">Featured Work</p>
+        <h2>Recent projects that demonstrate production-level execution.</h2>
+      </div>
+
+      <div class="work-grid">
+        <article
+          v-for="project in featuredProjects"
           :key="project.id"
+          class="work-card"
         >
           <img :src="project.image" :alt="project.title" />
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <RouterLink
-            :to="{ name: 'ProjectDetails', params: { id: project.id } }"
-            class="service-link"
-          >
-            Check Project
-          </RouterLink>
-        </div>
+          <div class="work-content">
+            <p class="tag">{{ project.category }}</p>
+            <h3>{{ project.title }}</h3>
+            <p class="description">{{ project.description }}</p>
+            <RouterLink
+              :to="{ name: 'ProjectDetails', params: { id: project.id } }"
+              class="detail-link"
+            >
+              See details
+            </RouterLink>
+          </div>
+        </article>
       </div>
-      <div class="view-all-container">
-        <router-link to="/projects" class="view-all-btn">
-          View All Projects
-          <span class="arrow">→</span>
+
+      <div class="section-footer">
+        <router-link to="/projects" class="all-projects-btn">
+          Explore all projects
         </router-link>
       </div>
     </div>
@@ -34,156 +40,123 @@
 import projectsData from "@/data.json";
 
 export default {
-  name: "ProjectsSection",
-  data() {
-    return {
-      projects: [],
-    };
-  },
+  name: "ServicesSection",
   computed: {
-    limitedProjects() {
-      return this.projects.slice(0, 3);
+    featuredProjects() {
+      return projectsData.projects.slice(0, 3);
     },
-  },
-  created() {
-    this.projects = projectsData.projects;
   },
 };
 </script>
 
 <style scoped>
-.services {
-  padding: 90px 0 100px;
-  background: transparent;
+.featured-work {
+  padding: 3rem 0;
+}
+
+.section-header {
+  max-width: 780px;
+  margin-bottom: 1.4rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-600);
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 h2 {
-  text-align: center;
-  font-size: 2.8rem;
-  color: var(--color-forest);
+  font-size: clamp(1.7rem, 2.5vw, 2.6rem);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.work-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.work-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.work-content {
+  padding: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-brand-700);
+  background: var(--color-bg-200);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
-.subtitle {
-  text-align: center;
-  color: var(--color-ink-muted);
-  margin-bottom: 3rem;
-  font-size: 1.05rem;
+.description {
+  color: var(--color-text-700);
+  margin-bottom: 0.8rem;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+.detail-link {
+  color: var(--color-brand-700);
+  font-weight: 700;
 }
 
-.service-card {
-  padding: 1.8rem;
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 20px;
-  box-shadow: 0 14px 30px rgba(31, 42, 29, 0.12);
-  border: 1px solid rgba(31, 42, 29, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-footer {
+  margin-top: 1.25rem;
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 38px rgba(31, 42, 29, 0.16);
-}
-
-.service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.service-card h3 {
-  font-size: 1.5rem;
-  margin: 0;
-  color: var(--color-ink);
-}
-
-.service-card p {
-  color: var(--color-ink-muted);
-  margin: 0;
-  font-size: 0.98rem;
-}
-
-.service-link {
-  color: var(--color-forest);
-  text-decoration: none;
-  font-weight: 600;
+.all-projects-btn {
   display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.95rem;
+  border: 1px solid var(--color-brand-700);
+  color: var(--color-brand-700);
+  border-radius: 10px;
+  padding: 0.58rem 0.95rem;
+  font-weight: 700;
 }
 
-.service-link::after {
-  content: "→";
-  transition: transform 0.3s ease;
+.all-projects-btn:hover {
+  background: var(--color-brand-700);
+  color: #fff;
 }
 
-.service-link:hover::after {
-  transform: translateX(4px);
-}
-
-.view-all-container {
-  text-align: center;
-  margin-top: 2.8rem;
-}
-
-.view-all-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.95rem 2.2rem;
-  font-size: 1rem;
-  color: var(--color-ink);
-  text-decoration: none;
-  border: 1.5px solid rgba(31, 42, 29, 0.3);
-  border-radius: 999px;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.view-all-btn:hover {
-  background: rgba(31, 111, 92, 0.1);
-  color: var(--color-forest);
-  transform: translateY(-2px);
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-}
-
-.view-all-btn:hover .arrow {
-  transform: translateX(5px);
-}
-
-@media (max-width: 768px) {
-  .services {
-    padding: 60px 0 80px;
+@media (max-width: 980px) {
+  .work-grid {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  .service-card {
-    padding: 1.4rem;
-    margin: 0 1rem;
-  }
-
-  .service-card img {
-    height: 180px;
+@media (max-width: 640px) {
+  .work-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
-

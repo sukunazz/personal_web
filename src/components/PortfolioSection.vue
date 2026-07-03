@@ -1,49 +1,56 @@
 <template>
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <h2>Tools</h2>
-      <p class="subtitle">for the love of nature</p>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/html.png" alt="HTML5 logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/css.png" alt="CSS3 logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/javascript.png" alt="JavaScript logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="/images/250px-React_Logo_SVG.svg.png" alt="React logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/node.png" alt="node.js logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="@/assets/images/mongodb.png" alt="mongodb logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="/images/250px-Nextjs-logo.svg.png" alt="Next.js logo" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="icon-container">
-            <img src="/images/lg-67786f2e073fb-NestJS.png" alt="NestJS logo" />
-          </div>
-        </div>
+  <section class="stack-section">
+    <div class="container stack-layout">
+      <div class="stack-copy">
+        <p class="kicker">Tech Stack</p>
+        <h2>Tools I use to ship clean, scalable web products.</h2>
+        <p>
+          I choose technology based on product requirements, team familiarity,
+          and maintainability. The focus is always on reliable delivery, not
+          tool hype.
+        </p>
+      </div>
+
+      <div class="stack-grid">
+        <article class="stack-card">
+          <h3>Frontend</h3>
+          <ul>
+            <li>Vue.js</li>
+            <li>React</li>
+            <li>JavaScript</li>
+            <li>HTML5 + CSS3</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>NestJS</li>
+            <li>MongoDB</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>Deployment</h3>
+          <ul>
+            <li>Vercel</li>
+            <li>GitHub</li>
+            <li>REST APIs</li>
+            <li>Performance tuning</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>Workflow</h3>
+          <ul>
+            <li>Requirement alignment</li>
+            <li>Milestone-driven delivery</li>
+            <li>Code readability first</li>
+            <li>Post-release support</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -56,91 +63,94 @@ export default {
 </script>
 
 <style scoped>
-.portfolio {
-  padding: 100px 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 245, 239, 0.9));
+.stack-section {
+  padding: 2rem 0 3rem;
+}
+
+.stack-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.stack-copy {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-600);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
 }
 
 h2 {
-  text-align: center;
-  font-size: 2.6rem;
-  color: var(--color-forest);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+  margin-bottom: 0.7rem;
 }
 
-.subtitle {
-  text-align: center;
-  color: var(--color-ink-muted);
-  margin-bottom: 3rem;
-  font-size: 1.05rem;
+.stack-copy p {
+  font-size: 1.03rem;
+  color: var(--color-text-700);
 }
 
-.portfolio-grid {
+.stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
-.portfolio-item {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 1.4rem;
-  padding: 1.8rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(31, 42, 29, 0.08);
-  box-shadow: 0 16px 30px rgba(31, 42, 29, 0.12);
+.stack-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
 }
 
-.portfolio-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 36px rgba(31, 42, 29, 0.15);
+.stack-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-brand-700);
 }
 
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 1.5rem;
+.stack-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.42rem;
+  color: var(--color-text-700);
 }
 
-.icon-container img {
-  width: auto;
-  height: 72px;
-  max-width: 120px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 8px 12px rgba(31, 42, 29, 0.1));
+.stack-card li {
+  position: relative;
+  padding-left: 0.95rem;
 }
 
-.portfolio-item:hover .icon-container img {
-  transform: scale(1.1);
+.stack-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.56rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent-600);
 }
 
-@media (max-width: 768px) {
-  .portfolio {
-    padding: 70px 0;
+@media (max-width: 980px) {
+  .stack-grid {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  h2 {
-    font-size: 2.1rem;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    padding: 0 0.5rem;
-  }
-
-  .portfolio-item {
-    padding: 1.2rem;
-  }
-
-  .icon-container {
-    padding: 1rem;
+@media (max-width: 620px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
-

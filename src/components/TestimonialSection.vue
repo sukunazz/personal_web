@@ -1,27 +1,27 @@
 <template>
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <p>
-            "Sujan is one of the best frontend developers I have ever worked
-            with. He is skilled, efficient, and detail-oriented. If you need a
-            fast and high-quality web solution, I highly recommend hiring
-            sujan."
-          </p>
-          <div class="testimonial-author">
-            <img
-              src="@/assets/images/bot.png"
-              alt="Lena Andrews"
-              class="author-image"
-            />
-            <div class="author-info">
-              <h4>Ashim</h4>
-              <p>Python Enthusiast</p>
-            </div>
-          </div>
+  <section class="testimonial-section">
+    <div class="container testimonial-layout">
+      <article class="quote-card">
+        <p class="kicker">Recommendation</p>
+        <blockquote>
+          "Sujan is one of the most dependable frontend developers I have worked
+          with. He delivers quickly, writes clean code, and stays focused on the
+          product outcome."
+        </blockquote>
+        <div class="author">
+          <h4>Ashim</h4>
+          <p>Python Enthusiast</p>
         </div>
-      </div>
+      </article>
+
+      <article class="collab-card">
+        <h3>What collaboration with me looks like</h3>
+        <ul>
+          <li>Requirements translated into practical implementation steps</li>
+          <li>Regular progress updates with clear blockers and next actions</li>
+          <li>Readable code that your team can extend confidently</li>
+        </ul>
+      </article>
     </div>
   </section>
 </template>
@@ -33,61 +33,66 @@ export default {
 </script>
 
 <style scoped>
-.testimonials {
-  padding: 100px 0;
-  background: #f9f9f9;
-  /* background: #fff; */
+.testimonial-section {
+  padding: 2rem 0 2.8rem;
 }
 
-.testimonial-card {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem;
-  /* background: #f9f9f9; */
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-content p {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
+.testimonial-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 1rem;
 }
 
-.author-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
+.quote-card,
+.collab-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
 }
 
-.author-info h4 {
-  margin: 0;
-  color: #333;
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-accent-600);
+  margin-bottom: 0.45rem;
 }
 
-.author-info p {
-  margin: 0;
-  color: #666;
-  font-size: 0.9rem;
+blockquote {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-text-900);
+  margin-bottom: 1.1rem;
 }
 
-@media (max-width: 768px) {
-  .testimonials {
-    padding: 60px 0;
-  }
+.author h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.1rem;
+}
 
-  .testimonial-card {
-    padding: 1.5rem;
+.author p {
+  color: var(--color-text-500);
+  font-size: 0.95rem;
+}
+
+.collab-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.collab-card ul {
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--color-text-700);
+}
+
+@media (max-width: 860px) {
+  .testimonial-layout {
+    grid-template-columns: 1fr;
   }
 }
 </style>
