@@ -111,8 +111,8 @@
         <div class="skills-illustration" aria-hidden="true">
           <img
             class="what-i-do-image"
-            src="/images/p1.png"
-            alt="Developer working illustration"
+            src="/images/skills-what-i-do.svg"
+            alt="Software engineering workflow illustration"
           />
         </div>
       </div>
@@ -598,9 +598,9 @@ export default {
 }
 
 .what-i-do-image {
-  filter: saturate(0.92) contrast(1.03);
+  filter: none;
   transform: translateY(0);
-  opacity: 0.96;
+  opacity: 0.98;
 }
 
 .readme-text {
