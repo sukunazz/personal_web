@@ -6,7 +6,31 @@
       <p class="subtitle">{{ project.category }}</p>
       <p class="intro">{{ project.description }}</p>
 
-      <img :src="project.previewImage || project.image" :alt="project.title" class="hero-image" />
+      <img
+        v-if="activeGalleryImage"
+        :src="activeGalleryImage.src"
+        :alt="activeGalleryImage.alt || project.title"
+        class="hero-image"
+      />
+
+      <div class="gallery-strip" v-if="galleryImages.length > 1">
+        <button
+          v-for="(image, index) in galleryImages"
+          :key="`${image.src}-${index}`"
+          type="button"
+          class="gallery-thumb"
+          :class="{ active: index === activeGalleryIndex }"
+          :aria-label="`Show screenshot ${index + 1}`"
+          @click="selectGallery(index)"
+        >
+          <img
+            :src="image.src"
+            :alt="image.alt || `${project.title} screenshot ${index + 1}`"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+      </div>
 
       <div class="meta-lines">
         <p><strong>Role:</strong> {{ project.role || "Frontend Developer" }}</p>
@@ -64,10 +88,57 @@ import projectsData from "@/data.json";
 
 export default {
   name: "ProjectDetails",
+  data() {
+    return {
+      activeGalleryIndex: 0,
+    };
+  },
   computed: {
     project() {
       const id = this.$route.params.id;
       return projectsData.projects.find((item) => String(item.id) === String(id));
+    },
+    galleryImages() {
+      if (!this.project) {
+        return [];
+      }
+
+      const gallery = Array.isArray(this.project.gallery)
+        ? this.project.gallery.filter((item) => item && item.src)
+        : [];
+
+      const preview = this.project.previewImage || this.project.image;
+      if (!preview) {
+        return gallery;
+      }
+
+      if (!gallery.some((item) => item.src === preview)) {
+        return [{ src: preview, alt: `${this.project.title} preview` }, ...gallery];
+      }
+
+      return gallery;
+    },
+    activeGalleryImage() {
+      return this.galleryImages[this.activeGalleryIndex] || null;
+    },
+  },
+  watch: {
+    "$route.params.id"() {
+      this.activeGalleryIndex = 0;
+    },
+    galleryImages(newImages) {
+      if (!newImages.length) {
+        this.activeGalleryIndex = 0;
+        return;
+      }
+      if (this.activeGalleryIndex >= newImages.length) {
+        this.activeGalleryIndex = 0;
+      }
+    },
+  },
+  methods: {
+    selectGallery(index) {
+      this.activeGalleryIndex = index;
     },
   },
 };
@@ -115,7 +186,40 @@ h1 {
   width: 100%;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
+  margin-bottom: 0.8rem;
+}
+
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.65rem;
   margin-bottom: 1rem;
+}
+
+.gallery-thumb {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  padding: 0;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-thumb:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-thumb.active {
+  border-color: #e5524c;
+  box-shadow: 0 0 0 2px rgba(229, 82, 76, 0.2);
 }
 
 .meta-lines p {

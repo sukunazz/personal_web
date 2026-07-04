@@ -10,26 +10,16 @@
           <img
             src="/images/skills-what-i-do.svg"
             alt="Software engineering illustration"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
         <div class="about-summary">
           <ul>
-            <li>
-              <i class="fas fa-microchip"></i>
-              Building scalable backend systems and APIs.
-            </li>
-            <li>
-              <i class="fas fa-users"></i>
-              Shipping user-focused frontend interfaces.
-            </li>
-            <li>
-              <i class="fas fa-seedling"></i>
-              Exploring practical AI and Web3 integrations.
-            </li>
-            <li>
-              <i class="fas fa-chess-knight"></i>
-              Playing chess in my leisure time.
+            <li v-for="item in highlights" :key="item.text">
+              <i :class="item.icon" aria-hidden="true"></i>
+              <span>{{ item.text }}</span>
             </li>
           </ul>
           <p class="fun-fact">
@@ -40,7 +30,6 @@
       </div>
 
       <section class="about-readme-block">
-        <h2 class="section-title">README</h2>
         <p class="readme-text">
           I am a software engineer with strong hands-on experience across modern
           web technologies and scalable backend systems. I focus on writing
@@ -60,24 +49,18 @@
 
       <section class="about-tools-block">
         <h2 class="section-title">Tools I Use</h2>
-        <div class="tools-grid">
-          <div class="tool-item"><img src="/images/vue.png" alt="Vue" /><span>Vue.js</span></div>
-          <div class="tool-item"><img src="/images/250px-React_Logo_SVG.svg.png" alt="React" /><span>React</span></div>
-          <div class="tool-item"><i class="fas fa-wind"></i><span>TailwindCSS</span></div>
-          <div class="tool-item"><i class="fas fa-layer-group"></i><span>Pinia</span></div>
-          <div class="tool-item"><img src="/images/lg-67786f2e073fb-NestJS.png" alt="NestJS" /><span>NestJS</span></div>
-          <div class="tool-item"><img src="/images/node.png" alt="Node.js" /><span>Node.js</span></div>
-          <div class="tool-item"><i class="fas fa-server"></i><span>Express</span></div>
-          <div class="tool-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
-          <div class="tool-item"><img src="/images/mongodb.png" alt="MongoDB" /><span>MongoDB</span></div>
-          <div class="tool-item"><i class="fas fa-bolt"></i><span>Redis</span></div>
-          <div class="tool-item"><i class="fab fa-docker"></i><span>Docker</span></div>
-          <div class="tool-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-          <div class="tool-item"><i class="fas fa-cloud"></i><span>Vercel</span></div>
-          <div class="tool-item"><i class="fas fa-plug"></i><span>Axios</span></div>
-          <div class="tool-item"><img src="/images/javascript.png" alt="JavaScript" /><span>JavaScript</span></div>
-          <div class="tool-item"><img src="/images/html.png" alt="HTML" /><span>HTML</span></div>
-          <div class="tool-item"><img src="/images/css.png" alt="CSS" /><span>CSS</span></div>
+        <div class="tools-cloud">
+          <div class="tool-token" v-for="tool in tools" :key="tool.name">
+            <img
+              v-if="tool.image"
+              :src="tool.image"
+              :alt="tool.name"
+              loading="lazy"
+              decoding="async"
+            />
+            <i v-else :class="tool.icon" aria-hidden="true"></i>
+            <span>{{ tool.name }}</span>
+          </div>
         </div>
       </section>
     </section>
@@ -87,6 +70,47 @@
 <script>
 export default {
   name: "AboutPage",
+  data() {
+    return {
+      highlights: [
+        {
+          icon: "fas fa-microchip",
+          text: "Building scalable backend systems and APIs.",
+        },
+        {
+          icon: "fas fa-users",
+          text: "Shipping user-focused frontend interfaces.",
+        },
+        {
+          icon: "fas fa-seedling",
+          text: "Exploring practical AI and Web3 integrations.",
+        },
+        {
+          icon: "fas fa-chess-knight",
+          text: "Playing chess in my leisure time.",
+        },
+      ],
+      tools: [
+        { name: "Vue.js", image: "/images/vue.png" },
+        { name: "React", image: "/images/250px-React_Logo_SVG.svg.png" },
+        { name: "TailwindCSS", icon: "fas fa-wind" },
+        { name: "Pinia", icon: "fas fa-layer-group" },
+        { name: "NestJS", image: "/images/lg-67786f2e073fb-NestJS.png" },
+        { name: "Node.js", image: "/images/node.png" },
+        { name: "Express", icon: "fas fa-server" },
+        { name: "PostgreSQL", icon: "fas fa-database" },
+        { name: "MongoDB", image: "/images/mongodb.png" },
+        { name: "Redis", icon: "fas fa-bolt" },
+        { name: "Docker", icon: "fab fa-docker" },
+        { name: "Git", icon: "fab fa-git-alt" },
+        { name: "Vercel", icon: "fas fa-cloud" },
+        { name: "Axios", icon: "fas fa-plug" },
+        { name: "JavaScript", image: "/images/javascript.png" },
+        { name: "HTML", image: "/images/html.png" },
+        { name: "CSS", image: "/images/css.png" },
+      ],
+    };
+  },
 };
 </script>
 
@@ -103,6 +127,7 @@ export default {
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
+  min-height: calc(100vh - 86px);
 }
 
 .skills-title {
@@ -143,50 +168,57 @@ export default {
 
 .about-top-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: minmax(290px, 1.03fr) minmax(340px, 0.97fr);
+  gap: 28px;
   align-items: center;
 }
 
 .about-illustration {
-  background: #f1efef;
-  border-radius: 12px;
-  padding: 14px;
+  width: 100%;
+  min-height: 0;
 }
 
 .about-illustration img {
   width: 100%;
-  border-radius: 10px;
+  max-width: 620px;
+  border-radius: 12px;
+  border: 1px solid #e7e2dc;
 }
 
 .about-summary ul {
   list-style: none;
   display: grid;
-  gap: 11px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .about-summary li {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  align-items: flex-start;
   color: #50545a;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
 }
 
 .about-summary i {
   color: #62666d;
-  margin-top: 4px;
+  margin-top: 5px;
+  width: 18px;
+  text-align: center;
 }
 
 .fun-fact {
   color: #50545a;
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 .about-readme-block {
-  margin-top: 30px;
+  margin-top: 26px;
+  max-width: 760px;
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
 }
 
 .section-title {
@@ -197,49 +229,54 @@ export default {
 }
 
 .readme-text {
-  font-size: 16px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 1.85;
   color: #666;
-  max-width: 980px;
+  max-width: none;
   margin-bottom: 12px;
 }
 
 .about-tools-block {
-  margin-top: 26px;
+  margin-top: 28px;
+  content-visibility: auto;
+  contain-intrinsic-size: 340px;
 }
 
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 18px 14px;
-  margin-top: 10px;
-}
-
-.tool-item {
+.tools-cloud {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 14px 26px;
+  margin-top: 12px;
+}
+
+.tool-token {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 2px;
+  gap: 10px;
   color: #50545a;
+  min-width: 140px;
+  padding: 2px 0;
 }
 
-.tool-item img {
-  width: 22px;
-  height: 22px;
+.tool-token img {
+  width: 23px;
+  height: 23px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
-.tool-item i {
+.tool-token i {
   font-size: 22px;
   color: #5d6168;
+  width: 23px;
+  text-align: center;
+  flex-shrink: 0;
 }
 
-.tool-item span {
-  font-size: 13px;
+.tool-token span {
+  font-size: 15px;
   font-weight: 600;
-  text-align: center;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 @media (max-width: 1200px) {
@@ -248,17 +285,14 @@ export default {
   }
 
   .about-illustration {
-    max-width: 520px;
-  }
-
-  .tools-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 620px;
   }
 }
 
 @media (max-width: 768px) {
   .about-card {
-    padding: 35px 25px;
+    padding: 35px 25px 40px;
+    min-height: calc(100vh - 92px);
   }
 
   .skills-title {
@@ -276,13 +310,20 @@ export default {
   .about-summary li,
   .fun-fact,
   .readme-text {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.75;
   }
 
-  .tools-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px 10px;
+  .tools-cloud {
+    gap: 12px 18px;
+  }
+
+  .tool-token {
+    min-width: 130px;
+  }
+
+  .tool-token span {
+    font-size: 14px;
   }
 }
 
@@ -299,8 +340,8 @@ export default {
     font-size: 24px;
   }
 
-  .tools-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .tool-token {
+    min-width: 120px;
   }
 }
 </style>

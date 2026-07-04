@@ -9,20 +9,28 @@
 
       <div class="footer-socials" aria-label="social links">
         <a
-          href="https://t.me/"
+          href="https://www.linkedin.com/in/sujansigdel/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Telegram"
+          aria-label="LinkedIn"
         >
-          <i class="fab fa-telegram"></i>
+          <i class="fab fa-linkedin"></i>
         </a>
         <a
-          href="https://www.instagram.com/"
+          href="https://github.com/sukunazz"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Instagram"
+          aria-label="GitHub"
         >
-          <i class="fab fa-instagram"></i>
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://x.com/sigdelsujan03"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
         </a>
       </div>
     </div>

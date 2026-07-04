@@ -37,21 +37,20 @@ export default {
 
 <style scoped>
 .projects-page {
-  min-height: calc(100vh - 120px);
-  padding-bottom: 0;
-  display: flex;
+  min-height: calc(100vh - 24px);
+  padding-bottom: 26px;
+  overflow-x: hidden;
 }
 
 .projects-card {
-  flex: 1;
   background: #ffffff;
   border-radius: 0 0 14px 14px;
   margin-top: -2px;
-  padding: 40px 44px 46px;
+  padding: 40px 44px 54px;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 86px);
 }
 
 .skills-title {
@@ -91,13 +90,18 @@ export default {
 }
 
 .projects-panel {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 6px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+  align-items: stretch;
 }
 
 .project-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border: 1px solid #e3dfdf;
   border-radius: 10px;
@@ -115,6 +119,7 @@ export default {
   width: 100%;
   aspect-ratio: 16/10;
   overflow: hidden;
+  background: #f1efef;
 }
 
 .project-thumb img {
@@ -125,21 +130,22 @@ export default {
 }
 
 .project-card h3 {
-  padding: 14px;
+  padding: 14px 14px 16px;
   font-size: 22px;
+  line-height: 1.25;
   color: #363a40;
 }
 
 @media (max-width: 1200px) {
   .projects-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .projects-card {
-    padding: 35px 25px;
-    min-height: calc(100vh - 110px);
+    padding: 35px 25px 42px;
+    min-height: calc(100vh - 92px);
   }
 
   .skills-title {
@@ -152,6 +158,7 @@ export default {
 
   .projects-panel {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
