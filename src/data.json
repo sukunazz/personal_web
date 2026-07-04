@@ -214,8 +214,8 @@
       "id": 4,
       "title": "email_sender",
       "description": "AI-powered CLI email assistant in Python that turns natural-language requests into complete, sendable emails with validation and approval.",
-      "image": "/images/email-sender.svg",
-      "previewImage": "/images/email-sender.svg",
+      "image": "/images/email_sender.png",
+      "previewImage": "/images/email_sender.png",
       "role": "Python Developer",
       "teamSize": "1 member",
       "technologies": [
@@ -269,8 +269,12 @@
       ],
       "gallery": [
         {
-          "src": "/images/email-sender.svg",
-          "alt": "Email Sender project cover"
+          "src": "/images/email_sender.png",
+          "alt": "Email Sender screenshot 1"
+        },
+        {
+          "src": "/images/email_sender_1.png",
+          "alt": "Email Sender screenshot 2"
         }
       ],
       "nextProject": {
