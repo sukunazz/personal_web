@@ -93,14 +93,13 @@ export default {
       tools: [
         { name: "Vue.js", image: "/images/vue.png" },
         { name: "React", image: "/images/250px-React_Logo_SVG.svg.png" },
+        { name: "Next.js", image: "/images/250px-Nextjs-logo.svg.png" },
+        { name: "Python", icon: "fab fa-python" },
         { name: "TailwindCSS", icon: "fas fa-wind" },
-        { name: "Pinia", icon: "fas fa-layer-group" },
-        { name: "NestJS", image: "/images/lg-67786f2e073fb-NestJS.png" },
         { name: "Node.js", image: "/images/node.png" },
         { name: "Express", icon: "fas fa-server" },
         { name: "PostgreSQL", icon: "fas fa-database" },
         { name: "MongoDB", image: "/images/mongodb.png" },
-        { name: "Redis", icon: "fas fa-bolt" },
         { name: "Docker", icon: "fab fa-docker" },
         { name: "Git", icon: "fab fa-git-alt" },
         { name: "Vercel", icon: "fas fa-cloud" },
@@ -212,6 +211,7 @@ export default {
   color: #50545a;
   font-size: 18px;
   line-height: 1.7;
+  padding-left: 30px;
 }
 
 .about-readme-block {
@@ -243,19 +243,20 @@ export default {
 }
 
 .tools-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 26px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 14px 22px;
   margin-top: 12px;
+  max-width: 980px;
 }
 
 .tool-token {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
   color: #50545a;
-  min-width: 140px;
-  padding: 2px 0;
+  min-width: 0;
+  padding: 4px 0;
 }
 
 .tool-token img {
@@ -277,6 +278,7 @@ export default {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 @media (max-width: 1200px) {
@@ -315,15 +317,13 @@ export default {
   }
 
   .tools-cloud {
-    gap: 12px 18px;
-  }
-
-  .tool-token {
-    min-width: 130px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
   }
 
   .tool-token span {
     font-size: 14px;
+    white-space: normal;
   }
 }
 
@@ -340,8 +340,8 @@ export default {
     font-size: 24px;
   }
 
-  .tool-token {
-    min-width: 120px;
+  .tools-cloud {
+    grid-template-columns: 1fr;
   }
 }
 </style>

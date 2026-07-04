@@ -92,9 +92,9 @@ export default {
 .projects-panel {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 18px;
-  margin-top: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 20px;
+  margin-top: 18px;
   align-items: stretch;
 }
 
@@ -104,7 +104,7 @@ export default {
   flex-direction: column;
   background: #ffffff;
   border: 1px solid #e3dfdf;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -117,7 +117,7 @@ export default {
 
 .project-thumb {
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: 3/2;
   overflow: hidden;
   background: #f1efef;
 }
@@ -130,15 +130,15 @@ export default {
 }
 
 .project-card h3 {
-  padding: 14px 14px 16px;
-  font-size: 22px;
+  padding: 16px 16px 18px;
+  font-size: 24px;
   line-height: 1.25;
   color: #363a40;
 }
 
 @media (max-width: 1200px) {
   .projects-panel {
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 }
 

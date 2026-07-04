@@ -1,6 +1,6 @@
 <template>
   <main class="project-page">
-    <section class="container section-frame" v-if="project">
+    <section class="container details-card" v-if="project">
       <router-link to="/projects" class="back-link">back to projects</router-link>
       <h1>{{ project.title }}</h1>
       <p class="subtitle">{{ project.category }}</p>
@@ -37,48 +37,39 @@
         <p><strong>Team:</strong> {{ project.teamSize || "Small Team" }}</p>
         <p><strong>Completed:</strong> {{ project.completedDate || "Recent" }}</p>
       </div>
-    </section>
 
-    <section class="container section-frame" v-if="project && project.overview">
-      <h2>Project Overview</h2>
-      <p>{{ project.overview }}</p>
-    </section>
+      <section class="content-block" v-if="project.overview">
+        <h2>Project Overview</h2>
+        <p>{{ project.overview }}</p>
+      </section>
 
-    <section
-      class="container section-frame"
-      v-if="project && project.challenges && project.challenges.length > 0"
-    >
-      <h2>Challenges and Solutions</h2>
-      <div class="list-block" v-for="(challenge, index) in project.challenges" :key="index">
-        <h3>{{ challenge.title }}</h3>
-        <p>{{ challenge.solution }}</p>
-      </div>
-    </section>
+      <section class="content-block" v-if="project.challenges && project.challenges.length > 0">
+        <h2>Challenges and Solutions</h2>
+        <div class="list-block" v-for="(challenge, index) in project.challenges" :key="index">
+          <h3>{{ challenge.title }}</h3>
+          <p>{{ challenge.solution }}</p>
+        </div>
+      </section>
 
-    <section
-      class="container section-frame"
-      v-if="project && project.technologies && project.technologies.length > 0"
-    >
-      <h2>Tech I used</h2>
-      <p class="inline-list">{{ project.technologies.join(", ") }}</p>
-    </section>
+      <section class="content-block" v-if="project.technologies && project.technologies.length > 0">
+        <h2>Tech I used</h2>
+        <p class="inline-list">{{ project.technologies.join(", ") }}</p>
+      </section>
 
-    <section
-      class="container section-frame"
-      v-if="project && project.links && project.links.length > 0"
-    >
-      <h2>Project links</h2>
-      <div class="link-list">
-        <a
-          v-for="(link, index) in project.links"
-          :key="index"
-          :href="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ link.text }}
-        </a>
-      </div>
+      <section class="content-block" v-if="project.links && project.links.length > 0">
+        <h2>Project links</h2>
+        <div class="link-list">
+          <a
+            v-for="(link, index) in project.links"
+            :key="index"
+            :href="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ link.text }}
+          </a>
+        </div>
+      </section>
     </section>
   </main>
 </template>
@@ -146,59 +137,66 @@ export default {
 
 <style scoped>
 .project-page {
-  padding: 1rem 0 2rem;
+  padding-bottom: 20px;
 }
 
-.section-frame {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 1.6rem;
-  margin-bottom: 1rem;
+.details-card {
+  background: #ffffff;
+  border-radius: 0 0 14px 14px;
+  margin-top: -2px;
+  padding: 40px 44px 46px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.05);
+  min-height: calc(100vh - 86px);
 }
 
 .back-link {
   display: inline-flex;
-  margin-bottom: 0.7rem;
-  color: var(--color-brand-700);
+  margin-bottom: 10px;
+  color: #4f545c;
   text-transform: lowercase;
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 h1 {
-  font-size: clamp(1.85rem, 4.5vw, 2.9rem);
-  margin-bottom: 0.25rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1;
+  color: #4b4f56;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  color: var(--color-accent-600);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  margin-bottom: 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1;
+  color: #4b4f56;
+  margin-bottom: 20px;
 }
 
 .intro {
-  margin-bottom: 1rem;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #595d63;
+  margin-bottom: 18px;
 }
 
 .hero-image {
   width: 100%;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ddd4c9;
+  margin-bottom: 12px;
 }
 
 .gallery-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.65rem;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .gallery-thumb {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border: 1px solid #ddd4c9;
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   background: #fff;
@@ -223,47 +221,97 @@ h1 {
 }
 
 .meta-lines p {
-  margin-bottom: 0.2rem;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #595d63;
+  margin-bottom: 4px;
+}
+
+.content-block {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid #e4ddcf;
 }
 
 h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+  font-size: 32px;
+  color: #43464b;
+  margin-bottom: 10px;
 }
 
 .list-block {
-  border-top: 1px solid var(--color-border);
-  padding-top: 0.7rem;
-  margin-top: 0.7rem;
+  border-top: 1px solid #ece6da;
+  padding-top: 12px;
+  margin-top: 12px;
 }
 
 .list-block h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.3rem;
+  font-size: 20px;
+  color: #43464b;
+  margin-bottom: 6px;
+}
+
+.list-block p {
+  font-size: 16px;
+  color: #595d63;
+  line-height: 1.8;
 }
 
 .inline-list {
-  color: var(--color-text-700);
+  color: #595d63;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .link-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 10px;
 }
 
 .link-list a {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-soft);
-  color: var(--color-brand-700);
-  font-size: 0.86rem;
-  padding: 0.45rem 0.65rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: #4b4f56;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 0 2px;
 }
 
-@media (max-width: 720px) {
-  .section-frame {
-    padding: 1.1rem;
+.link-list a:hover {
+  color: #e5524c;
+  border-bottom-color: #e5524c;
+}
+
+@media (max-width: 980px) {
+  .gallery-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .details-card {
+    padding: 35px 25px 40px;
+    min-height: calc(100vh - 92px);
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  .gallery-strip {
+    grid-template-columns: 1fr;
   }
 }
 </style>
