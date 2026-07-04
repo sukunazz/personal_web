@@ -122,11 +122,11 @@ export default {
 }
 
 .logo-red {
-  color: #ef6b61;
+  color: #2f8f83;
 }
 
 .logo-black {
-  color: #333;
+  color: #2b3a47;
 }
 
 .brand:hover {
@@ -160,7 +160,7 @@ export default {
 }
 
 .email-link:hover {
-  color: #ef6b61;
+  color: #2f8f83;
 }
 
 /* ---------------- Navigation ---------------- */
@@ -198,15 +198,15 @@ export default {
 }
 
 .nav-link:hover {
-  color: #ef6b61;
+  color: #2f8f83;
 }
 
 .nav-link.active {
-  color: #ef6b61;
+  color: #2f8f83;
 }
 
 .nav-link.router-link-exact-active {
-  color: #ef6b61;
+  color: #2f8f83;
 }
 
 .header-socials {
@@ -306,9 +306,9 @@ export default {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 1px solid #e5ddd0;
-    background: #f7f2ea;
-    color: #4e4e4e;
+    border: 1px solid #d5e2ec;
+    background: #eaf3fb;
+    color: #4f6271;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -317,8 +317,8 @@ export default {
   }
 
   .header-socials a:hover {
-    color: #e5524c;
-    border-color: #e8b5af;
+    color: #2f8f83;
+    border-color: #b8ddd8;
   }
 
   .nav-links {
@@ -328,7 +328,7 @@ export default {
     bottom: 0;
     z-index: 70;
     background: #ffffff;
-    border-top: 1px solid #e7e1d6;
+    border-top: 1px solid #d5e2ec;
     box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
     gap: 0;
     padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
@@ -362,7 +362,7 @@ export default {
 
   .nav-link.router-link-exact-active,
   .nav-link.active {
-    background: #f7f2ea;
+    background: #eaf3fb;
   }
 }
 </style>

@@ -60,13 +60,13 @@ export default {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #4b4f56;
+  color: #2f4152;
 }
 
 .skills-subtitle {
   font-size: 40px;
   line-height: 1;
-  color: #4b4f56;
+  color: #2f4152;
   margin-bottom: 20px;
 }
 
@@ -75,7 +75,7 @@ export default {
   width: 130px;
   height: 4px;
   border-radius: 99px;
-  background: #e5524c;
+  background: #2f8f83;
   margin-bottom: 26px;
   position: relative;
 }
@@ -85,7 +85,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #e5524c;
+  background: #2f8f83;
   position: absolute;
   left: -4px;
   top: -3px;
@@ -106,7 +106,7 @@ export default {
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border: 1px solid #e3dfdf;
+  border: 1px solid #d5e1eb;
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
@@ -122,7 +122,7 @@ export default {
   width: 100%;
   aspect-ratio: 3/2;
   overflow: hidden;
-  background: #f1efef;
+  background: #edf3f8;
 }
 
 .project-thumb img {
@@ -136,7 +136,7 @@ export default {
   padding: 16px 16px 18px;
   font-size: 24px;
   line-height: 1.25;
-  color: #363a40;
+  color: #304454;
 }
 
 @media (max-width: 1200px) {

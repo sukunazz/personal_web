@@ -220,7 +220,7 @@ export default {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: #4f545c;
+  color: #4c6071;
   text-transform: lowercase;
   font-size: 15px;
   font-weight: 600;
@@ -233,29 +233,29 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ded7cc;
-  background: #f7f3ed;
-  color: #4f545c;
+  border: 1px solid #d1dde8;
+  background: #edf4fb;
+  color: #4c6071;
   transition: 0.2s ease;
 }
 
 .back-link:hover .back-arrow {
-  background: #e5524c;
-  border-color: #e5524c;
+  background: #2f8f83;
+  border-color: #2f8f83;
   color: #ffffff;
 }
 
 h1 {
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   line-height: 1;
-  color: #4b4f56;
+  color: #2f4152;
   margin-bottom: 8px;
 }
 
 .subtitle {
   font-size: clamp(1.5rem, 3vw, 2.3rem);
   line-height: 1;
-  color: #4b4f56;
+  color: #2f4152;
   margin-bottom: 20px;
 }
 
@@ -269,7 +269,7 @@ h1 {
 .hero-image {
   width: 100%;
   border-radius: 10px;
-  border: 1px solid #ddd4c9;
+  border: 1px solid #d1dde8;
   margin-bottom: 12px;
 }
 
@@ -281,7 +281,7 @@ h1 {
 }
 
 .gallery-thumb {
-  border: 1px solid #ddd4c9;
+  border: 1px solid #d1dde8;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -302,7 +302,7 @@ h1 {
 }
 
 .gallery-thumb.active {
-  border-color: #e5524c;
+  border-color: #2f8f83;
   box-shadow: 0 0 0 2px rgba(229, 82, 76, 0.2);
 }
 
@@ -316,24 +316,24 @@ h1 {
 .content-block {
   margin-top: 26px;
   padding-top: 24px;
-  border-top: 1px solid #e4ddcf;
+  border-top: 1px solid #d3e0ea;
 }
 
 h2 {
   font-size: 32px;
-  color: #43464b;
+  color: #34495a;
   margin-bottom: 10px;
 }
 
 .list-block {
-  border-top: 1px solid #ece6da;
+  border-top: 1px solid #dbe6ef;
   padding-top: 12px;
   margin-top: 12px;
 }
 
 .list-block h3 {
   font-size: 20px;
-  color: #43464b;
+  color: #34495a;
   margin-bottom: 6px;
 }
 
@@ -359,15 +359,15 @@ h2 {
   border: 0;
   border-bottom: 1px solid transparent;
   background: transparent;
-  color: #4b4f56;
+  color: #2f4152;
   font-size: 15px;
   font-weight: 600;
   padding: 0 0 2px;
 }
 
 .link-list a:hover {
-  color: #e5524c;
-  border-bottom-color: #e5524c;
+  color: #2f8f83;
+  border-bottom-color: #2f8f83;
 }
 
 .achievement-list {
@@ -388,7 +388,7 @@ h2 {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #e5524c;
+  background: #2f8f83;
   position: absolute;
   left: 0;
   top: 11px;
@@ -403,9 +403,9 @@ h2 {
   align-items: center;
   gap: 10px;
   border-radius: 999px;
-  border: 1px solid #e7ddd0;
-  background: #f8f4ed;
-  color: #4b4f56;
+  border: 1px solid #d5e2ec;
+  background: #edf5fc;
+  color: #2f4152;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 16px;
@@ -413,8 +413,8 @@ h2 {
 }
 
 .next-project-button:hover {
-  border-color: #e5524c;
-  color: #e5524c;
+  border-color: #2f8f83;
+  color: #2f8f83;
 }
 
 @media (max-width: 980px) {

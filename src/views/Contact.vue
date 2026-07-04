@@ -139,13 +139,13 @@ export default {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #4b4f56;
+  color: #2f4152;
 }
 
 .skills-subtitle {
   font-size: 40px;
   line-height: 1;
-  color: #4b4f56;
+  color: #2f4152;
   margin-bottom: 20px;
 }
 
@@ -154,7 +154,7 @@ export default {
   width: 130px;
   height: 4px;
   border-radius: 99px;
-  background: #e5524c;
+  background: #2f8f83;
   margin-bottom: 26px;
   position: relative;
 }
@@ -164,7 +164,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #e5524c;
+  background: #2f8f83;
   position: absolute;
   left: -4px;
   top: -3px;
@@ -185,13 +185,13 @@ export default {
   font-size: 30px;
   line-height: 1.1;
   margin-bottom: 8px;
-  color: #4b4f56;
+  color: #2f4152;
 }
 
 .contact-intro p {
   font-size: 16px;
   line-height: 1.8;
-  color: #5d6168;
+  color: #566978;
 }
 
 .contact-info {
@@ -201,7 +201,7 @@ export default {
 
 .contact-item {
   padding: 0 0 14px;
-  border-bottom: 1px solid #e2dfdf;
+  border-bottom: 1px solid #d5e1eb;
 }
 
 .contact-item h3 {
@@ -212,7 +212,7 @@ export default {
 .contact-item a,
 .contact-item p {
   font-size: 15px;
-  color: #606060;
+  color: #5d6d7c;
   text-decoration: none;
 }
 
@@ -226,18 +226,18 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f6f4f4;
-  border: 1px solid #e2dddd;
+  background: #eef3f8;
+  border: 1px solid #d4e0ea;
   border-radius: 999px;
   padding: 6px 12px;
   font-size: 14px;
   font-weight: 600;
-  color: #4e4e4e;
+  color: #4f6271;
 }
 
 .contact-links i {
   font-size: 16px;
-  color: #e5524c;
+  color: #2f8f83;
 }
 
 .contact-form {
@@ -254,14 +254,14 @@ export default {
 
 .contact-form label {
   font-size: 13px;
-  color: #666;
+  color: #5f6f7e;
   font-weight: 600;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid #ded9d9;
+  border: 1px solid #d3dfe9;
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 14px;
@@ -282,13 +282,13 @@ export default {
   font-weight: 700;
   text-transform: lowercase;
   color: #ffffff;
-  background: #e5524c;
+  background: #2f8f83;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .contact-form button:hover {
-  background: #d44843;
+  background: #23675f;
 }
 
 .success,
@@ -302,7 +302,7 @@ export default {
 }
 
 .error {
-  color: #bf3f3f;
+  color: #b54747;
 }
 
 @media (max-width: 1200px) {

@@ -156,7 +156,7 @@ p {
   position: fixed;
   inset: 0;
   z-index: 120;
-  background: rgba(246, 240, 230, 0.62);
+  background: rgba(228, 238, 248, 0.62);
   backdrop-filter: blur(10px) saturate(1.02);
   -webkit-backdrop-filter: blur(10px) saturate(1.02);
   display: flex;
@@ -172,14 +172,14 @@ p {
   height: 86px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(223, 214, 201, 0.8);
+  border: 1px solid rgba(200, 214, 229, 0.82);
 }
 
 .route-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #d5cec1;
-  border-top-color: #e5524c;
+  border: 3px solid #c8d8e7;
+  border-top-color: #2f8f83;
   border-radius: 50%;
   animation: route-spin 0.85s linear infinite;
 }

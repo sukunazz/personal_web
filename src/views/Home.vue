@@ -115,12 +115,12 @@ export default {
 
 .hero-socials a {
   font-size: 34px;
-  color: #555;
+  color: #536777;
   transition: 0.25s;
 }
 
 .hero-socials a:hover {
-  color: #ef6b61;
+  color: #2f8f83;
   transform: translateX(5px);
 }
 
@@ -156,7 +156,7 @@ export default {
   font-size: 72px;
   line-height: 0.95;
   font-weight: 800;
-  color: #2f3135;
+  color: #233746;
   margin: 0 0 22px;
 }
 
@@ -164,7 +164,7 @@ export default {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #444;
+  color: #4a5d6d;
   margin-bottom: 28px;
 }
 
@@ -172,7 +172,7 @@ export default {
   width: 330px;
   font-size: 15px;
   line-height: 1.9;
-  color: #666;
+  color: #5f6f7e;
   margin-bottom: 40px;
 }
 
@@ -181,7 +181,7 @@ export default {
   height: 92px;
   border-radius: 50%;
   border: none;
-  background: #ef7b71;
+  background: #2f8f83;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -197,7 +197,7 @@ export default {
 
 .talk-button:hover {
   transform: translateY(-6px);
-  background: #eb6a5e;
+  background: #26766c;
   box-shadow: 0 18px 35px rgba(239, 123, 113, 0.45);
 }
 

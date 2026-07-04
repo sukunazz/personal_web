@@ -50,28 +50,28 @@ export default {
 
 .footer-content {
   text-align: center;
-  color: #50545a;
+  color: #415364;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
 }
 
 .footer-content h3 {
   font-size: clamp(1.7rem, 2.6vw, 2.1rem);
   margin-bottom: 8px;
-  color: #4b4f56;
+  color: #2f4152;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   font-weight: 700;
 }
 
 .footer-location {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  color: #666;
+  color: #5f6f7e;
   margin-bottom: 10px;
 }
 
 .footer-email {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 700;
-  color: #4b4f56;
+  color: #2f4152;
   text-decoration: none;
 }
 
@@ -84,12 +84,12 @@ export default {
 
 .footer-socials a {
   font-size: clamp(1.4rem, 1.8vw, 1.7rem);
-  color: #666;
+  color: #5f6f7e;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-socials a:hover {
-  color: #e5524c;
+  color: #2f8f83;
   transform: translateY(-2px);
 }
 

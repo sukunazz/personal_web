@@ -137,13 +137,13 @@ export default {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #4b4f56;
+  color: #2f4152;
 }
 
 .skills-subtitle {
   font-size: 40px;
   line-height: 1;
-  color: #4b4f56;
+  color: #2f4152;
   margin-bottom: 20px;
 }
 
@@ -152,7 +152,7 @@ export default {
   width: 130px;
   height: 4px;
   border-radius: 99px;
-  background: #e5524c;
+  background: #2f8f83;
   margin-bottom: 26px;
   position: relative;
 }
@@ -162,7 +162,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #e5524c;
+  background: #2f8f83;
   position: absolute;
   left: -4px;
   top: -3px;
@@ -184,7 +184,7 @@ export default {
   width: 100%;
   max-width: 620px;
   border-radius: 12px;
-  border: 1px solid #e7e2dc;
+  border: 1px solid #d8e3ed;
 }
 
 .about-summary ul {
@@ -198,20 +198,20 @@ export default {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  color: #50545a;
+  color: #415364;
   font-size: 18px;
   line-height: 1.55;
 }
 
 .about-summary i {
-  color: #62666d;
+  color: #5a6d7d;
   margin-top: 5px;
   width: 18px;
   text-align: center;
 }
 
 .fun-fact {
-  color: #50545a;
+  color: #415364;
   font-size: 18px;
   line-height: 1.7;
   padding-left: 30px;
@@ -234,7 +234,7 @@ export default {
 .readme-text {
   font-size: 17px;
   line-height: 1.85;
-  color: #666;
+  color: #5f6f7e;
   max-width: none;
   margin-bottom: 12px;
 }
@@ -258,7 +258,7 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  color: #50545a;
+  color: #415364;
   flex: 1 1 170px;
   min-width: 170px;
   max-width: 230px;
@@ -274,7 +274,7 @@ export default {
 
 .tool-token i {
   font-size: 25px;
-  color: #5d6168;
+  color: #566978;
   width: 26px;
   text-align: center;
   flex-shrink: 0;
