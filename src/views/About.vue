@@ -320,8 +320,22 @@ export default {
     line-height: 1.75;
   }
 
+  .about-summary,
+  .about-readme-block {
+    text-align: left;
+  }
+
+  .about-summary ul {
+    justify-items: start;
+  }
+
+  .fun-fact {
+    padding-left: 0;
+  }
+
   .tools-cloud {
     gap: 14px 20px;
+    padding-left: 10px;
   }
 
   .tool-token {
@@ -349,6 +363,7 @@ export default {
 
   .tools-cloud {
     gap: 12px 14px;
+    padding-left: 8px;
   }
 
   .tool-token {

@@ -244,22 +244,37 @@ export default {
     background: #ffffff;
     border-top: 1px solid #e7e1d6;
     box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 0;
-    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px));
   }
 
   .nav-link {
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
-    min-width: 54px;
-    font-size: 11px;
+    gap: 5px;
+    min-width: 0;
+    min-height: 50px;
+    padding: 3px 4px;
+    flex: 1 1 20%;
+    font-size: 12px;
     line-height: 1;
+    border-radius: 8px;
+    text-align: center;
   }
 
   .nav-link i {
-    font-size: 15px;
+    font-size: 16px;
+  }
+
+  .nav-link span {
+    white-space: nowrap;
+    font-size: 11.5px;
+  }
+
+  .nav-link.router-link-exact-active,
+  .nav-link.active {
+    background: #f7f2ea;
   }
 }
 </style>

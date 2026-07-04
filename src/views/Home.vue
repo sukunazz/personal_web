@@ -294,15 +294,17 @@ export default {
 
   .hero-image {
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 8px;
   }
 
   .minion-sequence {
-    transform: translateY(-10px);
+    padding: 4px 0 8px;
+    transform: translateY(-18px);
   }
 
   .hero-avatar {
     width: 352px;
+    aspect-ratio: auto;
   }
 }
 
@@ -349,7 +351,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-6px);
+    transform: translateY(-14px);
   }
 
   .hero-socials a {
@@ -368,7 +370,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-4px);
+    transform: translateY(-10px);
   }
 }
 </style>
