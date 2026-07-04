@@ -65,7 +65,7 @@
           >
             <img
               class="minion-frame"
-              src="/images/minion-wave.webp"
+              src="/images/minion-wave-full.png"
               alt=""
               aria-hidden="true"
             />
@@ -458,14 +458,17 @@ export default {
 
 .minion-frame {
   position: relative;
-  width: min(260px, 72%);
+  width: min(690px, 170%);
   height: auto;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  margin-left: 16%;
+  margin-left: -33%;
+  transform-origin: 68% 100%;
   filter: drop-shadow(0 10px 12px rgba(21, 26, 34, 0.22));
-  animation: minion-entrance 0.9s ease-out both;
+  animation:
+    minion-entrance 0.9s ease-out both,
+    minion-wave-sway 1.8s ease-in-out infinite 0.9s;
 }
 
 @keyframes minion-entrance {
@@ -476,6 +479,22 @@ export default {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes minion-wave-sway {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(2deg) translateY(-2px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0);
+  }
+  75% {
+    transform: rotate(-2deg) translateY(-1px);
   }
 }
 
@@ -858,6 +877,11 @@ export default {
     transform: translateX(-20px);
   }
 
+  .minion-frame {
+    width: min(620px, 168%);
+    margin-left: -30%;
+  }
+
   .skills-panel {
     grid-template-columns: 1fr;
   }
@@ -908,6 +932,11 @@ export default {
 
   .hero-avatar {
     width: 330px;
+  }
+
+  .minion-frame {
+    width: min(540px, 170%);
+    margin-left: -22%;
   }
 
   .contact-panel {
@@ -1002,8 +1031,8 @@ export default {
   }
 
   .minion-frame {
-    width: min(210px, 78%);
-    margin-left: 10%;
+    width: min(440px, 178%);
+    margin-left: -16%;
   }
 
   .section-title {
