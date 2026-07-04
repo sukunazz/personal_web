@@ -60,13 +60,13 @@ export default {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #2f4152;
+  color: #4b4f56;
 }
 
 .skills-subtitle {
   font-size: 40px;
   line-height: 1;
-  color: #2f4152;
+  color: #4b4f56;
   margin-bottom: 20px;
 }
 
@@ -75,7 +75,7 @@ export default {
   width: 130px;
   height: 4px;
   border-radius: 99px;
-  background: #2f8f83;
+  background: #e5524c;
   margin-bottom: 26px;
   position: relative;
 }
@@ -85,7 +85,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #2f8f83;
+  background: #e5524c;
   position: absolute;
   left: -4px;
   top: -3px;
@@ -136,7 +136,7 @@ export default {
   padding: 16px 16px 18px;
   font-size: 24px;
   line-height: 1.25;
-  color: #304454;
+  color: #363a40;
 }
 
 @media (max-width: 1200px) {

@@ -122,11 +122,11 @@ export default {
 }
 
 .logo-red {
-  color: #2f8f83;
+  color: #e5524c;
 }
 
 .logo-black {
-  color: #2b3a47;
+  color: #333;
 }
 
 .brand:hover {
@@ -160,7 +160,7 @@ export default {
 }
 
 .email-link:hover {
-  color: #2f8f83;
+  color: #e5524c;
 }
 
 /* ---------------- Navigation ---------------- */
@@ -198,15 +198,15 @@ export default {
 }
 
 .nav-link:hover {
-  color: #2f8f83;
+  color: #e5524c;
 }
 
 .nav-link.active {
-  color: #2f8f83;
+  color: #e5524c;
 }
 
 .nav-link.router-link-exact-active {
-  color: #2f8f83;
+  color: #e5524c;
 }
 
 .header-socials {
@@ -308,7 +308,7 @@ export default {
     border-radius: 50%;
     border: 1px solid #d5e2ec;
     background: #eaf3fb;
-    color: #4f6271;
+    color: #4e4e4e;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -317,7 +317,7 @@ export default {
   }
 
   .header-socials a:hover {
-    color: #2f8f83;
+    color: #e5524c;
     border-color: #b8ddd8;
   }
 

@@ -220,7 +220,7 @@ export default {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: #4c6071;
+  color: #4f545c;
   text-transform: lowercase;
   font-size: 15px;
   font-weight: 600;
@@ -235,27 +235,27 @@ export default {
   align-items: center;
   border: 1px solid #d1dde8;
   background: #edf4fb;
-  color: #4c6071;
+  color: #4f545c;
   transition: 0.2s ease;
 }
 
 .back-link:hover .back-arrow {
-  background: #2f8f83;
-  border-color: #2f8f83;
+  background: #e5524c;
+  border-color: #e5524c;
   color: #ffffff;
 }
 
 h1 {
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   line-height: 1;
-  color: #2f4152;
+  color: #4b4f56;
   margin-bottom: 8px;
 }
 
 .subtitle {
   font-size: clamp(1.5rem, 3vw, 2.3rem);
   line-height: 1;
-  color: #2f4152;
+  color: #4b4f56;
   margin-bottom: 20px;
 }
 
@@ -302,7 +302,7 @@ h1 {
 }
 
 .gallery-thumb.active {
-  border-color: #2f8f83;
+  border-color: #e5524c;
   box-shadow: 0 0 0 2px rgba(229, 82, 76, 0.2);
 }
 
@@ -321,7 +321,7 @@ h1 {
 
 h2 {
   font-size: 32px;
-  color: #34495a;
+  color: #43464b;
   margin-bottom: 10px;
 }
 
@@ -333,7 +333,7 @@ h2 {
 
 .list-block h3 {
   font-size: 20px;
-  color: #34495a;
+  color: #43464b;
   margin-bottom: 6px;
 }
 
@@ -359,15 +359,15 @@ h2 {
   border: 0;
   border-bottom: 1px solid transparent;
   background: transparent;
-  color: #2f4152;
+  color: #4b4f56;
   font-size: 15px;
   font-weight: 600;
   padding: 0 0 2px;
 }
 
 .link-list a:hover {
-  color: #2f8f83;
-  border-bottom-color: #2f8f83;
+  color: #e5524c;
+  border-bottom-color: #e5524c;
 }
 
 .achievement-list {
@@ -388,7 +388,7 @@ h2 {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #2f8f83;
+  background: #e5524c;
   position: absolute;
   left: 0;
   top: 11px;
@@ -405,7 +405,7 @@ h2 {
   border-radius: 999px;
   border: 1px solid #d5e2ec;
   background: #edf5fc;
-  color: #2f4152;
+  color: #4b4f56;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 16px;
@@ -413,8 +413,8 @@ h2 {
 }
 
 .next-project-button:hover {
-  border-color: #2f8f83;
-  color: #2f8f83;
+  border-color: #e5524c;
+  color: #e5524c;
 }
 
 @media (max-width: 980px) {

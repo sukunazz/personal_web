@@ -179,7 +179,7 @@ p {
   width: 40px;
   height: 40px;
   border: 3px solid #c8d8e7;
-  border-top-color: #2f8f83;
+  border-top-color: #e5524c;
   border-radius: 50%;
   animation: route-spin 0.85s linear infinite;
 }
