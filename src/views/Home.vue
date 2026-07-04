@@ -61,22 +61,10 @@
           <div
             class="hero-avatar minion-sequence"
             role="img"
-            aria-label="Minion character walks in, looks confused, then waves"
+            aria-label="Waving minion character"
           >
             <img
-              class="minion-frame minion-frame-walk"
-              src="/images/minion-walk.webp"
-              alt=""
-              aria-hidden="true"
-            />
-            <img
-              class="minion-frame minion-frame-confused"
-              src="/images/minion-confused.webp"
-              alt=""
-              aria-hidden="true"
-            />
-            <img
-              class="minion-frame minion-frame-wave"
+              class="minion-frame"
               src="/images/minion-wave.webp"
               alt=""
               aria-hidden="true"
@@ -469,119 +457,25 @@ export default {
 }
 
 .minion-frame {
-  position: absolute;
-  bottom: 8%;
-  left: 16%;
+  position: relative;
   width: min(260px, 72%);
   height: auto;
-  opacity: 0;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
+  margin-left: 16%;
   filter: drop-shadow(0 10px 12px rgba(21, 26, 34, 0.22));
+  animation: minion-entrance 0.9s ease-out both;
 }
 
-.minion-frame-walk {
-  animation: minion-walk-phase 9s linear infinite;
-}
-
-.minion-frame-confused {
-  animation: minion-confused-phase 9s linear infinite;
-}
-
-.minion-frame-wave {
-  animation: minion-wave-phase 9s linear infinite;
-}
-
-@keyframes minion-walk-phase {
-  0% {
-    opacity: 1;
-    transform: translateX(175%) translateY(0) scale(0.95);
-  }
-  8% {
-    opacity: 1;
-    transform: translateX(140%) translateY(-5px) scale(0.96);
-  }
-  16% {
-    opacity: 1;
-    transform: translateX(102%) translateY(0) scale(0.98);
-  }
-  24% {
-    opacity: 1;
-    transform: translateX(62%) translateY(-5px) scale(1);
-  }
-  32% {
-    opacity: 1;
-    transform: translateX(22%) translateY(0) scale(1);
-  }
-  38% {
+@keyframes minion-entrance {
+  from {
     opacity: 0;
-    transform: translateX(0) translateY(0) scale(1);
+    transform: translateX(36px);
   }
-  100% {
-    opacity: 0;
-    transform: translateX(0) translateY(0) scale(1);
-  }
-}
-
-@keyframes minion-confused-phase {
-  0%,
-  37% {
-    opacity: 0;
-    transform: translateX(0) rotate(0deg);
-  }
-  41% {
+  to {
     opacity: 1;
-    transform: translateX(0) rotate(0deg);
-  }
-  47% {
-    opacity: 1;
-    transform: translateX(0) rotate(8deg);
-  }
-  53% {
-    opacity: 1;
-    transform: translateX(0) rotate(-9deg);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(0) rotate(4deg);
-  }
-  66% {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
-  }
-  70%,
-  100% {
-    opacity: 0;
-    transform: translateX(0) rotate(0deg);
-  }
-}
-
-@keyframes minion-wave-phase {
-  0%,
-  66% {
-    opacity: 0;
-    transform: translateX(0) rotate(0deg);
-  }
-  70% {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
-  }
-  78% {
-    opacity: 1;
-    transform: translateX(0) rotate(-2deg);
-  }
-  86% {
-    opacity: 1;
-    transform: translateX(0) rotate(2deg);
-  }
-  96% {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0);
   }
 }
 
@@ -1109,7 +1003,7 @@ export default {
 
   .minion-frame {
     width: min(210px, 78%);
-    left: 10%;
+    margin-left: 10%;
   }
 
   .section-title {
