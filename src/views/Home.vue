@@ -158,7 +158,7 @@ export default {
 
 .hero-socials a {
   font-size: 34px;
-  color: #555;
+  color: #000000;
   transition: 0.25s;
 }
 

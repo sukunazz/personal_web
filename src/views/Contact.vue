@@ -235,7 +235,7 @@ export default {
 
 .contact-links i {
   font-size: 16px;
-  color: var(--color-accent-600);
+  color: #000000;
 }
 
 .contact-form {
