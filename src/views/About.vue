@@ -135,13 +135,13 @@ export default {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #4b4f56;
+  color: var(--color-heading);
 }
 
 .skills-subtitle {
   font-size: 40px;
   line-height: 1;
-  color: #4b4f56;
+  color: var(--color-heading);
   margin-bottom: 20px;
 }
 
@@ -230,7 +230,7 @@ export default {
 .section-title {
   font-size: 34px;
   font-weight: 700;
-  color: #3f3f3f;
+  color: var(--color-heading);
   margin-bottom: 10px;
 }
 

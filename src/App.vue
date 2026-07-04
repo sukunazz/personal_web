@@ -125,7 +125,7 @@ h3 {
   font-family: "IBM Plex Serif", "Georgia", serif;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--color-text-900);
+  color: var(--color-heading);
 }
 
 p {

@@ -199,7 +199,7 @@ export default {
   font-size: 72px;
   line-height: 0.95;
   font-weight: 800;
-  color: #2f3135;
+  color: var(--color-heading);
   margin: 0 0 22px;
 }
 
@@ -207,7 +207,7 @@ export default {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #444;
+  color: #6c9580;
   margin-bottom: 28px;
 }
 

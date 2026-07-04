@@ -245,14 +245,14 @@ export default {
 h1 {
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   line-height: 1;
-  color: #4b4f56;
+  color: var(--color-heading);
   margin-bottom: 8px;
 }
 
 .subtitle {
   font-size: clamp(1.5rem, 3vw, 2.3rem);
   line-height: 1;
-  color: #4b4f56;
+  color: var(--color-heading);
   margin-bottom: 20px;
 }
 
@@ -318,7 +318,7 @@ h1 {
 
 h2 {
   font-size: 32px;
-  color: #43464b;
+  color: var(--color-heading);
   margin-bottom: 10px;
 }
 
@@ -330,7 +330,7 @@ h2 {
 
 .list-block h3 {
   font-size: 20px;
-  color: #43464b;
+  color: var(--color-heading);
   margin-bottom: 6px;
 }
 
