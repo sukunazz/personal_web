@@ -96,6 +96,8 @@ export default {
         { name: "React", image: "/images/250px-React_Logo_SVG.svg.png" },
         { name: "Next.js", image: "/images/250px-Nextjs-logo.svg.png" },
         { name: "Python", icon: "fab fa-python" },
+        { name: "LangGraph", icon: "fas fa-project-diagram" },
+        { name: "LangChain", icon: "fas fa-link" },
         { name: "TailwindCSS", icon: "fas fa-wind" },
         { name: "Node.js", image: "/images/node.png" },
         { name: "Express", icon: "fas fa-server" },

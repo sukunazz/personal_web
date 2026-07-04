@@ -50,7 +50,7 @@ export default {
       const token = ++this.routeLoadToken;
       this.isRouteLoading = true;
 
-      await Promise.all([this.delay(1280), this.preloadRouteAssets(to)]);
+      await Promise.all([this.delay(780), this.preloadRouteAssets(to)]);
 
       if (token === this.routeLoadToken) {
         this.isRouteLoading = false;

@@ -206,6 +206,74 @@
         }
       ],
       "nextProject": {
+        "id": 4,
+        "title": "email_sender"
+      }
+    },
+    {
+      "id": 4,
+      "title": "email_sender",
+      "description": "AI-powered CLI email assistant in Python that turns natural-language requests into complete, sendable emails with validation and approval.",
+      "image": "/images/email-sender.svg",
+      "previewImage": "/images/email-sender.svg",
+      "role": "Python Developer",
+      "teamSize": "1 member",
+      "technologies": [
+        "Python",
+        "LangGraph (StateGraph)",
+        "LangChain",
+        "NVIDIA LLM (ChatNVIDIA)",
+        "smtplib",
+        "EmailMessage",
+        "python-dotenv",
+        "json",
+        "re"
+      ],
+      "completedDate": "2026",
+      "category": "AI Automation",
+      "overview": "This project is an AI-powered CLI email assistant built in Python that converts a natural-language request into a complete, sendable email. It uses a LangGraph workflow to extract details, validate missing information, generate tone-aware content, show preview/approval, and send via Gmail SMTP. The system reduces manual drafting while keeping human approval before delivery.",
+      "challenges": [
+        {
+          "title": "Incomplete User Requests",
+          "solution": "Validation + interactive prompts collect missing core and extra fields before writing."
+        },
+        {
+          "title": "Malformed or Markdown-Wrapped JSON from LLM",
+          "solution": "safe_json() and markdown stripping make parsing reliable with fallback handling."
+        },
+        {
+          "title": "Preventing Invented Email Details",
+          "solution": "Strict prompt rules and dynamic required-field detection ensure only provided facts are used."
+        }
+      ],
+      "features": [
+        {
+          "title": "Workflow-Based Drafting",
+          "description": "LangGraph nodes handle extraction, validation, writing, approval, and sending in a clear state flow."
+        },
+        {
+          "title": "Tone-Aware Generation",
+          "description": "Supports casual and professional output styles while preserving user intent."
+        },
+        {
+          "title": "Human Approval Gate",
+          "description": "Shows preview and asks for explicit approval before delivery."
+        }
+      ],
+      "links": [],
+      "achievements": [
+        "End-to-end automated email workflow from request to send.",
+        "Dynamic handling of different email types with extra required fields.",
+        "Built-in tone control (casual/professional) and human approval gate.",
+        "Production-relevant safeguards for parsing reliability and content accuracy."
+      ],
+      "gallery": [
+        {
+          "src": "/images/email-sender.svg",
+          "alt": "Email Sender project cover"
+        }
+      ],
+      "nextProject": {
         "id": 1,
         "title": "CertChain"
       }

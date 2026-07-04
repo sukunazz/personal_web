@@ -5,6 +5,15 @@
       <p class="skills-subtitle">Let's Build Something</p>
       <span class="section-rule" aria-hidden="true"></span>
 
+      <section class="contact-intro">
+        <h3>Let's Connect</h3>
+        <p>
+          Have a project in mind or just want to chat? Feel free to reach out.
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your visions.
+        </p>
+      </section>
+
       <div class="contact-panel">
         <div class="contact-info">
           <div class="contact-item">
@@ -167,6 +176,24 @@ export default {
   gap: 28px;
 }
 
+.contact-intro {
+  margin-bottom: 22px;
+  max-width: 860px;
+}
+
+.contact-intro h3 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  color: #4b4f56;
+}
+
+.contact-intro p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5d6168;
+}
+
 .contact-info {
   display: grid;
   gap: 16px;
@@ -299,6 +326,15 @@ export default {
 
   .contact-panel {
     gap: 22px;
+  }
+
+  .contact-intro h3 {
+    font-size: 26px;
+  }
+
+  .contact-intro p {
+    font-size: 15px;
+    line-height: 1.75;
   }
 }
 
