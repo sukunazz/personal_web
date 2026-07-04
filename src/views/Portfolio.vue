@@ -37,11 +37,13 @@ export default {
 
 <style scoped>
 .projects-page {
-  min-height: calc(100vh - 200px);
-  padding-bottom: 20px;
+  min-height: calc(100vh - 120px);
+  padding-bottom: 0;
+  display: flex;
 }
 
 .projects-card {
+  flex: 1;
   background: #ffffff;
   border-radius: 0 0 14px 14px;
   margin-top: -2px;
@@ -49,7 +51,7 @@ export default {
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 120px);
 }
 
 .skills-title {
@@ -137,7 +139,7 @@ export default {
 @media (max-width: 768px) {
   .projects-card {
     padding: 35px 25px;
-    min-height: calc(100vh - 170px);
+    min-height: calc(100vh - 110px);
   }
 
   .skills-title {
