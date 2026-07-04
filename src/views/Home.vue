@@ -59,26 +59,35 @@
 
         <section class="hero-image">
           <div
-            class="hero-avatar penguin-scene"
+            class="hero-avatar minion-scene"
             role="img"
-            aria-label="Animated penguin character waving"
+            aria-label="Minion style character walking in, looking confused, then waving"
           >
-            <div class="penguin-shadow"></div>
-            <div class="penguin-character">
-              <div class="penguin-head">
-                <span class="penguin-eye penguin-eye-left"></span>
-                <span class="penguin-eye penguin-eye-right"></span>
-                <span class="penguin-blush penguin-blush-left"></span>
-                <span class="penguin-blush penguin-blush-right"></span>
-                <span class="penguin-beak"></span>
+            <div class="minion-floor-shadow"></div>
+            <div class="minion-character">
+              <div class="minion-body">
+                <span class="minion-goggle-strap"></span>
+                <div class="minion-goggle">
+                  <span class="minion-eye minion-eye-left">
+                    <span class="minion-pupil"></span>
+                  </span>
+                  <span class="minion-eye minion-eye-right">
+                    <span class="minion-pupil"></span>
+                  </span>
+                </div>
+                <span class="minion-mouth"></span>
+                <div class="minion-overall">
+                  <span class="minion-pocket"></span>
+                </div>
               </div>
-              <div class="penguin-body">
-                <span class="penguin-belly"></span>
-                <span class="penguin-foot penguin-foot-left"></span>
-                <span class="penguin-foot penguin-foot-right"></span>
+              <div class="minion-arm minion-arm-left"></div>
+              <div class="minion-arm minion-arm-right"></div>
+              <div class="minion-leg minion-leg-left">
+                <span class="minion-shoe"></span>
               </div>
-              <div class="penguin-flipper penguin-flipper-left"></div>
-              <div class="penguin-flipper penguin-flipper-right"></div>
+              <div class="minion-leg minion-leg-right">
+                <span class="minion-shoe"></span>
+              </div>
             </div>
           </div>
         </section>
@@ -451,279 +460,437 @@ export default {
   width: 430px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
+  position: relative;
 }
 
-.penguin-scene {
+.minion-scene {
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-  padding: 18px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, #f7fbff 0%, #eef4fa 100%);
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 12px 0 18px;
   user-select: none;
-  box-shadow:
-    0 12px 24px rgba(44, 62, 80, 0.08),
-    inset 0 0 0 1px rgba(100, 120, 140, 0.08);
-  transform: translateX(-24px);
-  transition: box-shadow 0.3s ease;
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(-36px);
 }
 
-.penguin-scene::before {
-  content: "";
+.minion-floor-shadow {
   position: absolute;
-  inset: 16px 16px auto;
-  height: 38%;
-  border-radius: 22px;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.94) 0 30%, transparent 31%),
-    radial-gradient(circle at 72% 22%, rgba(255, 255, 255, 0.85) 0 26%, transparent 27%),
-    linear-gradient(180deg, rgba(219, 236, 253, 0.9) 0%, rgba(219, 236, 253, 0.1) 100%);
-}
-
-.penguin-scene::after {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 16px;
-  height: 28%;
+  left: 45%;
+  bottom: 12%;
+  width: 34%;
+  height: 9%;
   border-radius: 999px;
-  background: linear-gradient(180deg, #d4e3f2 0%, #c6d8ea 100%);
+  background: rgba(27, 35, 46, 0.2);
+  filter: blur(5px);
+  animation: minion-shadow-track 8s ease-in-out infinite;
 }
 
-.penguin-scene:hover {
-  box-shadow:
-    0 18px 34px rgba(44, 62, 80, 0.14),
-    inset 0 0 0 1px rgba(100, 120, 140, 0.08);
-}
-
-.penguin-shadow {
-  position: absolute;
-  width: 55%;
-  height: 13%;
-  bottom: 18%;
-  border-radius: 999px;
-  background: rgba(43, 59, 72, 0.24);
-  filter: blur(4px);
-  animation: penguin-shadow 3.2s ease-in-out infinite;
-  z-index: 1;
-}
-
-.penguin-character {
+.minion-character {
   position: relative;
-  left: 0;
-  width: 58%;
+  width: 64%;
   max-width: 250px;
-  aspect-ratio: 3 / 4;
-  z-index: 2;
-  animation:
-    penguin-walk 6s ease-in-out infinite,
-    penguin-bob 3.2s ease-in-out infinite;
+  aspect-ratio: 4 / 5;
+  transform-origin: 50% 100%;
+  animation: minion-entry 8s ease-in-out infinite;
 }
 
-.penguin-head {
+.minion-body {
   position: absolute;
   width: 62%;
-  height: 38%;
+  height: 70%;
   left: 50%;
-  top: 4%;
+  top: 8%;
   transform: translateX(-50%);
-  border-radius: 52% 52% 44% 44%;
-  background: #1f2b37;
-  z-index: 4;
+  border-radius: 42% 42% 36% 36%;
+  background: linear-gradient(180deg, #f8dc43 0%, #e8bb20 100%);
+  box-shadow: inset 0 -8px 0 rgba(189, 145, 22, 0.42);
+  overflow: hidden;
+  animation: minion-body-mood 8s ease-in-out infinite;
 }
 
-.penguin-eye {
+.minion-goggle-strap {
   position: absolute;
-  width: 16%;
-  height: 18%;
-  top: 36%;
-  border-radius: 50%;
+  width: 116%;
+  height: 10%;
+  left: -8%;
+  top: 24%;
+  background: #3b434d;
+}
+
+.minion-goggle {
+  position: absolute;
+  width: 64%;
+  height: 25%;
+  left: 50%;
+  top: 13%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.minion-eye {
+  position: absolute;
+  width: 42%;
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  border: 7px solid #bfc6ce;
   background: #ffffff;
-  animation: penguin-blink 4.6s infinite;
+  box-shadow: inset 0 0 0 3px #dfe3e7;
 }
 
-.penguin-eye::before {
-  content: "";
+.minion-eye-left {
+  left: 0;
+}
+
+.minion-eye-right {
+  right: 0;
+}
+
+.minion-pupil {
   position: absolute;
-  width: 48%;
-  height: 48%;
+  width: 35%;
+  aspect-ratio: 1 / 1;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: #212833;
-}
-
-.penguin-eye-left {
-  left: 22%;
-}
-
-.penguin-eye-right {
-  right: 22%;
-}
-
-.penguin-blush {
-  position: absolute;
-  width: 11%;
-  height: 8%;
-  top: 56%;
   border-radius: 999px;
-  background: rgba(236, 140, 145, 0.6);
+  background: #5a3a2d;
+  transform: translate(-50%, -50%);
+  animation: minion-look-around 8s ease-in-out infinite;
 }
 
-.penguin-blush-left {
-  left: 17%;
-}
-
-.penguin-blush-right {
-  right: 17%;
-}
-
-.penguin-beak {
+.minion-pupil::after {
+  content: "";
   position: absolute;
-  width: 18%;
-  height: 14%;
+  width: 44%;
+  aspect-ratio: 1 / 1;
   left: 50%;
-  top: 55%;
-  transform: translateX(-50%);
-  border-radius: 40% 40% 70% 70%;
-  background: #f4a64f;
+  top: 50%;
+  border-radius: 999px;
+  background: #1d1d1d;
+  transform: translate(-50%, -50%);
 }
 
-.penguin-body {
+.minion-mouth {
   position: absolute;
-  width: 72%;
-  height: 58%;
+  width: 32%;
+  height: 11%;
   left: 50%;
-  bottom: 6%;
+  top: 52%;
   transform: translateX(-50%);
-  border-radius: 49% 49% 44% 44%;
-  background: #18222d;
+  border-bottom: 4px solid #5d3c2d;
+  border-radius: 0 0 16px 16px;
+  animation: minion-mouth 8s ease-in-out infinite;
+}
+
+.minion-overall {
+  position: absolute;
+  width: 100%;
+  height: 43%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-radius: 0 0 38% 38%;
+  background: #3f74c6;
+  overflow: hidden;
+}
+
+.minion-overall::before,
+.minion-overall::after {
+  content: "";
+  position: absolute;
+  width: 21%;
+  height: 46%;
+  top: -32%;
+  background: #4a82d6;
+}
+
+.minion-overall::before {
+  left: 20%;
+  transform: rotate(-18deg);
+}
+
+.minion-overall::after {
+  right: 20%;
+  transform: rotate(18deg);
+}
+
+.minion-pocket {
+  position: absolute;
+  width: 30%;
+  height: 44%;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  border-radius: 8px 8px 14px 14px;
+  border: 2px solid rgba(28, 55, 93, 0.52);
+}
+
+.minion-arm {
+  position: absolute;
+  top: 41%;
+  width: 14%;
+  height: 31%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f6d741 0%, #eabc1c 100%);
   z-index: 3;
 }
 
-.penguin-belly {
+.minion-arm::after {
+  content: "";
   position: absolute;
-  width: 62%;
-  height: 72%;
+  width: 68%;
+  height: 24%;
   left: 50%;
-  top: 16%;
+  bottom: -7%;
   transform: translateX(-50%);
-  border-radius: 48%;
-  background: #f7fbff;
-}
-
-.penguin-flipper {
-  position: absolute;
-  width: 22%;
-  height: 36%;
-  top: 38%;
   border-radius: 999px;
-  background: #121a23;
-  z-index: 2;
+  background: #1e2732;
 }
 
-.penguin-flipper-left {
-  left: 14%;
-  transform-origin: 80% 18%;
-  transform: rotate(30deg);
-  animation: penguin-flipper-left 3.2s ease-in-out infinite;
+.minion-arm-left {
+  left: 11%;
+  transform-origin: 85% 12%;
+  animation: minion-left-arm 8s linear infinite;
 }
 
-.penguin-flipper-right {
-  right: 14%;
-  transform-origin: 20% 18%;
-  transform: rotate(-18deg);
-  animation: penguin-wave 1.4s ease-in-out infinite;
+.minion-arm-right {
+  right: 11%;
+  transform-origin: 15% 12%;
+  animation: minion-right-arm 8s linear infinite;
 }
 
-.penguin-foot {
+.minion-leg {
   position: absolute;
-  width: 20%;
-  height: 13%;
-  bottom: -5%;
-  border-radius: 56% 56% 42% 42%;
-  background: #f19b44;
+  width: 11%;
+  height: 22%;
+  bottom: 2%;
+  border-radius: 8px;
+  background: #3f74c6;
+  transform-origin: 50% 8%;
 }
 
-.penguin-foot-left {
-  left: 24%;
+.minion-leg-left {
+  left: 39%;
+  animation: minion-left-leg 8s linear infinite;
 }
 
-.penguin-foot-right {
-  right: 24%;
+.minion-leg-right {
+  right: 39%;
+  animation: minion-right-leg 8s linear infinite;
 }
 
-@keyframes penguin-bob {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-1.5deg);
-  }
+.minion-shoe {
+  position: absolute;
+  width: 172%;
+  height: 42%;
+  left: 50%;
+  bottom: -17%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #212a34;
 }
 
-@keyframes penguin-walk {
-  0%,
-  100% {
-    left: 0;
+@keyframes minion-entry {
+  0% {
+    transform: translateX(185%) translateY(0) rotateY(-18deg);
   }
-  25% {
-    left: 5%;
+  8% {
+    transform: translateX(145%) translateY(-3px) rotateY(-15deg);
   }
-  75% {
-    left: -5%;
+  16% {
+    transform: translateX(103%) translateY(0) rotateY(-12deg);
   }
-}
-
-@keyframes penguin-wave {
-  0%,
-  100% {
-    transform: rotate(-18deg);
+  24% {
+    transform: translateX(62%) translateY(-3px) rotateY(-8deg);
   }
-  40% {
-    transform: rotate(-52deg);
+  32% {
+    transform: translateX(20%) translateY(0) rotateY(-5deg);
   }
-  70% {
-    transform: rotate(-28deg);
-  }
-}
-
-@keyframes penguin-flipper-left {
-  0%,
-  100% {
-    transform: rotate(30deg);
-  }
-  50% {
-    transform: rotate(18deg);
-  }
-}
-
-@keyframes penguin-shadow {
-  0%,
-  100% {
-    transform: scaleX(1);
-    opacity: 0.24;
-  }
-  50% {
-    transform: scaleX(0.88);
-    opacity: 0.18;
-  }
-}
-
-@keyframes penguin-blink {
-  0%,
-  44%,
-  48%,
-  100% {
-    transform: scaleY(1);
+  38% {
+    transform: translateX(0) translateY(0) rotateY(0deg);
   }
   46% {
-    transform: scaleY(0.15);
+    transform: translateX(0) translateY(0) rotate(3deg);
+  }
+  52% {
+    transform: translateX(0) translateY(0) rotate(-4deg);
+  }
+  58% {
+    transform: translateX(0) translateY(0) rotate(2deg);
+  }
+  64%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes minion-body-mood {
+  0%,
+  38%,
+  64%,
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  45% {
+    transform: translateX(-50%) rotate(8deg);
+  }
+  51% {
+    transform: translateX(-50%) rotate(-10deg);
+  }
+  57% {
+    transform: translateX(-50%) rotate(7deg);
+  }
+}
+
+@keyframes minion-look-around {
+  0%,
+  38%,
+  64%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  44% {
+    transform: translate(-32%, -56%);
+  }
+  50% {
+    transform: translate(-68%, -45%);
+  }
+  56% {
+    transform: translate(-42%, -48%);
+  }
+}
+
+@keyframes minion-mouth {
+  0%,
+  38%,
+  64%,
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+  46% {
+    transform: translateX(-50%) scaleX(0.65);
+  }
+  54% {
+    transform: translateX(-50%) scaleX(1.15);
+  }
+}
+
+@keyframes minion-left-arm {
+  0% {
+    transform: rotate(-16deg);
+  }
+  8% {
+    transform: rotate(8deg);
+  }
+  16% {
+    transform: rotate(-14deg);
+  }
+  24% {
+    transform: rotate(7deg);
+  }
+  32% {
+    transform: rotate(-10deg);
+  }
+  38%,
+  100% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes minion-right-arm {
+  0%,
+  62% {
+    transform: rotate(16deg);
+  }
+  68% {
+    transform: rotate(-52deg);
+  }
+  74% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-56deg);
+  }
+  86% {
+    transform: rotate(-22deg);
+  }
+  92% {
+    transform: rotate(-52deg);
+  }
+  100% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes minion-left-leg {
+  0% {
+    transform: rotate(16deg);
+  }
+  8% {
+    transform: rotate(-12deg);
+  }
+  16% {
+    transform: rotate(16deg);
+  }
+  24% {
+    transform: rotate(-10deg);
+  }
+  32% {
+    transform: rotate(8deg);
+  }
+  38%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes minion-right-leg {
+  0% {
+    transform: rotate(-16deg);
+  }
+  8% {
+    transform: rotate(12deg);
+  }
+  16% {
+    transform: rotate(-16deg);
+  }
+  24% {
+    transform: rotate(10deg);
+  }
+  32% {
+    transform: rotate(-8deg);
+  }
+  38%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes minion-shadow-track {
+  0% {
+    transform: translateX(145%) scale(0.72);
+    opacity: 0;
+  }
+  24% {
+    opacity: 0.16;
+  }
+  38% {
+    transform: translateX(0) scale(1);
+    opacity: 0.24;
+  }
+  52% {
+    transform: translateX(0) scale(0.9);
+    opacity: 0.18;
+  }
+  64%,
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 0.22;
   }
 }
 
@@ -1102,8 +1269,8 @@ export default {
     width: 360px;
   }
 
-  .penguin-scene {
-    transform: translateX(-14px);
+  .minion-scene {
+    transform: translateX(-20px);
   }
 
   .skills-panel {
@@ -1150,7 +1317,7 @@ export default {
     margin-top: 20px;
   }
 
-  .penguin-scene {
+  .minion-scene {
     transform: translateX(0);
   }
 
@@ -1249,8 +1416,8 @@ export default {
     width: 260px;
   }
 
-  .penguin-character {
-    width: 62%;
+  .minion-character {
+    width: 70%;
   }
 
   .section-title {
