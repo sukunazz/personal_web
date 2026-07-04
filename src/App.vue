@@ -5,7 +5,6 @@
       <div v-if="showRouteLoader" class="route-loader" aria-live="polite" aria-busy="true">
         <div class="route-loader-inner">
           <span class="route-spinner" aria-hidden="true"></span>
-          <p>Loading page...</p>
         </div>
       </div>
     </transition>
@@ -157,30 +156,32 @@ p {
   position: fixed;
   inset: 0;
   z-index: 120;
-  background: rgba(246, 240, 230, 0.92);
-  backdrop-filter: blur(2px);
+  background: rgba(246, 240, 230, 0.62);
+  backdrop-filter: blur(10px) saturate(1.02);
+  -webkit-backdrop-filter: blur(10px) saturate(1.02);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .route-loader-inner {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: #4b4f56;
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  justify-content: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(223, 214, 201, 0.8);
 }
 
 .route-spinner {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #d5cec1;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #d5cec1;
   border-top-color: #e5524c;
   border-radius: 50%;
-  animation: route-spin 0.8s linear infinite;
+  animation: route-spin 0.85s linear infinite;
 }
 
 @keyframes route-spin {
