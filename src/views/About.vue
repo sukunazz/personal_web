@@ -16,37 +16,38 @@
           />
         </div>
 
-        <div class="about-summary">
-          <ul>
-            <li v-for="item in highlights" :key="item.text">
-              <i :class="item.icon" aria-hidden="true"></i>
-              <span>{{ item.text }}</span>
-            </li>
-          </ul>
-          <p class="fun-fact">
-            <strong>Fun Fact:</strong> I enjoy solving tough bugs like puzzle
-            games.
+        <section class="about-readme-block">
+          <p class="readme-text">
+            I am a software engineer with strong hands-on experience across
+            modern web technologies and scalable backend systems. I focus on
+            writing reliable code that is easy to maintain and practical to
+            extend.
           </p>
-        </div>
+          <p class="readme-text">
+            My work is centered around the JavaScript ecosystem, where I build
+            full-stack products with clear architecture, performant APIs, and
+            user-centered interfaces.
+          </p>
+          <p class="readme-text">
+            Outside coding, I spend time learning new tools, reading
+            documentation, playing chess, and continuously improving my software
+            engineering craft.
+          </p>
+        </section>
       </div>
 
-      <section class="about-readme-block">
-        <p class="readme-text">
-          I am a software engineer with strong hands-on experience across modern
-          web technologies and scalable backend systems. I focus on writing
-          reliable code that is easy to maintain and practical to extend.
+      <div class="about-summary">
+        <ul>
+          <li v-for="item in highlights" :key="item.text">
+            <i :class="item.icon" aria-hidden="true"></i>
+            <span>{{ item.text }}</span>
+          </li>
+        </ul>
+        <p class="fun-fact">
+          <strong>Fun Fact:</strong> I enjoy solving tough bugs like puzzle
+          games.
         </p>
-        <p class="readme-text">
-          My work is centered around the JavaScript ecosystem, where I build
-          full-stack products with clear architecture, performant APIs, and
-          user-centered interfaces.
-        </p>
-        <p class="readme-text">
-          Outside coding, I spend time learning new tools, reading
-          documentation, playing chess, and continuously improving my software
-          engineering craft.
-        </p>
-      </section>
+      </div>
 
       <section class="about-tools-block">
         <h2 class="section-title">Tools I Use</h2>
@@ -122,7 +123,7 @@ export default {
 }
 
 .about-card {
-  background: #ffffff;
+  background: var(--color-surface-soft);
   border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 46px;
@@ -188,7 +189,7 @@ export default {
   list-style: none;
   display: grid;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .about-summary li {
@@ -215,10 +216,15 @@ export default {
 }
 
 .about-readme-block {
-  margin-top: 26px;
-  max-width: 760px;
+  margin-top: 0;
+  max-width: none;
   content-visibility: auto;
   contain-intrinsic-size: 300px;
+}
+
+.about-summary {
+  margin-top: 26px;
+  max-width: 760px;
 }
 
 .section-title {

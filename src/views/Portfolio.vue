@@ -45,7 +45,7 @@ export default {
 .projects-card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: var(--color-surface-soft);
   border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 54px;

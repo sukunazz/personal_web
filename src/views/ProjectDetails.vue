@@ -205,7 +205,7 @@ export default {
 }
 
 .details-card {
-  background: #ffffff;
+  background: var(--color-surface-soft);
   border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 46px;
@@ -237,8 +237,8 @@ export default {
 }
 
 .back-link:hover .back-arrow {
-  background: #e5524c;
-  border-color: #e5524c;
+  background: var(--color-brand-600);
+  border-color: var(--color-brand-600);
   color: #ffffff;
 }
 
@@ -299,8 +299,8 @@ h1 {
 }
 
 .gallery-thumb.active {
-  border-color: #e5524c;
-  box-shadow: 0 0 0 2px rgba(229, 82, 76, 0.2);
+  border-color: var(--color-brand-600);
+  box-shadow: 0 0 0 2px rgba(31, 79, 70, 0.2);
 }
 
 .meta-lines p {
@@ -363,8 +363,8 @@ h2 {
 }
 
 .link-list a:hover {
-  color: #e5524c;
-  border-bottom-color: #e5524c;
+  color: var(--color-brand-700);
+  border-bottom-color: var(--color-brand-700);
 }
 
 .achievement-list {
@@ -385,7 +385,7 @@ h2 {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #e5524c;
+  background: var(--color-brand-600);
   position: absolute;
   left: 0;
   top: 11px;
@@ -410,8 +410,8 @@ h2 {
 }
 
 .next-project-button:hover {
-  border-color: #e5524c;
-  color: #e5524c;
+  border-color: var(--color-brand-600);
+  color: var(--color-brand-700);
 }
 
 @media (max-width: 980px) {

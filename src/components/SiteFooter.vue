@@ -89,7 +89,7 @@ export default {
 }
 
 .footer-socials a:hover {
-  color: #e5524c;
+  color: var(--color-brand-700);
   transform: translateY(-2px);
 }
 

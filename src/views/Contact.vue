@@ -125,7 +125,7 @@ export default {
 }
 
 .contact-card {
-  background: #ffffff;
+  background: var(--color-surface-soft);
   border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 46px;
@@ -286,7 +286,7 @@ export default {
 }
 
 .contact-form button:hover {
-  background: #d44843;
+  background: var(--color-brand-600);
 }
 
 .success,

@@ -85,7 +85,7 @@ export default {
 .header-frame {
   min-height: 82px;
 
-  background: #ffffff;
+  background: var(--color-surface-soft);
 
   padding: 0 34px;
 
@@ -156,7 +156,7 @@ export default {
 }
 
 .email-link:hover {
-  color: #e5524c;
+  color: var(--color-brand-700);
 }
 
 /* ---------------- Navigation ---------------- */
@@ -194,15 +194,15 @@ export default {
 }
 
 .nav-link:hover {
-  color: #e5524c;
+  color: var(--color-brand-700);
 }
 
 .nav-link.active {
-  color: #e5524c;
+  color: var(--color-brand-700);
 }
 
 .nav-link.router-link-exact-active {
-  color: #e5524c;
+  color: var(--color-brand-700);
 }
 
 .header-socials {
@@ -310,8 +310,8 @@ export default {
   }
 
   .header-socials a:hover {
-    color: #e5524c;
-    border-color: #b8ddd8;
+    color: var(--color-brand-700);
+    border-color: var(--color-brand-600);
   }
 
   .nav-links {
@@ -320,7 +320,7 @@ export default {
     right: 0;
     bottom: 0;
     z-index: 70;
-    background: #ffffff;
+    background: var(--color-surface-soft);
     border-top: 1px solid #d5e2ec;
     box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
     gap: 0;
@@ -355,7 +355,7 @@ export default {
 
   .nav-link.router-link-exact-active,
   .nav-link.active {
-    background: #eaf3fb;
+    background: #e2f0eb;
   }
 }
 </style>

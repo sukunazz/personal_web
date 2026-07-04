@@ -92,7 +92,7 @@ export default {
 }
 
 .hero-card {
-  background: #ffffff;
+  background: var(--color-surface-soft);
   border-radius: 0;
   margin-top: -2px;
   padding: 44px 0 50px;
@@ -101,6 +101,8 @@ export default {
 
 .hero-shell {
   padding: 0 60px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-layout {
@@ -125,7 +127,7 @@ export default {
 }
 
 .hero-socials a:hover {
-  color: #e5524c;
+  color: var(--color-brand-700);
   transform: translateX(5px);
 }
 
@@ -202,8 +204,8 @@ export default {
 
 .talk-button:hover {
   transform: translateY(-6px);
-  background: #eb6a5e;
-  box-shadow: 0 18px 35px rgba(239, 123, 113, 0.45);
+  background: var(--color-brand-600);
+  box-shadow: 0 18px 35px rgba(31, 79, 70, 0.3);
 }
 
 .hero-image {
