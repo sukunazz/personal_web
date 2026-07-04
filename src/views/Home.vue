@@ -299,7 +299,7 @@ export default {
 
   .minion-sequence {
     padding: 4px 0 8px;
-    transform: translateY(-12px);
+    transform: translateY(-8px);
   }
 
   .hero-avatar {
@@ -351,7 +351,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
   }
 
   .hero-socials a {
@@ -370,7 +370,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-6px);
+    transform: translateY(-3px);
   }
 }
 </style>

@@ -266,12 +266,11 @@ export default {
     grid-template-columns: 1fr auto;
     grid-template-areas:
       "brand socials"
-      "email socials"
-      "nav nav";
+      "email socials";
     align-items: center;
-    row-gap: 8px;
+    row-gap: 6px;
     column-gap: 12px;
-    padding: 16px 14px 12px;
+    padding: 14px 14px 12px;
     border-radius: 14px 14px 0 0;
   }
 
@@ -323,18 +322,16 @@ export default {
   }
 
   .nav-links {
-    grid-area: nav;
-    position: static;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    z-index: auto;
-    background: transparent;
-    border-top: 1px solid #ebe5da;
-    box-shadow: none;
-    justify-content: stretch;
-    gap: 4px;
-    padding: 10px 0 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    background: #ffffff;
+    border-top: 1px solid #e7e1d6;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+    gap: 0;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -345,7 +342,7 @@ export default {
     justify-content: center;
     gap: 5px;
     min-width: 0;
-    min-height: 48px;
+    min-height: 50px;
     padding: 4px 2px;
     flex: 1 1 auto;
     font-size: 12px;
