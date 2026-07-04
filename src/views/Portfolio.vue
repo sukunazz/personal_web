@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .projects-page {
-  min-height: calc(100vh - 210px);
+  min-height: calc(100vh - 200px);
   padding-bottom: 20px;
 }
 
@@ -49,7 +49,7 @@ export default {
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
-  min-height: calc(100vh - 210px);
+  min-height: calc(100vh - 200px);
 }
 
 .skills-title {
@@ -89,12 +89,10 @@ export default {
 }
 
 .projects-panel {
-  background: #f1efef;
-  border-radius: 12px;
-  padding: 24px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+  margin-top: 6px;
 }
 
 .project-card {
@@ -139,7 +137,7 @@ export default {
 @media (max-width: 768px) {
   .projects-card {
     padding: 35px 25px;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 170px);
   }
 
   .skills-title {
@@ -152,7 +150,6 @@ export default {
 
   .projects-panel {
     grid-template-columns: 1fr;
-    padding: 18px;
   }
 }
 

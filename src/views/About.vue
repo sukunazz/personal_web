@@ -210,37 +210,36 @@ export default {
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 8px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px 14px;
+  margin-top: 10px;
 }
 
 .tool-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  border: 1px solid #ddd6ce;
-  border-radius: 12px;
-  padding: 10px 12px;
-  background: #f8f6f2;
+  gap: 8px;
+  padding: 4px 2px;
   color: #50545a;
-  min-height: 48px;
 }
 
 .tool-item img {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
 }
 
 .tool-item i {
-  font-size: 18px;
+  font-size: 22px;
   color: #5d6168;
 }
 
 .tool-item span {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  text-align: center;
+  line-height: 1.35;
 }
 
 @media (max-width: 1200px) {
@@ -253,7 +252,7 @@ export default {
   }
 
   .tools-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -282,7 +281,8 @@ export default {
   }
 
   .tools-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 10px;
   }
 }
 
@@ -300,7 +300,7 @@ export default {
   }
 
   .tools-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 </style>
