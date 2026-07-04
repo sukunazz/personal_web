@@ -1,33 +1,68 @@
 <template>
   <main class="contact-page">
-    <section class="container section-frame intro">
-      <h1>keep in touch</h1>
-      <p>Why not talk to me about your project ideas?</p>
-      <div class="contact-lines">
-        <p>Pokhara, Nepal</p>
-        <p>sujansigdel03@gmail.com</p>
-      </div>
-    </section>
+    <section class="container section-card contact-section">
+      <h2 class="skills-title">Contact</h2>
+      <p class="skills-subtitle">Let's Build Something</p>
+      <span class="section-rule" aria-hidden="true"></span>
 
-    <section class="container section-frame form-wrap">
-      <h2>send a message</h2>
-      <form @submit.prevent="submitForm">
-        <div class="field-row">
-          <label for="name">name</label>
+      <div class="contact-panel">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <a href="mailto:sujansigdel03@gmail.com">sujansigdel03@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <h3>Location</h3>
+            <p>Pokhara, Nepal</p>
+          </div>
+          <div class="contact-item">
+            <h3>Profiles</h3>
+            <div class="contact-links">
+              <a
+                href="https://www.linkedin.com/in/sujansigdel/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/sukunazz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://x.com/sigdelsujan03"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" @submit.prevent="submitForm">
+          <h3>Send Message</h3>
+          <label for="name">Name</label>
           <input id="name" type="text" v-model="form.name" required />
-        </div>
-        <div class="field-row">
-          <label for="email">email</label>
+
+          <label for="email">Email</label>
           <input id="email" type="email" v-model="form.email" required />
-        </div>
-        <div class="field-row">
-          <label for="message">message</label>
-          <textarea id="message" v-model="form.message" required></textarea>
-        </div>
-        <button type="submit">send</button>
-      </form>
-      <p v-if="successMessage" class="success">{{ successMessage }}</p>
-      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+
+          <label for="message">Message</label>
+          <textarea id="message" v-model="form.message" rows="6" required></textarea>
+
+          <button type="submit">send</button>
+
+          <p v-if="successMessage" class="success">{{ successMessage }}</p>
+          <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+        </form>
+      </div>
     </section>
   </main>
 </template>
@@ -72,99 +107,210 @@ export default {
 
 <style scoped>
 .contact-page {
-  padding: 1rem 0 2rem;
+  padding-bottom: 22px;
 }
 
-.section-frame {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 1.6rem;
-  margin-bottom: 1rem;
+.section-card {
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px 44px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.05);
 }
 
-h1 {
-  font-size: clamp(1.9rem, 5vw, 3rem);
-  margin-bottom: 0.3rem;
+.skills-title {
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #4b4f56;
 }
 
-.intro > p {
-  color: var(--color-text-500);
-  margin-bottom: 0.85rem;
+.skills-subtitle {
+  font-size: 40px;
+  line-height: 1;
+  color: #4b4f56;
+  margin-bottom: 20px;
 }
 
-.contact-lines p {
-  margin-bottom: 0.2rem;
+.section-rule {
+  display: block;
+  width: 130px;
+  height: 4px;
+  border-radius: 99px;
+  background: #e5524c;
+  margin-bottom: 26px;
+  position: relative;
 }
 
-h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.9rem;
+.section-rule::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e5524c;
+  position: absolute;
+  left: -4px;
+  top: -3px;
 }
 
-form {
-  max-width: 700px;
-}
-
-.field-row {
+.contact-panel {
+  background: #f1efef;
+  border-radius: 12px;
+  padding: 32px;
   display: grid;
-  gap: 0.3rem;
-  margin-bottom: 0.8rem;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
+  gap: 18px;
 }
 
-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-500);
+.contact-info {
+  display: grid;
+  gap: 16px;
 }
 
-input,
-textarea {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-soft);
-  color: var(--color-text-900);
-  padding: 0.6rem 0.7rem;
+.contact-item {
+  background: #f8f7f7;
+  border: 1px solid #e7e4e4;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-textarea {
-  min-height: 140px;
+.contact-item h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
 }
 
-button {
-  border: none;
-  border-radius: var(--radius-sm);
-  background: var(--color-brand-700);
-  color: #fff;
-  padding: 0.58rem 0.95rem;
-  font-size: 0.88rem;
+.contact-item a,
+.contact-item p {
+  font-size: 15px;
+  color: #606060;
+  text-decoration: none;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2dddd;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
   font-weight: 600;
-  text-transform: lowercase;
-  cursor: pointer;
+  color: #4e4e4e;
 }
 
-button:hover {
-  background: var(--color-brand-600);
+.contact-links i {
+  font-size: 16px;
+  color: #e5524c;
+}
+
+.contact-form {
+  background: #f8f7f7;
+  border: 1px solid #e7e4e4;
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.contact-form h3 {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.contact-form label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 6px;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: lowercase;
+  color: #ffffff;
+  background: #e5524c;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact-form button:hover {
+  background: #d44843;
 }
 
 .success,
 .error {
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
+  margin-top: 4px;
+  font-size: 14px;
 }
 
 .success {
-  color: var(--color-success);
+  color: #1c8f59;
 }
 
 .error {
-  color: var(--color-danger);
+  color: #bf3f3f;
 }
 
-@media (max-width: 720px) {
-  .section-frame {
-    padding: 1.1rem;
+@media (max-width: 1200px) {
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-card {
+    padding: 35px 25px;
+  }
+
+  .skills-title {
+    font-size: 42px;
+  }
+
+  .skills-subtitle {
+    font-size: 30px;
+  }
+
+  .contact-panel {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .skills-title {
+    font-size: 34px;
+  }
+
+  .skills-subtitle {
+    font-size: 24px;
   }
 }
 </style>
