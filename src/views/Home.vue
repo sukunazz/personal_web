@@ -1,72 +1,75 @@
 <template>
   <main class="home-page">
-    <section class="container hero-card">
-      <div class="hero-layout">
-        <aside class="hero-socials" aria-label="social links">
-          <a
-            href="https://www.linkedin.com/in/sujansigdel/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
+    <section class="hero-card">
+      <div class="container hero-shell">
+        <div class="hero-layout">
+          <aside class="hero-socials" aria-label="social links">
+            <a
+              href="https://www.linkedin.com/in/sujansigdel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
 
-          <a
-            href="https://github.com/sukunazz"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
+            <a
+              href="https://github.com/sukunazz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
 
-          <a
-            href="https://x.com/sigdelsujan03"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-        </aside>
+            <a
+              href="https://x.com/sigdelsujan03"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+          </aside>
 
-        <section class="hero-content">
-          <div class="speech-bubble">It's me</div>
+          <section class="hero-content">
+            <div class="speech-bubble">It's me</div>
 
-          <h1 class="hero-title">
-            Sujan <br />
-            Sigdel
-          </h1>
+            <h1 class="hero-title">
+              Sujan <br />
+              Sigdel
+            </h1>
 
-          <h4 class="hero-role">SOFTWARE ENGINEER</h4>
+            <h4 class="hero-role">SOFTWARE ENGINEER</h4>
 
-          <p class="hero-description">
-            AKA <strong>Sukunazz</strong>. Software Developer from Pokhara,
-            Nepal with experience building modern web applications, scalable
-            backend systems, AI applications, and practical software solutions.
-          </p>
+            <p class="hero-description">
+              AKA <strong>Sukunazz</strong>. Software Developer from Pokhara,
+              Nepal with experience building modern web applications, scalable
+              backend systems, AI applications, and practical software
+              solutions.
+            </p>
 
-          <button type="button" class="talk-button" @click="goToContact">
-            let's<br />
-            talk
-          </button>
-        </section>
+            <button type="button" class="talk-button" @click="goToContact">
+              let's<br />
+              talk
+            </button>
+          </section>
 
-        <section class="hero-image">
-          <div
-            class="hero-avatar minion-sequence"
-            role="img"
-            aria-label="Waving minion character"
-          >
-            <img
-              class="minion-frame"
-              src="/images/minion-wave.webp"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-        </section>
+          <section class="hero-image">
+            <div
+              class="hero-avatar minion-sequence"
+              role="img"
+              aria-label="Waving minion character"
+            >
+              <img
+                class="minion-frame"
+                src="/images/minion-wave.webp"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+          </section>
+        </div>
       </div>
     </section>
   </main>
@@ -89,13 +92,17 @@ export default {
 }
 
 .hero-card {
-  background: #ffffff;
-  border-radius: 0 0 14px 14px;
+  background: var(--color-surface);
+  border-radius: 0;
   margin-top: -2px;
-  padding: 44px 60px 50px;
+  padding: 44px 0 50px;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
+}
+
+.hero-shell {
+  padding: 0 60px;
 }
 
 .hero-layout {
@@ -310,7 +317,11 @@ export default {
 
 @media (max-width: 768px) {
   .hero-card {
-    padding: 35px 25px;
+    padding: 35px 0;
+  }
+
+  .hero-shell {
+    padding: 0 25px;
   }
 
   .hero-title {
@@ -360,6 +371,10 @@ export default {
 }
 
 @media (max-width: 390px) {
+  .hero-shell {
+    padding: 0 18px;
+  }
+
   .hero-avatar {
     width: 248px;
   }
