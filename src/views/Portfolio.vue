@@ -91,10 +91,13 @@ export default {
 .projects-panel {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  margin-top: auto;
-  padding-top: clamp(34px, 8vh, 88px);
+  margin-top: 6px;
+  padding-top: clamp(14px, 3vh, 34px);
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
   align-items: stretch;
 }
 
@@ -153,10 +156,11 @@ export default {
   }
 
   .projects-panel {
-    grid-template-columns: repeat(auto-fit, minmax(360px, 420px));
+    grid-template-columns: repeat(3, minmax(360px, 420px));
     justify-content: center;
     gap: 24px;
-    padding-top: clamp(44px, 10vh, 120px);
+    padding-top: clamp(20px, 3.5vh, 44px);
+    max-width: 1400px;
   }
 
   .project-card h3 {
@@ -166,7 +170,17 @@ export default {
 
 @media (max-width: 1200px) {
   .projects-panel {
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-panel {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding-top: 22px;
   }
 }
 
@@ -187,8 +201,7 @@ export default {
   .projects-panel {
     grid-template-columns: 1fr;
     gap: 14px;
-    margin-top: 0;
-    padding-top: 30px;
+    padding-top: 18px;
   }
 }
 
@@ -199,6 +212,16 @@ export default {
 
   .skills-subtitle {
     font-size: 24px;
+  }
+
+  .projects-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .projects-panel {
+    gap: 12px;
+    padding-top: 14px;
   }
 }
 </style>
