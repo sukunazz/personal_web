@@ -1,14 +1,30 @@
 <template>
   <footer class="site-footer">
-    <div class="container footer-frame">
-      <p class="footer-copy">© {{ year }} Sujan Sigdel. Built with Vue and care.</p>
+    <div class="container footer-content">
+      <h3>Keep In Touch</h3>
+      <p class="footer-location">Pokhara, Nepal</p>
+      <a href="mailto:sujansigdel03@gmail.com" class="footer-email"
+        >sujansigdel03@gmail.com</a
+      >
 
-      <nav class="footer-links" aria-label="Footer links">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/projects">Projects</router-link>
-        <router-link to="/contact">Contact</router-link>
-      </nav>
+      <div class="footer-socials" aria-label="social links">
+        <a
+          href="https://t.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Telegram"
+        >
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
   </footer>
 </template>
@@ -16,61 +32,75 @@
 <script>
 export default {
   name: "SiteFooter",
-  computed: {
-    year() {
-      return new Date().getFullYear();
-    },
-  },
 };
 </script>
 
 <style scoped>
 .site-footer {
-  padding: 8px 0 26px;
+  padding: 48px 0 44px;
 }
 
-.footer-frame {
-  background: linear-gradient(180deg, #f8f4ee 0%, #f3ece2 100%);
-  border: 1px solid #ddd2c3;
-  border-radius: 14px;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+.footer-content {
+  text-align: center;
+  color: #46566a;
 }
 
-.footer-copy {
-  font-size: 14px;
-  color: #645d54;
+.footer-content h3 {
+  font-size: 40px;
+  margin-bottom: 12px;
+  color: #42586f;
 }
 
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.footer-location {
+  font-size: 31px;
+  color: #62778f;
+  margin-bottom: 8px;
 }
 
-.footer-links a {
-  font-size: 14px;
-  color: #4a443b;
+.footer-email {
+  font-size: 41px;
+  font-weight: 700;
+  color: #42586f;
   text-decoration: none;
 }
 
-.footer-links a:hover,
-.footer-links a.router-link-exact-active {
-  color: #e5524c;
+.footer-socials {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer-socials a {
+  font-size: 39px;
+  color: #5d6e80;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: #3f556f;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .footer-frame {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 16px;
+  .site-footer {
+    padding: 40px 0 36px;
   }
 
-  .footer-links {
-    flex-wrap: wrap;
+  .footer-content h3 {
+    font-size: 30px;
+  }
+
+  .footer-location {
+    font-size: 22px;
+  }
+
+  .footer-email {
+    font-size: 25px;
+  }
+
+  .footer-socials a {
+    font-size: 33px;
   }
 }
 </style>
