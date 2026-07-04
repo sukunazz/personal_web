@@ -41,6 +41,7 @@
         <p><strong>Role:</strong> {{ project.role || "Frontend Developer" }}</p>
         <p><strong>Team:</strong> {{ project.teamSize || "Small Team" }}</p>
         <p><strong>Completed:</strong> {{ project.completedDate || "Recent" }}</p>
+        <p v-if="project.duration"><strong>Duration:</strong> {{ project.duration }}</p>
       </div>
 
       <section class="content-block" v-if="project.overview">
@@ -53,6 +54,14 @@
         <div class="list-block" v-for="(challenge, index) in project.challenges" :key="index">
           <h3>{{ challenge.title }}</h3>
           <p>{{ challenge.solution }}</p>
+        </div>
+      </section>
+
+      <section class="content-block" v-if="project.features && project.features.length > 0">
+        <h2>Key Features</h2>
+        <div class="list-block" v-for="(feature, index) in project.features" :key="`feature-${index}`">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
         </div>
       </section>
 
@@ -75,6 +84,36 @@
           </a>
         </div>
       </section>
+
+      <section class="content-block" v-if="project.achievements && project.achievements.length > 0">
+        <h2>Achievements</h2>
+        <ul class="achievement-list">
+          <li v-for="(item, index) in project.achievements" :key="`achievement-${index}`">{{ item }}</li>
+        </ul>
+      </section>
+
+      <section class="content-block next-project-wrap" v-if="nextProject">
+        <router-link
+          class="next-project-button"
+          :to="{ name: 'ProjectDetails', params: { id: nextProject.id } }"
+        >
+          Next Project: {{ nextProject.title }}
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </router-link>
+      </section>
+    </section>
+
+    <section class="container details-card" v-else>
+      <router-link to="/projects" class="back-link">
+        <span class="back-arrow" aria-hidden="true">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>back to projects</span>
+      </router-link>
+      <h1>Project Not Found</h1>
+      <p class="intro">
+        This project link is invalid or outdated. Please select a project again from the projects page.
+      </p>
     </section>
   </main>
 </template>
@@ -91,8 +130,21 @@ export default {
   },
   computed: {
     project() {
-      const id = this.$route.params.id;
-      return projectsData.projects.find((item) => String(item.id) === String(id));
+      const routeId = String(this.$route.params.id || "").trim().toLowerCase();
+      return projectsData.projects.find((item) => {
+        const itemId = String(item.id);
+        const titleSlug = this.slugify(item.title);
+        return itemId === routeId || titleSlug === routeId;
+      });
+    },
+    nextProject() {
+      if (!this.project || !this.project.nextProject) {
+        return null;
+      }
+      const targetId = String(this.project.nextProject.id);
+      return (
+        projectsData.projects.find((item) => String(item.id) === targetId) || this.project.nextProject
+      );
     },
     galleryImages() {
       if (!this.project) {
@@ -133,6 +185,13 @@ export default {
     },
   },
   methods: {
+    slugify(value) {
+      return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    },
     selectGallery(index) {
       this.activeGalleryIndex = index;
     },
@@ -309,6 +368,53 @@ h2 {
 .link-list a:hover {
   color: #e5524c;
   border-bottom-color: #e5524c;
+}
+
+.achievement-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.achievement-list li {
+  color: #595d63;
+  line-height: 1.75;
+  position: relative;
+  padding-left: 18px;
+}
+
+.achievement-list li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5524c;
+  position: absolute;
+  left: 0;
+  top: 11px;
+}
+
+.next-project-wrap {
+  display: flex;
+}
+
+.next-project-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid #e7ddd0;
+  background: #f8f4ed;
+  color: #4b4f56;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 16px;
+  transition: 0.2s ease;
+}
+
+.next-project-button:hover {
+  border-color: #e5524c;
+  color: #e5524c;
 }
 
 @media (max-width: 980px) {

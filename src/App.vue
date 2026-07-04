@@ -1,6 +1,14 @@
 <template>
   <div id="app">
     <NavigationBar />
+    <transition name="route-loader-fade">
+      <div v-if="showRouteLoader" class="route-loader" aria-live="polite" aria-busy="true">
+        <div class="route-loader-inner">
+          <span class="route-spinner" aria-hidden="true"></span>
+          <p>Loading page...</p>
+        </div>
+      </div>
+    </transition>
     <router-view></router-view>
     <SiteFooter />
   </div>
@@ -9,12 +17,104 @@
 <script>
 import NavigationBar from "./components/NavigationBar.vue";
 import SiteFooter from "./components/SiteFooter.vue";
+import projectsData from "@/data.json";
 
 export default {
   name: "App",
   components: {
     NavigationBar,
     SiteFooter,
+  },
+  data() {
+    return {
+      isRouteLoading: false,
+      routeLoadToken: 0,
+    };
+  },
+  computed: {
+    showRouteLoader() {
+      return this.isRouteLoading && this.$route.path !== "/";
+    },
+  },
+  watch: {
+    $route(to, from) {
+      this.handleRouteLoading(to, from);
+    },
+  },
+  methods: {
+    async handleRouteLoading(to, from) {
+      if (!from || to.path === "/") {
+        this.isRouteLoading = false;
+        return;
+      }
+
+      const token = ++this.routeLoadToken;
+      this.isRouteLoading = true;
+
+      await Promise.all([this.delay(280), this.preloadRouteAssets(to)]);
+
+      if (token === this.routeLoadToken) {
+        this.isRouteLoading = false;
+      }
+    },
+    delay(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    },
+    async preloadRouteAssets(route) {
+      const urls = [];
+
+      if (route.path === "/about") {
+        urls.push("/images/skills-what-i-do.svg");
+      }
+
+      if (route.path === "/projects") {
+        urls.push(...projectsData.projects.map((project) => project.image).filter(Boolean));
+      }
+
+      if (route.name === "ProjectDetails") {
+        const routeId = String(route.params.id || "").toLowerCase();
+        const targetProject = projectsData.projects.find((project) => {
+          const idMatch = String(project.id) === routeId;
+          const slugMatch =
+            String(project.title || "")
+              .toLowerCase()
+              .trim()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/^-+|-+$/g, "") === routeId;
+          return idMatch || slugMatch;
+        });
+
+        if (targetProject) {
+          urls.push(targetProject.previewImage || targetProject.image);
+          if (Array.isArray(targetProject.gallery)) {
+            urls.push(
+              ...targetProject.gallery.map((item) => (item && item.src ? item.src : null)).filter(Boolean)
+            );
+          }
+        }
+      }
+
+      await this.preloadImages(urls);
+    },
+    preloadImages(urls) {
+      const uniqueUrls = [...new Set((urls || []).filter(Boolean))];
+      if (!uniqueUrls.length) {
+        return Promise.resolve();
+      }
+
+      const loaders = uniqueUrls.map(
+        (url) =>
+          new Promise((resolve) => {
+            const image = new Image();
+            image.onload = () => resolve();
+            image.onerror = () => resolve();
+            image.src = url;
+          })
+      );
+
+      const timeout = this.delay(2200);
+      return Promise.race([Promise.all(loaders), timeout]);
+    },
   },
 };
 </script>
@@ -51,5 +151,51 @@ p {
   .container {
     width: min(95vw, var(--site-max-width));
   }
+}
+
+.route-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(246, 240, 230, 0.92);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-loader-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4b4f56;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.route-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d5cec1;
+  border-top-color: #e5524c;
+  border-radius: 50%;
+  animation: route-spin 0.8s linear infinite;
+}
+
+@keyframes route-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.route-loader-fade-enter-active,
+.route-loader-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.route-loader-fade-enter-from,
+.route-loader-fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -52,12 +52,12 @@
         }
       ],
       "nextProject": {
-        "id": 4,
+        "id": 2,
         "title": "WoodCraft"
       }
     },
     {
-      "id": 4,
+      "id": 2,
       "title": "WoodCraft",
       "description": "WoodCraft is a full-featured e-commerce platform with product browsing, cart flows, secure checkout, and inventory management for modern online retail.",
       "image": "/images/woodcraft.png",
@@ -127,71 +127,82 @@
         }
       ],
       "nextProject": {
-        "id": 5,
-        "title": "StudyWebsite"
+        "id": 3,
+        "title": "Booksville Frontend"
       }
     },
     {
-      "id": 5,
-      "title": "StudyWebsite",
-      "description": "StudyWebsite is an education platform that helps students access learning resources, discover course material faster, and collaborate through interactive features.",
-      "image": "/images/studywebsite.png",
-      "previewImage": "/images/studywebsite.png",
-      "role": "Full Stack Developer",
-      "teamSize": "1 member",
-      "technologies": [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Elasticsearch",
-        "Socket.io",
-        "JWT"
-      ],
-      "completedDate": "April 2025",
-      "category": "Educational Technology",
-      "overview": "StudyWebsite is a learning-focused platform designed to support students across multiple faculties. It provides centralized study resources, search-first content discovery, and collaborative discussion tools to improve learning efficiency.",
+      "id": 3,
+      "title": "Booksville Frontend",
+      "description": "Booksville is a web app for book lovers to discover, buy, rent, and review books while connecting with others. Built with Vue 3 and Vite.",
+      "image": "https://www.ayushpaudel.com.np/assets/booksvillefrontend-flRLvNI4.webp",
+      "previewImage": "https://www.ayushpaudel.com.np/assets/1desktop-C8UiBFwo.png",
+      "role": "Frontend Developer",
+      "teamSize": "2 members",
+      "technologies": ["Vue 3", "Vite", "Vercel", "Vuex"],
+      "completedDate": "November 2024",
+      "duration": "1 month",
+      "category": "Web Application",
+      "overview": "Booksville is a comprehensive web application for book enthusiasts, offering features for discovering, purchasing, renting, and reviewing books while building a community. The frontend is built with Vue 3 and Vite, delivering a responsive and intuitive user experience.",
       "challenges": [
         {
-          "title": "Search Relevance",
-          "solution": "Configured Elasticsearch indexing and filters for faster and more relevant content discovery."
+          "title": "Complex User Interface",
+          "solution": "Implemented component-based architecture and state management for seamless user interactions."
         },
         {
-          "title": "Content Organization",
-          "solution": "Structured resources by faculty, subject, and difficulty so students can find materials quickly."
+          "title": "Performance Optimization",
+          "solution": "Utilized Vite build optimization and lazy loading for improved page load times."
+        }
+      ],
+      "features": [
+        {
+          "title": "Advanced Search",
+          "description": "Powerful search functionality with filters and recommendations."
         },
         {
-          "title": "Realtime Collaboration",
-          "solution": "Integrated Socket.io features to support active discussions and group coordination."
+          "title": "Social Features",
+          "description": "User reviews, ratings, friend connections, and reading progress tracking."
+        },
+        {
+          "title": "E-commerce Integration",
+          "description": "Complete shopping experience with wishlist and order management."
         }
       ],
       "links": [
         {
-          "text": "Live Platform",
-          "url": "https://studywebsite-platform.com"
+          "text": "Live Demo",
+          "url": "https://booksville.tech"
         },
         {
-          "text": "GitHub Repository",
-          "url": "https://github.com/username/studywebsite"
+          "text": "Source Code",
+          "url": "https://github.com/on-bot/BooksVilleFrontend"
         }
       ],
       "achievements": [
-        "Built searchable resource discovery across multiple faculties",
-        "Delivered collaborative features for active student study groups",
-        "Improved content navigation with structured subject organization"
+        "Successfully implemented responsive design across device sizes.",
+        "Integrated real-time social features.",
+        "Implemented comprehensive e-commerce functionality."
       ],
       "gallery": [
         {
-          "src": "/images/studywebsite-dashboard.png",
-          "alt": "StudyWebsite dashboard"
+          "src": "https://www.ayushpaudel.com.np/assets/1desktop-C8UiBFwo.png",
+          "alt": "Desktop landing page"
         },
         {
-          "src": "/images/studywebsite-subjects.png",
-          "alt": "StudyWebsite subjects"
+          "src": "https://www.ayushpaudel.com.np/assets/2desktop-Dy6uXP8f.png",
+          "alt": "Desktop home page"
         },
         {
-          "src": "/images/studywebsite-collaboration.png",
-          "alt": "StudyWebsite collaboration"
+          "src": "https://www.ayushpaudel.com.np/assets/3desktop-xojDYBwV.png",
+          "alt": "Desktop book shop"
+        },
+        {
+          "src": "https://www.ayushpaudel.com.np/assets/4desktop-DEUsbj-i.png",
+          "alt": "Desktop social page"
+        },
+        {
+          "src": "https://www.ayushpaudel.com.np/assets/1mobile-D715ZJw8.png",
+          "alt": "Mobile landing page"
         }
       ],
       "nextProject": {
