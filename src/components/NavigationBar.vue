@@ -299,8 +299,8 @@ export default {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 1px solid #d9d2c9;
-    background: #f6f0e9;
+    border: 1px solid #d7e2f0;
+    background: #ffffff;
     color: #4e4e4e;
     display: inline-flex;
     align-items: center;
@@ -355,7 +355,7 @@ export default {
 
   .nav-link.router-link-exact-active,
   .nav-link.active {
-    background: #edf1f9;
+    background: #f2f7ff;
   }
 }
 </style>

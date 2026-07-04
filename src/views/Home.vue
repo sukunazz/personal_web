@@ -121,7 +121,7 @@ export default {
   height: 420px;
   right: -120px;
   top: 80px;
-  background: radial-gradient(circle, rgba(174, 218, 221, 0.55) 0%, rgba(174, 218, 221, 0) 70%);
+  background: radial-gradient(circle, rgba(194, 216, 241, 0.35) 0%, rgba(194, 216, 241, 0) 72%);
 }
 
 .hero-card::after {
@@ -129,7 +129,7 @@ export default {
   height: 320px;
   left: -140px;
   bottom: -60px;
-  background: radial-gradient(circle, rgba(219, 153, 108, 0.25) 0%, rgba(219, 153, 108, 0) 72%);
+  background: radial-gradient(circle, rgba(233, 170, 130, 0.18) 0%, rgba(233, 170, 130, 0) 72%);
 }
 
 .hero-shell {
@@ -229,9 +229,9 @@ export default {
 .hero-highlights span {
   padding: 7px 12px;
   border-radius: 999px;
-  border: 1px solid #d8d0c5;
-  background: #f6f0e9;
-  color: #666;
+  border: 1px solid #d7e2f0;
+  background: #ffffff;
+  color: #5f6f85;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.3px;

@@ -46,34 +46,34 @@ export default {
 <style scoped>
 .site-footer {
   padding: 12px 0 28px;
-  background: linear-gradient(180deg, #f8ede3 0%, #dfd3c3 100%);
-  border-top: 1px solid #d0b8a8;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+  border-top: 1px solid #dbe6f4;
 }
 
 .footer-content {
   text-align: center;
-  color: #6f6468;
+  color: #667086;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
 }
 
 .footer-content h3 {
   font-size: clamp(1.7rem, 2.6vw, 2.1rem);
   margin-bottom: 8px;
-  color: #85586f;
+  color: #5a6a85;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   font-weight: 700;
 }
 
 .footer-location {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  color: #7d7075;
+  color: #707a8d;
   margin-bottom: 10px;
 }
 
 .footer-email {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 700;
-  color: #85586f;
+  color: #5a6a85;
   text-decoration: none;
 }
 
@@ -86,12 +86,12 @@ export default {
 
 .footer-socials a {
   font-size: clamp(1.4rem, 1.8vw, 1.7rem);
-  color: #8d7d80;
+  color: #79859c;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-socials a:hover {
-  color: #c5705d;
+  color: #8abae5;
   transform: translateY(-2px);
 }
 
