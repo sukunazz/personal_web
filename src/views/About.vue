@@ -60,21 +60,24 @@
 
       <section class="about-tools-block">
         <h2 class="section-title">Tools I Use</h2>
-        <div class="tools-list">
-          <span>Vue.js</span>
-          <span>React</span>
-          <span>TailwindCSS</span>
-          <span>Pinia</span>
-          <span>NestJS</span>
-          <span>Node.js</span>
-          <span>Express</span>
-          <span>PostgreSQL</span>
-          <span>MongoDB</span>
-          <span>Redis</span>
-          <span>Docker</span>
-          <span>Git</span>
-          <span>Vercel</span>
-          <span>Axios</span>
+        <div class="tools-grid">
+          <div class="tool-item"><img src="/images/vue.png" alt="Vue" /><span>Vue.js</span></div>
+          <div class="tool-item"><img src="/images/250px-React_Logo_SVG.svg.png" alt="React" /><span>React</span></div>
+          <div class="tool-item"><i class="fas fa-wind"></i><span>TailwindCSS</span></div>
+          <div class="tool-item"><i class="fas fa-layer-group"></i><span>Pinia</span></div>
+          <div class="tool-item"><img src="/images/lg-67786f2e073fb-NestJS.png" alt="NestJS" /><span>NestJS</span></div>
+          <div class="tool-item"><img src="/images/node.png" alt="Node.js" /><span>Node.js</span></div>
+          <div class="tool-item"><i class="fas fa-server"></i><span>Express</span></div>
+          <div class="tool-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+          <div class="tool-item"><img src="/images/mongodb.png" alt="MongoDB" /><span>MongoDB</span></div>
+          <div class="tool-item"><i class="fas fa-bolt"></i><span>Redis</span></div>
+          <div class="tool-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+          <div class="tool-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+          <div class="tool-item"><i class="fas fa-cloud"></i><span>Vercel</span></div>
+          <div class="tool-item"><i class="fas fa-plug"></i><span>Axios</span></div>
+          <div class="tool-item"><img src="/images/javascript.png" alt="JavaScript" /><span>JavaScript</span></div>
+          <div class="tool-item"><img src="/images/html.png" alt="HTML" /><span>HTML</span></div>
+          <div class="tool-item"><img src="/images/css.png" alt="CSS" /><span>CSS</span></div>
         </div>
       </section>
     </section>
@@ -202,22 +205,40 @@ export default {
 }
 
 .about-tools-block {
-  margin-top: 20px;
+  margin-top: 26px;
 }
 
-.tools-list {
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tool-item {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
-  margin-top: 6px;
-}
-
-.tools-list span {
   border: 1px solid #ddd6ce;
-  border-radius: 999px;
-  padding: 6px 12px;
+  border-radius: 12px;
+  padding: 10px 12px;
   background: #f8f6f2;
   color: #50545a;
+  min-height: 48px;
+}
+
+.tool-item img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.tool-item i {
+  font-size: 18px;
+  color: #5d6168;
+}
+
+.tool-item span {
   font-size: 14px;
   font-weight: 600;
 }
@@ -229,6 +250,10 @@ export default {
 
   .about-illustration {
     max-width: 520px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -255,6 +280,10 @@ export default {
     font-size: 15px;
     line-height: 1.75;
   }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 500px) {
@@ -268,6 +297,10 @@ export default {
 
   .section-title {
     font-size: 24px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

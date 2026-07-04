@@ -37,6 +37,7 @@ export default {
 
 <style scoped>
 .projects-page {
+  min-height: calc(100vh - 210px);
   padding-bottom: 20px;
 }
 
@@ -48,6 +49,7 @@ export default {
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
+  min-height: calc(100vh - 210px);
 }
 
 .skills-title {
@@ -137,6 +139,7 @@ export default {
 @media (max-width: 768px) {
   .projects-card {
     padding: 35px 25px;
+    min-height: calc(100vh - 180px);
   }
 
   .skills-title {

@@ -162,12 +162,9 @@ export default {
 }
 
 .contact-panel {
-  background: #f1efef;
-  border-radius: 12px;
-  padding: 32px;
   display: grid;
   grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
-  gap: 18px;
+  gap: 28px;
 }
 
 .contact-info {
@@ -176,15 +173,13 @@ export default {
 }
 
 .contact-item {
-  background: #f8f7f7;
-  border: 1px solid #e7e4e4;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 0 0 14px;
+  border-bottom: 1px solid #e2dfdf;
 }
 
 .contact-item h3 {
-  font-size: 17px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .contact-item a,
@@ -204,7 +199,7 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ffffff;
+  background: #f6f4f4;
   border: 1px solid #e2dddd;
   border-radius: 999px;
   padding: 6px 12px;
@@ -219,10 +214,7 @@ export default {
 }
 
 .contact-form {
-  background: #f8f7f7;
-  border: 1px solid #e7e4e4;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 0;
   display: grid;
   gap: 10px;
   align-content: start;
@@ -242,10 +234,11 @@ export default {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #ded9d9;
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 14px;
+  background: #ffffff;
 }
 
 .contact-form textarea {
@@ -305,7 +298,7 @@ export default {
   }
 
   .contact-panel {
-    padding: 20px;
+    gap: 22px;
   }
 }
 
