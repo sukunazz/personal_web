@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <header class="site-header">
     <div class="container header-frame">
       <router-link to="/" class="brand">
@@ -78,7 +78,7 @@ export default {
 
 <style scoped>
 .site-header {
-  padding-top: 20px;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -86,8 +86,6 @@ export default {
   min-height: 82px;
 
   background: #ffffff;
-
-  border-radius: 14px 14px 0 0;
 
   padding: 0 34px;
 
@@ -98,9 +96,7 @@ export default {
 
   column-gap: 26px;
 
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 12px 30px rgba(0, 0, 0, 0.05);
+  margin-top: -2px;
 }
 
 /* ---------------- Logo ---------------- */
@@ -224,8 +220,6 @@ export default {
 
     gap: 18px;
 
-    border-radius: 14px;
-
     padding: 22px;
   }
 
@@ -258,7 +252,7 @@ export default {
 
 @media (max-width: 768px) {
   .site-header {
-    padding-top: 12px;
+    padding-top: 0;
   }
 
   .header-frame {
@@ -271,7 +265,6 @@ export default {
     row-gap: 6px;
     column-gap: 12px;
     padding: 14px 14px 12px;
-    border-radius: 14px 14px 0 0;
   }
 
   .brand {

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main class="home-page">
     <section class="hero-card">
       <div class="container hero-shell">
@@ -92,13 +92,11 @@ export default {
 }
 
 .hero-card {
-  background: var(--color-surface);
+  background: #ffffff;
   border-radius: 0;
   margin-top: -2px;
   padding: 44px 0 50px;
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 18px 40px rgba(0, 0, 0, 0.05);
+  min-height: calc(100vh - 86px);
 }
 
 .hero-shell {
@@ -318,6 +316,7 @@ export default {
 @media (max-width: 768px) {
   .hero-card {
     padding: 35px 0;
+    min-height: calc(100vh - 92px);
   }
 
   .hero-shell {

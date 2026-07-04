@@ -140,7 +140,7 @@ p {
 }
 
 .container {
-  width: min(97vw, var(--site-max-width));
+  width: 100%;
   max-width: none;
   margin: 0 auto;
   padding: 0;
@@ -148,7 +148,7 @@ p {
 
 @media (max-width: 768px) {
   .container {
-    width: min(95vw, var(--site-max-width));
+    width: 100%;
   }
 }
 

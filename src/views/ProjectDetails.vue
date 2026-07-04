@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main class="project-page">
     <section class="container details-card" v-if="project">
       <router-link to="/projects" class="back-link">
@@ -206,12 +206,9 @@ export default {
 
 .details-card {
   background: #ffffff;
-  border-radius: 0 0 14px 14px;
+  border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 46px;
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 18px 40px rgba(0, 0, 0, 0.05);
   min-height: calc(100vh - 86px);
 }
 

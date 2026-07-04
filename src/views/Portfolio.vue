@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main class="projects-page">
     <section class="container projects-card">
       <h2 class="skills-title">My Works</h2>
@@ -46,12 +46,9 @@ export default {
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border-radius: 0 0 14px 14px;
+  border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 54px;
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 18px 40px rgba(0, 0, 0, 0.05);
   min-height: calc(100vh - 86px);
 }
 

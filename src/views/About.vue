@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main class="about-page">
     <section class="container about-card">
       <h2 class="skills-title">About Me</h2>
@@ -123,12 +123,9 @@ export default {
 
 .about-card {
   background: #ffffff;
-  border-radius: 0 0 14px 14px;
+  border-radius: 0;
   margin-top: -2px;
   padding: 40px 44px 46px;
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 18px 40px rgba(0, 0, 0, 0.05);
   min-height: calc(100vh - 86px);
 }
 
