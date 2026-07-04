@@ -196,7 +196,7 @@ export default {
 }
 
 .hero-title {
-  font-size: 72px;
+  font-size: 62px;
   line-height: 0.95;
   font-weight: 800;
   color: var(--color-heading);
@@ -204,7 +204,7 @@ export default {
 }
 
 .hero-role {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #6c9580;
@@ -331,7 +331,7 @@ export default {
   }
 
   .hero-title {
-    font-size: 88px;
+    font-size: 78px;
   }
 
   .hero-description {
@@ -371,7 +371,7 @@ export default {
   }
 
   .hero-title {
-    font-size: 96px;
+    font-size: 84px;
   }
 
   .hero-avatar {
@@ -390,7 +390,7 @@ export default {
   }
 
   .hero-title {
-    font-size: 60px;
+    font-size: 54px;
   }
 
   .hero-avatar {
@@ -455,7 +455,7 @@ export default {
   }
 
   .hero-title {
-    font-size: 52px;
+    font-size: 46px;
   }
 
   .hero-description {
@@ -480,7 +480,7 @@ export default {
 
 @media (max-width: 500px) {
   .hero-title {
-    font-size: 42px;
+    font-size: 38px;
   }
 
   .hero-role {

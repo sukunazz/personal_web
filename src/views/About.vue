@@ -131,7 +131,7 @@ export default {
 }
 
 .skills-title {
-  font-size: 58px;
+  font-size: 50px;
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
@@ -139,7 +139,7 @@ export default {
 }
 
 .skills-subtitle {
-  font-size: 40px;
+  font-size: 34px;
   line-height: 1;
   color: var(--color-heading);
   margin-bottom: 20px;
@@ -228,7 +228,7 @@ export default {
 }
 
 .section-title {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--color-heading);
   margin-bottom: 10px;
@@ -299,11 +299,11 @@ export default {
   }
 
   .skills-title {
-    font-size: 68px;
+    font-size: 58px;
   }
 
   .skills-subtitle {
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .about-top-layout {
@@ -321,7 +321,7 @@ export default {
   }
 
   .section-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .tools-cloud {

@@ -57,7 +57,7 @@ export default {
 }
 
 .footer-content h3 {
-  font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
   margin-bottom: 8px;
   color: var(--color-heading);
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;

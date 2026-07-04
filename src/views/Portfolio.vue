@@ -53,7 +53,7 @@ export default {
 }
 
 .skills-title {
-  font-size: 58px;
+  font-size: 50px;
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
@@ -61,7 +61,7 @@ export default {
 }
 
 .skills-subtitle {
-  font-size: 40px;
+  font-size: 34px;
   line-height: 1;
   color: var(--color-heading);
   margin-bottom: 20px;
@@ -134,7 +134,7 @@ export default {
 
 .project-card h3 {
   padding: 16px 16px 18px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.25;
   color: #363a40;
 }
@@ -148,11 +148,11 @@ export default {
   }
 
   .skills-title {
-    font-size: 68px;
+    font-size: 58px;
   }
 
   .skills-subtitle {
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .projects-panel {
@@ -164,7 +164,7 @@ export default {
   }
 
   .project-card h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 

@@ -317,7 +317,7 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 28px;
   color: var(--color-heading);
   margin-bottom: 10px;
 }
@@ -329,7 +329,7 @@ h2 {
 }
 
 .list-block h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--color-heading);
   margin-bottom: 6px;
 }
