@@ -303,6 +303,36 @@ export default {
   color: #bf3f3f;
 }
 
+@media (min-width: 1600px) {
+  .contact-card {
+    padding-top: 46px;
+    padding-bottom: 58px;
+    padding-left: max(44px, calc((100vw - 1680px) / 2 + 44px));
+    padding-right: max(44px, calc((100vw - 1680px) / 2 + 44px));
+  }
+
+  .skills-title {
+    font-size: 68px;
+  }
+
+  .skills-subtitle {
+    font-size: 46px;
+  }
+
+  .contact-panel {
+    grid-template-columns: minmax(420px, 0.86fr) minmax(640px, 1.14fr);
+    gap: 42px;
+  }
+
+  .contact-intro {
+    max-width: 1080px;
+  }
+
+  .contact-intro p {
+    font-size: 17px;
+  }
+}
+
 @media (max-width: 1200px) {
   .contact-panel {
     grid-template-columns: 1fr;

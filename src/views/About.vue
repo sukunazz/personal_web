@@ -290,6 +290,45 @@ export default {
   white-space: nowrap;
 }
 
+@media (min-width: 1600px) {
+  .about-card {
+    padding-top: 46px;
+    padding-bottom: 56px;
+    padding-left: max(44px, calc((100vw - 1680px) / 2 + 44px));
+    padding-right: max(44px, calc((100vw - 1680px) / 2 + 44px));
+  }
+
+  .skills-title {
+    font-size: 68px;
+  }
+
+  .skills-subtitle {
+    font-size: 46px;
+  }
+
+  .about-top-layout {
+    grid-template-columns: minmax(520px, 0.95fr) minmax(560px, 1.05fr);
+    gap: 40px;
+  }
+
+  .readme-text {
+    font-size: 18px;
+  }
+
+  .about-summary li,
+  .fun-fact {
+    font-size: 19px;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .tools-cloud {
+    gap: 20px 32px;
+  }
+}
+
 @media (max-width: 1200px) {
   .about-top-layout {
     grid-template-columns: 1fr;

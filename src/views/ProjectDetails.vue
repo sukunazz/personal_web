@@ -414,6 +414,29 @@ h2 {
   color: var(--color-brand-700);
 }
 
+@media (min-width: 1600px) {
+  .details-card {
+    padding-top: 46px;
+    padding-bottom: 60px;
+    padding-left: max(44px, calc((100vw - 1680px) / 2 + 44px));
+    padding-right: max(44px, calc((100vw - 1680px) / 2 + 44px));
+  }
+
+  .intro,
+  .meta-lines p,
+  .list-block p,
+  .inline-list,
+  .achievement-list li {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .gallery-strip {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 14px;
+  }
+}
+
 @media (max-width: 980px) {
   .gallery-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));

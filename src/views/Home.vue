@@ -313,6 +313,76 @@ export default {
   }
 }
 
+@media (min-width: 1600px) {
+  .hero-card {
+    padding: 58px 0 62px;
+  }
+
+  .hero-shell {
+    max-width: none;
+    padding-left: max(60px, calc((100vw - 1720px) / 2 + 60px));
+    padding-right: max(60px, calc((100vw - 1720px) / 2 + 60px));
+  }
+
+  .hero-layout {
+    grid-template-columns: 88px minmax(470px, 560px) minmax(460px, 620px);
+    column-gap: 34px;
+    min-height: 760px;
+  }
+
+  .hero-title {
+    font-size: 88px;
+  }
+
+  .hero-description {
+    width: min(460px, 100%);
+    font-size: 17px;
+  }
+
+  .hero-highlights span {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .hero-avatar {
+    width: 540px;
+  }
+
+  .minion-frame {
+    width: min(390px, 86%);
+  }
+
+  .talk-button {
+    width: 104px;
+    height: 104px;
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero-shell {
+    padding-left: max(72px, calc((100vw - 1860px) / 2 + 72px));
+    padding-right: max(72px, calc((100vw - 1860px) / 2 + 72px));
+  }
+
+  .hero-layout {
+    grid-template-columns: 92px minmax(500px, 600px) minmax(500px, 700px);
+    min-height: 820px;
+  }
+
+  .hero-title {
+    font-size: 96px;
+  }
+
+  .hero-avatar {
+    width: 600px;
+  }
+
+  .minion-frame {
+    width: min(440px, 86%);
+  }
+}
+
 @media (max-width: 1200px) {
   .hero-layout {
     grid-template-columns: 60px minmax(340px, 1fr) minmax(300px, 390px);

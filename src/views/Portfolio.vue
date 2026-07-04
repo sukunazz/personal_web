@@ -136,6 +136,34 @@ export default {
   color: #363a40;
 }
 
+@media (min-width: 1600px) {
+  .projects-card {
+    padding-top: 46px;
+    padding-bottom: 62px;
+    padding-left: max(44px, calc((100vw - 1680px) / 2 + 44px));
+    padding-right: max(44px, calc((100vw - 1680px) / 2 + 44px));
+  }
+
+  .skills-title {
+    font-size: 68px;
+  }
+
+  .skills-subtitle {
+    font-size: 46px;
+  }
+
+  .projects-panel {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 420px));
+    justify-content: center;
+    gap: 24px;
+    padding-top: clamp(44px, 10vh, 120px);
+  }
+
+  .project-card h3 {
+    font-size: 26px;
+  }
+}
+
 @media (max-width: 1200px) {
   .projects-panel {
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));

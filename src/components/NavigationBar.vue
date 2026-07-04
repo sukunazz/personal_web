@@ -211,6 +211,31 @@ export default {
 
 /* ---------------- Responsive ---------------- */
 
+@media (min-width: 1600px) {
+  .header-frame {
+    min-height: 92px;
+    column-gap: 34px;
+    padding-left: max(34px, calc((100vw - 1680px) / 2 + 34px));
+    padding-right: max(34px, calc((100vw - 1680px) / 2 + 34px));
+  }
+
+  .brand {
+    font-size: 32px;
+  }
+
+  .email-link {
+    font-size: 15px;
+  }
+
+  .nav-links {
+    gap: 34px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 950px) {
   .header-frame {
     display: flex;
