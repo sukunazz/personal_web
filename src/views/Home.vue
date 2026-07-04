@@ -209,7 +209,7 @@ export default {
 }
 
 .hero-avatar {
-  width: 430px;
+  width: 458px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
   position: relative;
@@ -230,7 +230,7 @@ export default {
 
 .minion-frame {
   position: relative;
-  width: min(300px, 80%);
+  width: min(324px, 82%);
   height: auto;
   object-fit: contain;
   pointer-events: none;
@@ -262,7 +262,7 @@ export default {
   }
 
   .hero-avatar {
-    width: 360px;
+    width: 385px;
   }
 
   .minion-sequence {
@@ -302,7 +302,7 @@ export default {
   }
 
   .hero-avatar {
-    width: 330px;
+    width: 352px;
   }
 }
 
@@ -340,11 +340,11 @@ export default {
   }
 
   .hero-avatar {
-    width: 260px;
+    width: 278px;
   }
 
   .minion-frame {
-    width: min(235px, 84%);
+    width: min(252px, 86%);
     margin-left: 10%;
   }
 
@@ -354,6 +354,21 @@ export default {
 
   .hero-socials a {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-avatar {
+    width: 248px;
+  }
+
+  .minion-frame {
+    width: min(228px, 86%);
+    margin-left: 8%;
+  }
+
+  .minion-sequence {
+    transform: translateY(-2px);
   }
 }
 </style>

@@ -246,9 +246,10 @@ export default {
 .tools-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px 32px;
+  width: 100%;
+  gap: 18px 28px;
   margin-top: 12px;
-  max-width: 1040px;
+  max-width: none;
 }
 
 .tool-token {
@@ -256,21 +257,23 @@ export default {
   align-items: center;
   gap: 11px;
   color: #50545a;
-  min-width: 150px;
+  flex: 1 1 170px;
+  min-width: 170px;
+  max-width: 230px;
   padding: 2px 0;
 }
 
 .tool-token img {
-  width: 23px;
-  height: 23px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .tool-token i {
-  font-size: 22px;
+  font-size: 25px;
   color: #5d6168;
-  width: 23px;
+  width: 26px;
   text-align: center;
   flex-shrink: 0;
 }
@@ -321,9 +324,13 @@ export default {
     gap: 14px 20px;
   }
 
+  .tool-token {
+    min-width: 160px;
+  }
+
   .tool-token span {
     font-size: 14px;
-    white-space: nowrap;
+    white-space: normal;
   }
 }
 
@@ -345,7 +352,8 @@ export default {
   }
 
   .tool-token {
-    min-width: 130px;
+    min-width: 140px;
+    flex-basis: 140px;
   }
 
   .tool-token span {
