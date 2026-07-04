@@ -122,7 +122,7 @@ export default {
 }
 
 .logo-black {
-  color: #333;
+  color: #111111;
 }
 
 .brand:hover {
@@ -138,7 +138,7 @@ export default {
 
   gap: 10px;
 
-  color: #4f4f4f;
+  color: #111111;
 
   font-size: 14px;
 
@@ -180,7 +180,7 @@ export default {
 
   text-decoration: none;
 
-  color: #4b4b4b;
+  color: #111111;
 
   font-size: 15px;
 
@@ -301,7 +301,7 @@ export default {
     border-radius: 50%;
     border: 1px solid #d7e2f0;
     background: #ffffff;
-    color: #4e4e4e;
+    color: #111111;
     display: inline-flex;
     align-items: center;
     justify-content: center;

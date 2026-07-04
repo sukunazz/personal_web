@@ -189,7 +189,7 @@ export default {
 .contact-intro p {
   font-size: 16px;
   line-height: 1.8;
-  color: #5d6168;
+  color: #111111;
 }
 
 .contact-info {
@@ -210,7 +210,7 @@ export default {
 .contact-item a,
 .contact-item p {
   font-size: 15px;
-  color: #606060;
+  color: #111111;
   text-decoration: none;
 }
 
@@ -230,7 +230,7 @@ export default {
   padding: 6px 12px;
   font-size: 14px;
   font-weight: 600;
-  color: #4e4e4e;
+  color: #111111;
 }
 
 .contact-links i {
@@ -252,7 +252,7 @@ export default {
 
 .contact-form label {
   font-size: 13px;
-  color: #666;
+  color: #111111;
   font-weight: 600;
 }
 

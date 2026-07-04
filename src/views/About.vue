@@ -196,20 +196,20 @@ export default {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  color: #50545a;
+  color: #111111;
   font-size: 18px;
   line-height: 1.55;
 }
 
 .about-summary i {
-  color: #62666d;
+  color: #111111;
   margin-top: 5px;
   width: 18px;
   text-align: center;
 }
 
 .fun-fact {
-  color: #50545a;
+  color: #111111;
   font-size: 18px;
   line-height: 1.7;
   padding-left: 30px;
@@ -237,7 +237,7 @@ export default {
 .readme-text {
   font-size: 17px;
   line-height: 1.85;
-  color: #666;
+  color: #111111;
   max-width: none;
   margin-bottom: 12px;
 }
@@ -261,7 +261,7 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  color: #50545a;
+  color: #111111;
   flex: 1 1 170px;
   min-width: 170px;
   max-width: 230px;
@@ -277,7 +277,7 @@ export default {
 
 .tool-token i {
   font-size: 25px;
-  color: #5d6168;
+  color: #111111;
   width: 26px;
   text-align: center;
   flex-shrink: 0;

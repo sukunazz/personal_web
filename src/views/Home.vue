@@ -215,7 +215,7 @@ export default {
   width: 330px;
   font-size: 15px;
   line-height: 1.9;
-  color: #666;
+  color: #111111;
   margin-bottom: 18px;
 }
 
@@ -231,7 +231,7 @@ export default {
   border-radius: 999px;
   border: 1px solid #d7e2f0;
   background: #ffffff;
-  color: #5f6f85;
+  color: #111111;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.3px;

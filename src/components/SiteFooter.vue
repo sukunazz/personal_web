@@ -52,7 +52,7 @@ export default {
 
 .footer-content {
   text-align: center;
-  color: #667086;
+  color: #111111;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
 }
 
@@ -66,14 +66,14 @@ export default {
 
 .footer-location {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  color: #707a8d;
+  color: #111111;
   margin-bottom: 10px;
 }
 
 .footer-email {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 700;
-  color: #5a6a85;
+  color: #111111;
   text-decoration: none;
 }
 
@@ -86,7 +86,7 @@ export default {
 
 .footer-socials a {
   font-size: clamp(1.4rem, 1.8vw, 1.7rem);
-  color: #79859c;
+  color: #111111;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 

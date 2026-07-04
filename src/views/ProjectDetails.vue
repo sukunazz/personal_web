@@ -217,7 +217,7 @@ export default {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: #4f545c;
+  color: #111111;
   text-transform: lowercase;
   font-size: 15px;
   font-weight: 600;
@@ -232,7 +232,7 @@ export default {
   align-items: center;
   border: 1px solid #d1dde8;
   background: #edf4fb;
-  color: #4f545c;
+  color: #111111;
   transition: 0.2s ease;
 }
 
@@ -259,7 +259,7 @@ h1 {
 .intro {
   font-size: 16px;
   line-height: 1.8;
-  color: #595d63;
+  color: #111111;
   margin-bottom: 18px;
 }
 
@@ -306,7 +306,7 @@ h1 {
 .meta-lines p {
   font-size: 16px;
   line-height: 1.75;
-  color: #595d63;
+  color: #111111;
   margin-bottom: 4px;
 }
 
@@ -336,12 +336,12 @@ h2 {
 
 .list-block p {
   font-size: 16px;
-  color: #595d63;
+  color: #111111;
   line-height: 1.8;
 }
 
 .inline-list {
-  color: #595d63;
+  color: #111111;
   font-size: 16px;
   line-height: 1.8;
 }
@@ -356,7 +356,7 @@ h2 {
   border: 0;
   border-bottom: 1px solid transparent;
   background: transparent;
-  color: #4b4f56;
+  color: #111111;
   font-size: 15px;
   font-weight: 600;
   padding: 0 0 2px;
@@ -374,7 +374,7 @@ h2 {
 }
 
 .achievement-list li {
-  color: #595d63;
+  color: #111111;
   line-height: 1.75;
   position: relative;
   padding-left: 18px;
@@ -402,7 +402,7 @@ h2 {
   border-radius: 999px;
   border: 1px solid #d5e2ec;
   background: #edf5fc;
-  color: #4b4f56;
+  color: #111111;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 16px;
