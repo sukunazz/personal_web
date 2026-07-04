@@ -225,7 +225,7 @@ export default {
   user-select: none;
   background: transparent;
   box-shadow: none;
-  transform: translate(-38px, -12px);
+  transform: translate(-38px, -16px);
 }
 
 .minion-frame {
@@ -266,7 +266,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translate(-20px, -10px);
+    transform: translate(-20px, -13px);
   }
 }
 
@@ -298,7 +298,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 
   .hero-avatar {
@@ -349,7 +349,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 
   .hero-socials a {
@@ -368,7 +368,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
   }
 }
 </style>

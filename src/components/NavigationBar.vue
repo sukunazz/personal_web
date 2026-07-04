@@ -224,4 +224,42 @@ export default {
     font-size: 14px;
   }
 }
+
+@media (max-width: 768px) {
+  .header-frame {
+    padding: 18px 18px 14px;
+    gap: 12px;
+  }
+
+  .email-link {
+    font-size: 12px;
+  }
+
+  .nav-links {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    background: #ffffff;
+    border-top: 1px solid #e7e1d6;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+    justify-content: space-around;
+    gap: 0;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .nav-link {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    min-width: 54px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  .nav-link i {
+    font-size: 15px;
+  }
+}
 </style>
