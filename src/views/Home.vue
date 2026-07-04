@@ -59,36 +59,28 @@
 
         <section class="hero-image">
           <div
-            class="hero-avatar minion-scene"
+            class="hero-avatar minion-sequence"
             role="img"
-            aria-label="Minion style character walking in, looking confused, then waving"
+            aria-label="Minion character walks in, looks confused, then waves"
           >
-            <div class="minion-floor-shadow"></div>
-            <div class="minion-character">
-              <div class="minion-body">
-                <span class="minion-goggle-strap"></span>
-                <div class="minion-goggle">
-                  <span class="minion-eye minion-eye-left">
-                    <span class="minion-pupil"></span>
-                  </span>
-                  <span class="minion-eye minion-eye-right">
-                    <span class="minion-pupil"></span>
-                  </span>
-                </div>
-                <span class="minion-mouth"></span>
-                <div class="minion-overall">
-                  <span class="minion-pocket"></span>
-                </div>
-              </div>
-              <div class="minion-arm minion-arm-left"></div>
-              <div class="minion-arm minion-arm-right"></div>
-              <div class="minion-leg minion-leg-left">
-                <span class="minion-shoe"></span>
-              </div>
-              <div class="minion-leg minion-leg-right">
-                <span class="minion-shoe"></span>
-              </div>
-            </div>
+            <img
+              class="minion-frame minion-frame-walk"
+              src="/images/minion-walk.webp"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="minion-frame minion-frame-confused"
+              src="/images/minion-confused.webp"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="minion-frame minion-frame-wave"
+              src="/images/minion-wave.webp"
+              alt=""
+              aria-hidden="true"
+            />
           </div>
         </section>
       </div>
@@ -463,7 +455,7 @@ export default {
   position: relative;
 }
 
-.minion-scene {
+.minion-sequence {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -473,424 +465,123 @@ export default {
   user-select: none;
   background: transparent;
   box-shadow: none;
-  transform: translateX(-36px);
+  transform: translateX(-38px);
 }
 
-.minion-floor-shadow {
+.minion-frame {
   position: absolute;
-  left: 45%;
-  bottom: 12%;
-  width: 34%;
-  height: 9%;
-  border-radius: 999px;
-  background: rgba(27, 35, 46, 0.2);
-  filter: blur(5px);
-  animation: minion-shadow-track 8s ease-in-out infinite;
+  bottom: 8%;
+  left: 16%;
+  width: min(260px, 72%);
+  height: auto;
+  opacity: 0;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 10px 12px rgba(21, 26, 34, 0.22));
 }
 
-.minion-character {
-  position: relative;
-  width: 64%;
-  max-width: 250px;
-  aspect-ratio: 4 / 5;
-  transform-origin: 50% 100%;
-  animation: minion-entry 8s ease-in-out infinite;
+.minion-frame-walk {
+  animation: minion-walk-phase 9s linear infinite;
 }
 
-.minion-body {
-  position: absolute;
-  width: 62%;
-  height: 70%;
-  left: 50%;
-  top: 8%;
-  transform: translateX(-50%);
-  border-radius: 42% 42% 36% 36%;
-  background: linear-gradient(180deg, #f8dc43 0%, #e8bb20 100%);
-  box-shadow: inset 0 -8px 0 rgba(189, 145, 22, 0.42);
-  overflow: hidden;
-  animation: minion-body-mood 8s ease-in-out infinite;
+.minion-frame-confused {
+  animation: minion-confused-phase 9s linear infinite;
 }
 
-.minion-goggle-strap {
-  position: absolute;
-  width: 116%;
-  height: 10%;
-  left: -8%;
-  top: 24%;
-  background: #3b434d;
+.minion-frame-wave {
+  animation: minion-wave-phase 9s linear infinite;
 }
 
-.minion-goggle {
-  position: absolute;
-  width: 64%;
-  height: 25%;
-  left: 50%;
-  top: 13%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2;
-}
-
-.minion-eye {
-  position: absolute;
-  width: 42%;
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  border: 7px solid #bfc6ce;
-  background: #ffffff;
-  box-shadow: inset 0 0 0 3px #dfe3e7;
-}
-
-.minion-eye-left {
-  left: 0;
-}
-
-.minion-eye-right {
-  right: 0;
-}
-
-.minion-pupil {
-  position: absolute;
-  width: 35%;
-  aspect-ratio: 1 / 1;
-  left: 50%;
-  top: 50%;
-  border-radius: 999px;
-  background: #5a3a2d;
-  transform: translate(-50%, -50%);
-  animation: minion-look-around 8s ease-in-out infinite;
-}
-
-.minion-pupil::after {
-  content: "";
-  position: absolute;
-  width: 44%;
-  aspect-ratio: 1 / 1;
-  left: 50%;
-  top: 50%;
-  border-radius: 999px;
-  background: #1d1d1d;
-  transform: translate(-50%, -50%);
-}
-
-.minion-mouth {
-  position: absolute;
-  width: 32%;
-  height: 11%;
-  left: 50%;
-  top: 52%;
-  transform: translateX(-50%);
-  border-bottom: 4px solid #5d3c2d;
-  border-radius: 0 0 16px 16px;
-  animation: minion-mouth 8s ease-in-out infinite;
-}
-
-.minion-overall {
-  position: absolute;
-  width: 100%;
-  height: 43%;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  border-radius: 0 0 38% 38%;
-  background: #3f74c6;
-  overflow: hidden;
-}
-
-.minion-overall::before,
-.minion-overall::after {
-  content: "";
-  position: absolute;
-  width: 21%;
-  height: 46%;
-  top: -32%;
-  background: #4a82d6;
-}
-
-.minion-overall::before {
-  left: 20%;
-  transform: rotate(-18deg);
-}
-
-.minion-overall::after {
-  right: 20%;
-  transform: rotate(18deg);
-}
-
-.minion-pocket {
-  position: absolute;
-  width: 30%;
-  height: 44%;
-  left: 50%;
-  top: 30%;
-  transform: translateX(-50%);
-  border-radius: 8px 8px 14px 14px;
-  border: 2px solid rgba(28, 55, 93, 0.52);
-}
-
-.minion-arm {
-  position: absolute;
-  top: 41%;
-  width: 14%;
-  height: 31%;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #f6d741 0%, #eabc1c 100%);
-  z-index: 3;
-}
-
-.minion-arm::after {
-  content: "";
-  position: absolute;
-  width: 68%;
-  height: 24%;
-  left: 50%;
-  bottom: -7%;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: #1e2732;
-}
-
-.minion-arm-left {
-  left: 11%;
-  transform-origin: 85% 12%;
-  animation: minion-left-arm 8s linear infinite;
-}
-
-.minion-arm-right {
-  right: 11%;
-  transform-origin: 15% 12%;
-  animation: minion-right-arm 8s linear infinite;
-}
-
-.minion-leg {
-  position: absolute;
-  width: 11%;
-  height: 22%;
-  bottom: 2%;
-  border-radius: 8px;
-  background: #3f74c6;
-  transform-origin: 50% 8%;
-}
-
-.minion-leg-left {
-  left: 39%;
-  animation: minion-left-leg 8s linear infinite;
-}
-
-.minion-leg-right {
-  right: 39%;
-  animation: minion-right-leg 8s linear infinite;
-}
-
-.minion-shoe {
-  position: absolute;
-  width: 172%;
-  height: 42%;
-  left: 50%;
-  bottom: -17%;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: #212a34;
-}
-
-@keyframes minion-entry {
+@keyframes minion-walk-phase {
   0% {
-    transform: translateX(185%) translateY(0) rotateY(-18deg);
+    opacity: 1;
+    transform: translateX(175%) translateY(0) scale(0.95);
   }
   8% {
-    transform: translateX(145%) translateY(-3px) rotateY(-15deg);
+    opacity: 1;
+    transform: translateX(140%) translateY(-5px) scale(0.96);
   }
   16% {
-    transform: translateX(103%) translateY(0) rotateY(-12deg);
+    opacity: 1;
+    transform: translateX(102%) translateY(0) scale(0.98);
   }
   24% {
-    transform: translateX(62%) translateY(-3px) rotateY(-8deg);
+    opacity: 1;
+    transform: translateX(62%) translateY(-5px) scale(1);
   }
   32% {
-    transform: translateX(20%) translateY(0) rotateY(-5deg);
+    opacity: 1;
+    transform: translateX(22%) translateY(0) scale(1);
   }
   38% {
-    transform: translateX(0) translateY(0) rotateY(0deg);
+    opacity: 0;
+    transform: translateX(0) translateY(0) scale(1);
   }
-  46% {
-    transform: translateX(0) translateY(0) rotate(3deg);
-  }
-  52% {
-    transform: translateX(0) translateY(0) rotate(-4deg);
-  }
-  58% {
-    transform: translateX(0) translateY(0) rotate(2deg);
-  }
-  64%,
   100% {
-    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0;
+    transform: translateX(0) translateY(0) scale(1);
   }
 }
 
-@keyframes minion-body-mood {
+@keyframes minion-confused-phase {
   0%,
-  38%,
-  64%,
+  37% {
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
+  }
+  41% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  47% {
+    opacity: 1;
+    transform: translateX(0) rotate(8deg);
+  }
+  53% {
+    opacity: 1;
+    transform: translateX(0) rotate(-9deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0) rotate(4deg);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  70%,
   100% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  45% {
-    transform: translateX(-50%) rotate(8deg);
-  }
-  51% {
-    transform: translateX(-50%) rotate(-10deg);
-  }
-  57% {
-    transform: translateX(-50%) rotate(7deg);
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
   }
 }
 
-@keyframes minion-look-around {
+@keyframes minion-wave-phase {
   0%,
-  38%,
-  64%,
-  100% {
-    transform: translate(-50%, -50%);
+  66% {
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
   }
-  44% {
-    transform: translate(-32%, -56%);
+  70% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
   }
-  50% {
-    transform: translate(-68%, -45%);
-  }
-  56% {
-    transform: translate(-42%, -48%);
-  }
-}
-
-@keyframes minion-mouth {
-  0%,
-  38%,
-  64%,
-  100% {
-    transform: translateX(-50%) scaleX(1);
-  }
-  46% {
-    transform: translateX(-50%) scaleX(0.65);
-  }
-  54% {
-    transform: translateX(-50%) scaleX(1.15);
-  }
-}
-
-@keyframes minion-left-arm {
-  0% {
-    transform: rotate(-16deg);
-  }
-  8% {
-    transform: rotate(8deg);
-  }
-  16% {
-    transform: rotate(-14deg);
-  }
-  24% {
-    transform: rotate(7deg);
-  }
-  32% {
-    transform: rotate(-10deg);
-  }
-  38%,
-  100% {
-    transform: rotate(-8deg);
-  }
-}
-
-@keyframes minion-right-arm {
-  0%,
-  62% {
-    transform: rotate(16deg);
-  }
-  68% {
-    transform: rotate(-52deg);
-  }
-  74% {
-    transform: rotate(-20deg);
-  }
-  80% {
-    transform: rotate(-56deg);
+  78% {
+    opacity: 1;
+    transform: translateX(0) rotate(-2deg);
   }
   86% {
-    transform: rotate(-22deg);
+    opacity: 1;
+    transform: translateX(0) rotate(2deg);
   }
-  92% {
-    transform: rotate(-52deg);
+  96% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
   }
   100% {
-    transform: rotate(16deg);
-  }
-}
-
-@keyframes minion-left-leg {
-  0% {
-    transform: rotate(16deg);
-  }
-  8% {
-    transform: rotate(-12deg);
-  }
-  16% {
-    transform: rotate(16deg);
-  }
-  24% {
-    transform: rotate(-10deg);
-  }
-  32% {
-    transform: rotate(8deg);
-  }
-  38%,
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes minion-right-leg {
-  0% {
-    transform: rotate(-16deg);
-  }
-  8% {
-    transform: rotate(12deg);
-  }
-  16% {
-    transform: rotate(-16deg);
-  }
-  24% {
-    transform: rotate(10deg);
-  }
-  32% {
-    transform: rotate(-8deg);
-  }
-  38%,
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes minion-shadow-track {
-  0% {
-    transform: translateX(145%) scale(0.72);
     opacity: 0;
-  }
-  24% {
-    opacity: 0.16;
-  }
-  38% {
-    transform: translateX(0) scale(1);
-    opacity: 0.24;
-  }
-  52% {
-    transform: translateX(0) scale(0.9);
-    opacity: 0.18;
-  }
-  64%,
-  100% {
-    transform: translateX(0) scale(1);
-    opacity: 0.22;
+    transform: translateX(0) rotate(0deg);
   }
 }
 
@@ -1269,7 +960,7 @@ export default {
     width: 360px;
   }
 
-  .minion-scene {
+  .minion-sequence {
     transform: translateX(-20px);
   }
 
@@ -1317,7 +1008,7 @@ export default {
     margin-top: 20px;
   }
 
-  .minion-scene {
+  .minion-sequence {
     transform: translateX(0);
   }
 
@@ -1416,8 +1107,9 @@ export default {
     width: 260px;
   }
 
-  .minion-character {
-    width: 70%;
+  .minion-frame {
+    width: min(210px, 78%);
+    left: 10%;
   }
 
   .section-title {
