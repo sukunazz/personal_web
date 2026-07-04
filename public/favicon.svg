@@ -1,24 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#f8f3eb"/>
-      <stop offset="1" stop-color="#efe6d7"/>
-    </linearGradient>
-    <linearGradient id="mark" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#ef6b61"/>
-      <stop offset="1" stop-color="#e5524c"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <path d="M16 42L26 22h6L22 42z" fill="url(#mark)"/>
-  <path d="M48 42L38 22h-6l10 20z" fill="url(#mark)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <path d="M6 32L17 22V27L12 32L17 37V42L6 32Z" fill="#ef6b61" />
   <text
-    x="32"
-    y="40"
-    text-anchor="middle"
-    font-family="IBM Plex Sans, Segoe UI, sans-serif"
-    font-size="21"
-    font-weight="700"
+    x="22"
+    y="42"
+    font-family="IBM Plex Sans, Segoe UI, Arial, sans-serif"
+    font-size="28"
+    font-weight="800"
+    fill="#2f3135"
+  >
+    S
+  </text>
+  <path d="M35 47L40 17H46L41 47H35Z" fill="#ef6b61" />
+  <text
+    x="46"
+    y="42"
+    font-family="IBM Plex Sans, Segoe UI, Arial, sans-serif"
+    font-size="28"
+    font-weight="800"
     fill="#2f3135"
   >
     S

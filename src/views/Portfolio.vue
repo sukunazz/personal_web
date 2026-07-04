@@ -43,6 +43,8 @@ export default {
 }
 
 .projects-card {
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border-radius: 0 0 14px 14px;
   margin-top: -2px;
@@ -94,7 +96,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 20px;
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: clamp(34px, 8vh, 88px);
   align-items: stretch;
 }
 
@@ -159,6 +162,8 @@ export default {
   .projects-panel {
     grid-template-columns: 1fr;
     gap: 14px;
+    margin-top: 0;
+    padding-top: 30px;
   }
 }
 

@@ -1,7 +1,12 @@
 <template>
   <main class="project-page">
     <section class="container details-card" v-if="project">
-      <router-link to="/projects" class="back-link">back to projects</router-link>
+      <router-link to="/projects" class="back-link">
+        <span class="back-arrow" aria-hidden="true">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>back to projects</span>
+      </router-link>
       <h1>{{ project.title }}</h1>
       <p class="subtitle">{{ project.category }}</p>
       <p class="intro">{{ project.description }}</p>
@@ -153,10 +158,32 @@ export default {
 
 .back-link {
   display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
   color: #4f545c;
   text-transform: lowercase;
   font-size: 15px;
+  font-weight: 600;
+}
+
+.back-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ded7cc;
+  background: #f7f3ed;
+  color: #4f545c;
+  transition: 0.2s ease;
+}
+
+.back-link:hover .back-arrow {
+  background: #e5524c;
+  border-color: #e5524c;
+  color: #ffffff;
 }
 
 h1 {

@@ -10,7 +10,8 @@
           <img
             src="/images/skills-what-i-do.svg"
             alt="Software engineering illustration"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
           />
         </div>
@@ -243,20 +244,20 @@ export default {
 }
 
 .tools-cloud {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-  gap: 14px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
   margin-top: 12px;
-  max-width: 980px;
+  max-width: 1040px;
 }
 
 .tool-token {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   color: #50545a;
-  min-width: 0;
-  padding: 4px 0;
+  min-width: 150px;
+  padding: 2px 0;
 }
 
 .tool-token img {
@@ -317,13 +318,12 @@ export default {
   }
 
   .tools-cloud {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 14px;
+    gap: 14px 20px;
   }
 
   .tool-token span {
     font-size: 14px;
-    white-space: normal;
+    white-space: nowrap;
   }
 }
 
@@ -341,7 +341,15 @@ export default {
   }
 
   .tools-cloud {
-    grid-template-columns: 1fr;
+    gap: 12px 14px;
+  }
+
+  .tool-token {
+    min-width: 130px;
+  }
+
+  .tool-token span {
+    white-space: normal;
   }
 }
 </style>
