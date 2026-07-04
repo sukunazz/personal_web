@@ -58,11 +58,29 @@
         </section>
 
         <section class="hero-image">
-          <img
-            class="hero-avatar"
-            src="/images/penguin-cute.png"
-            alt="Cute penguin character"
-          />
+          <div
+            class="hero-avatar penguin-scene"
+            role="img"
+            aria-label="Animated penguin character waving"
+          >
+            <div class="penguin-shadow"></div>
+            <div class="penguin-character">
+              <div class="penguin-head">
+                <span class="penguin-eye penguin-eye-left"></span>
+                <span class="penguin-eye penguin-eye-right"></span>
+                <span class="penguin-blush penguin-blush-left"></span>
+                <span class="penguin-blush penguin-blush-right"></span>
+                <span class="penguin-beak"></span>
+              </div>
+              <div class="penguin-body">
+                <span class="penguin-belly"></span>
+                <span class="penguin-foot penguin-foot-left"></span>
+                <span class="penguin-foot penguin-foot-right"></span>
+              </div>
+              <div class="penguin-flipper penguin-flipper-left"></div>
+              <div class="penguin-flipper penguin-flipper-right"></div>
+            </div>
+          </div>
         </section>
       </div>
     </section>
@@ -433,20 +451,280 @@ export default {
   width: 430px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  height: auto;
+}
+
+.penguin-scene {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
   padding: 18px;
   border-radius: 28px;
   background: linear-gradient(180deg, #f7fbff 0%, #eef4fa 100%);
-  object-fit: contain;
   user-select: none;
   box-shadow:
     0 12px 24px rgba(44, 62, 80, 0.08),
     inset 0 0 0 1px rgba(100, 120, 140, 0.08);
-  transition: 0.4s;
+  transform: translateX(-24px);
+  transition: box-shadow 0.3s ease;
 }
 
-.hero-avatar:hover {
-  transform: translateY(-6px) scale(1.01);
+.penguin-scene::before {
+  content: "";
+  position: absolute;
+  inset: 16px 16px auto;
+  height: 38%;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.94) 0 30%, transparent 31%),
+    radial-gradient(circle at 72% 22%, rgba(255, 255, 255, 0.85) 0 26%, transparent 27%),
+    linear-gradient(180deg, rgba(219, 236, 253, 0.9) 0%, rgba(219, 236, 253, 0.1) 100%);
+}
+
+.penguin-scene::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 16px;
+  height: 28%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d4e3f2 0%, #c6d8ea 100%);
+}
+
+.penguin-scene:hover {
+  box-shadow:
+    0 18px 34px rgba(44, 62, 80, 0.14),
+    inset 0 0 0 1px rgba(100, 120, 140, 0.08);
+}
+
+.penguin-shadow {
+  position: absolute;
+  width: 55%;
+  height: 13%;
+  bottom: 18%;
+  border-radius: 999px;
+  background: rgba(43, 59, 72, 0.24);
+  filter: blur(4px);
+  animation: penguin-shadow 3.2s ease-in-out infinite;
+  z-index: 1;
+}
+
+.penguin-character {
+  position: relative;
+  left: 0;
+  width: 58%;
+  max-width: 250px;
+  aspect-ratio: 3 / 4;
+  z-index: 2;
+  animation:
+    penguin-walk 6s ease-in-out infinite,
+    penguin-bob 3.2s ease-in-out infinite;
+}
+
+.penguin-head {
+  position: absolute;
+  width: 62%;
+  height: 38%;
+  left: 50%;
+  top: 4%;
+  transform: translateX(-50%);
+  border-radius: 52% 52% 44% 44%;
+  background: #1f2b37;
+  z-index: 4;
+}
+
+.penguin-eye {
+  position: absolute;
+  width: 16%;
+  height: 18%;
+  top: 36%;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: penguin-blink 4.6s infinite;
+}
+
+.penguin-eye::before {
+  content: "";
+  position: absolute;
+  width: 48%;
+  height: 48%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #212833;
+}
+
+.penguin-eye-left {
+  left: 22%;
+}
+
+.penguin-eye-right {
+  right: 22%;
+}
+
+.penguin-blush {
+  position: absolute;
+  width: 11%;
+  height: 8%;
+  top: 56%;
+  border-radius: 999px;
+  background: rgba(236, 140, 145, 0.6);
+}
+
+.penguin-blush-left {
+  left: 17%;
+}
+
+.penguin-blush-right {
+  right: 17%;
+}
+
+.penguin-beak {
+  position: absolute;
+  width: 18%;
+  height: 14%;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%);
+  border-radius: 40% 40% 70% 70%;
+  background: #f4a64f;
+}
+
+.penguin-body {
+  position: absolute;
+  width: 72%;
+  height: 58%;
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  border-radius: 49% 49% 44% 44%;
+  background: #18222d;
+  z-index: 3;
+}
+
+.penguin-belly {
+  position: absolute;
+  width: 62%;
+  height: 72%;
+  left: 50%;
+  top: 16%;
+  transform: translateX(-50%);
+  border-radius: 48%;
+  background: #f7fbff;
+}
+
+.penguin-flipper {
+  position: absolute;
+  width: 22%;
+  height: 36%;
+  top: 38%;
+  border-radius: 999px;
+  background: #121a23;
+  z-index: 2;
+}
+
+.penguin-flipper-left {
+  left: 14%;
+  transform-origin: 80% 18%;
+  transform: rotate(30deg);
+  animation: penguin-flipper-left 3.2s ease-in-out infinite;
+}
+
+.penguin-flipper-right {
+  right: 14%;
+  transform-origin: 20% 18%;
+  transform: rotate(-18deg);
+  animation: penguin-wave 1.4s ease-in-out infinite;
+}
+
+.penguin-foot {
+  position: absolute;
+  width: 20%;
+  height: 13%;
+  bottom: -5%;
+  border-radius: 56% 56% 42% 42%;
+  background: #f19b44;
+}
+
+.penguin-foot-left {
+  left: 24%;
+}
+
+.penguin-foot-right {
+  right: 24%;
+}
+
+@keyframes penguin-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes penguin-walk {
+  0%,
+  100% {
+    left: 0;
+  }
+  25% {
+    left: 5%;
+  }
+  75% {
+    left: -5%;
+  }
+}
+
+@keyframes penguin-wave {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+  40% {
+    transform: rotate(-52deg);
+  }
+  70% {
+    transform: rotate(-28deg);
+  }
+}
+
+@keyframes penguin-flipper-left {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes penguin-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.24;
+  }
+  50% {
+    transform: scaleX(0.88);
+    opacity: 0.18;
+  }
+}
+
+@keyframes penguin-blink {
+  0%,
+  44%,
+  48%,
+  100% {
+    transform: scaleY(1);
+  }
+  46% {
+    transform: scaleY(0.15);
+  }
 }
 
 .section-card {
@@ -824,6 +1102,10 @@ export default {
     width: 360px;
   }
 
+  .penguin-scene {
+    transform: translateX(-14px);
+  }
+
   .skills-panel {
     grid-template-columns: 1fr;
   }
@@ -866,6 +1148,10 @@ export default {
   .hero-image {
     justify-content: center;
     margin-top: 20px;
+  }
+
+  .penguin-scene {
+    transform: translateX(0);
   }
 
   .hero-avatar {
@@ -961,6 +1247,10 @@ export default {
 
   .hero-avatar {
     width: 260px;
+  }
+
+  .penguin-character {
+    width: 62%;
   }
 
   .section-title {
