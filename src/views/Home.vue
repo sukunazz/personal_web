@@ -49,6 +49,12 @@
               solutions.
             </p>
 
+            <div class="hero-highlights" aria-label="core focus areas">
+              <span>Web Apps</span>
+              <span>Backend APIs</span>
+              <span>AI Workflows</span>
+            </div>
+
             <button type="button" class="talk-button" @click="goToContact">
               let's<br />
               talk
@@ -97,19 +103,49 @@ export default {
   margin-top: -2px;
   padding: 44px 0 50px;
   min-height: calc(100vh - 86px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before,
+.hero-card::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-card::before {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: 80px;
+  background: radial-gradient(circle, rgba(174, 218, 221, 0.55) 0%, rgba(174, 218, 221, 0) 70%);
+}
+
+.hero-card::after {
+  width: 320px;
+  height: 320px;
+  left: -140px;
+  bottom: -60px;
+  background: radial-gradient(circle, rgba(219, 153, 108, 0.25) 0%, rgba(219, 153, 108, 0) 72%);
 }
 
 .hero-shell {
   padding: 0 60px;
-  max-width: 1440px;
+  max-width: 1320px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 70px 430px 1fr;
+  grid-template-columns: 70px minmax(380px, 440px) minmax(340px, 440px);
   align-items: center;
-  column-gap: 40px;
+  justify-content: space-between;
+  column-gap: 24px;
   min-height: 680px;
 }
 
@@ -180,7 +216,26 @@ export default {
   font-size: 15px;
   line-height: 1.9;
   color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 18px;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.hero-highlights span {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid #d8d0c5;
+  background: #f6f0e9;
+  color: #666;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 .talk-button {
@@ -188,7 +243,7 @@ export default {
   height: 92px;
   border-radius: 50%;
   border: none;
-  background: #e5524c;
+  background: var(--color-accent-600);
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -198,19 +253,19 @@ export default {
   font-weight: 500;
   line-height: 1.05;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(239, 123, 113, 0.35);
+  box-shadow: 0 10px 25px rgba(219, 153, 108, 0.35);
   transition: 0.3s;
 }
 
 .talk-button:hover {
   transform: translateY(-6px);
   background: var(--color-brand-600);
-  box-shadow: 0 18px 35px rgba(31, 79, 70, 0.3);
+  box-shadow: 0 18px 35px rgba(128, 144, 183, 0.3);
 }
 
 .hero-image {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -260,8 +315,8 @@ export default {
 
 @media (max-width: 1200px) {
   .hero-layout {
-    grid-template-columns: 60px 1fr 420px;
-    gap: 30px;
+    grid-template-columns: 60px minmax(340px, 1fr) minmax(300px, 390px);
+    gap: 24px;
   }
 
   .hero-title {
@@ -291,6 +346,10 @@ export default {
   .hero-description {
     width: 100%;
     max-width: 550px;
+  }
+
+  .hero-highlights {
+    justify-content: center;
   }
 
   .hero-socials {
@@ -331,6 +390,11 @@ export default {
 
   .hero-description {
     font-size: 14px;
+  }
+
+  .hero-highlights {
+    justify-content: center;
+    margin-bottom: 28px;
   }
 
   .hero-socials a {

@@ -118,7 +118,7 @@ export default {
 }
 
 .logo-red {
-  color: #e5524c;
+  color: var(--color-accent-600);
 }
 
 .logo-black {
@@ -299,8 +299,8 @@ export default {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 1px solid #d5e2ec;
-    background: #eaf3fb;
+    border: 1px solid #d9d2c9;
+    background: #f6f0e9;
     color: #4e4e4e;
     display: inline-flex;
     align-items: center;
@@ -355,7 +355,7 @@ export default {
 
   .nav-link.router-link-exact-active,
   .nav-link.active {
-    background: #e2f0eb;
+    background: #edf1f9;
   }
 }
 </style>

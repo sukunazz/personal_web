@@ -1,17 +1,17 @@
 :root {
-  --color-text-900: #1d1b18;
-  --color-text-700: #47423c;
-  --color-text-500: #6f665b;
-  --color-brand-700: #1f4f46;
-  --color-brand-600: #2a6a5d;
-  --color-accent-600: #8a5a35;
-  --color-accent-500: #a76e42;
-  --color-warm-500: #c39a72;
-  --color-bg-100: #edf4fb;
-  --color-bg-200: #dfe8f1;
+  --color-text-900: #2f3541;
+  --color-text-700: #515a67;
+  --color-text-500: #6f7a89;
+  --color-brand-700: #6e7da2;
+  --color-brand-600: #8090b7;
+  --color-accent-600: #db996c;
+  --color-accent-500: #e8ab83;
+  --color-warm-500: #d7b49e;
+  --color-bg-100: #fcf8f3;
+  --color-bg-200: #f1ece5;
   --color-surface: #ffffff;
-  --color-surface-soft: #f4f8fc;
-  --color-border: #c9d6e3;
+  --color-surface-soft: #fcf8f3;
+  --color-border: #d9d2c9;
   --color-success: #14835d;
   --color-danger: #bf3f3f;
   --shadow-soft: 0 8px 20px rgba(28, 24, 20, 0.06);
@@ -33,7 +33,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text-900);
-  background: linear-gradient(180deg, #eef4fa 0%, #e6eef7 54%, #eef4fa 100%);
+  background: linear-gradient(180deg, #fcf8f3 0%, #f4f5f9 46%, #eef5f7 100%);
   line-height: 1.65;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   font-size: 17px;

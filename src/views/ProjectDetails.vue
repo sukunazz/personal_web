@@ -300,7 +300,7 @@ h1 {
 
 .gallery-thumb.active {
   border-color: var(--color-brand-600);
-  box-shadow: 0 0 0 2px rgba(31, 79, 70, 0.2);
+  box-shadow: 0 0 0 2px rgba(110, 125, 162, 0.25);
 }
 
 .meta-lines p {

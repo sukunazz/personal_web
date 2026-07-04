@@ -150,7 +150,7 @@ export default {
   width: 130px;
   height: 4px;
   border-radius: 99px;
-  background: #e5524c;
+  background: var(--color-accent-600);
   margin-bottom: 26px;
   position: relative;
 }
@@ -160,7 +160,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #e5524c;
+  background: var(--color-accent-600);
   position: absolute;
   left: -4px;
   top: -3px;
