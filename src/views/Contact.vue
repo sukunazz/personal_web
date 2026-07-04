@@ -1,6 +1,6 @@
 <template>
   <main class="contact-page">
-    <section class="container section-card contact-section">
+    <section class="container contact-card">
       <h2 class="skills-title">Contact</h2>
       <p class="skills-subtitle">Let's Build Something</p>
       <span class="section-rule" aria-hidden="true"></span>
@@ -55,7 +55,12 @@
           <input id="email" type="email" v-model="form.email" required />
 
           <label for="message">Message</label>
-          <textarea id="message" v-model="form.message" rows="6" required></textarea>
+          <textarea
+            id="message"
+            v-model="form.message"
+            rows="6"
+            required
+          ></textarea>
 
           <button type="submit">send</button>
 
@@ -107,14 +112,14 @@ export default {
 
 <style scoped>
 .contact-page {
-  padding-bottom: 22px;
+  padding-bottom: 20px;
 }
 
-.section-card {
-  margin-top: 20px;
+.contact-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 40px 44px;
+  border-radius: 0 0 14px 14px;
+  margin-top: -2px;
+  padding: 40px 44px 46px;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
@@ -287,7 +292,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .section-card {
+  .contact-card {
     padding: 35px 25px;
   }
 

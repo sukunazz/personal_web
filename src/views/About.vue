@@ -1,6 +1,6 @@
 <template>
   <main class="about-page">
-    <section class="container section-card about-top-card">
+    <section class="container about-card">
       <h2 class="skills-title">About Me</h2>
       <p class="skills-subtitle">Who I Am</p>
       <span class="section-rule" aria-hidden="true"></span>
@@ -38,44 +38,45 @@
           </p>
         </div>
       </div>
-    </section>
 
-    <section class="container section-card readme-card">
-      <h2 class="section-title">README</h2>
-      <p class="readme-text">
-        I am a software engineer with strong hands-on experience across modern
-        web technologies and scalable backend systems. I focus on writing
-        reliable code that is easy to maintain and practical to extend.
-      </p>
-      <p class="readme-text">
-        My work is centered around the JavaScript ecosystem, where I build
-        full-stack products with clear architecture, performant APIs, and
-        user-centered interfaces.
-      </p>
-      <p class="readme-text">
-        Outside coding, I spend time learning new tools, reading documentation,
-        playing chess, and continuously improving my software engineering craft.
-      </p>
-    </section>
+      <section class="about-readme-block">
+        <h2 class="section-title">README</h2>
+        <p class="readme-text">
+          I am a software engineer with strong hands-on experience across modern
+          web technologies and scalable backend systems. I focus on writing
+          reliable code that is easy to maintain and practical to extend.
+        </p>
+        <p class="readme-text">
+          My work is centered around the JavaScript ecosystem, where I build
+          full-stack products with clear architecture, performant APIs, and
+          user-centered interfaces.
+        </p>
+        <p class="readme-text">
+          Outside coding, I spend time learning new tools, reading
+          documentation, playing chess, and continuously improving my software
+          engineering craft.
+        </p>
+      </section>
 
-    <section class="container section-card tools-card">
-      <h2 class="section-title">Tools I Use</h2>
-      <div class="tools-panel">
-        <span>Vue.js</span>
-        <span>React</span>
-        <span>TailwindCSS</span>
-        <span>Pinia</span>
-        <span>NestJS</span>
-        <span>Node.js</span>
-        <span>Express</span>
-        <span>PostgreSQL</span>
-        <span>MongoDB</span>
-        <span>Redis</span>
-        <span>Docker</span>
-        <span>Git</span>
-        <span>Vercel</span>
-        <span>Axios</span>
-      </div>
+      <section class="about-tools-block">
+        <h2 class="section-title">Tools I Use</h2>
+        <div class="tools-list">
+          <span>Vue.js</span>
+          <span>React</span>
+          <span>TailwindCSS</span>
+          <span>Pinia</span>
+          <span>NestJS</span>
+          <span>Node.js</span>
+          <span>Express</span>
+          <span>PostgreSQL</span>
+          <span>MongoDB</span>
+          <span>Redis</span>
+          <span>Docker</span>
+          <span>Git</span>
+          <span>Vercel</span>
+          <span>Axios</span>
+        </div>
+      </section>
     </section>
   </main>
 </template>
@@ -88,14 +89,14 @@ export default {
 
 <style scoped>
 .about-page {
-  padding-bottom: 22px;
+  padding-bottom: 20px;
 }
 
-.section-card {
-  margin-top: 20px;
+.about-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 40px 44px;
+  border-radius: 0 0 14px 14px;
+  margin-top: -2px;
+  padding: 40px 44px 46px;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
@@ -181,6 +182,10 @@ export default {
   line-height: 1.6;
 }
 
+.about-readme-block {
+  margin-top: 30px;
+}
+
 .section-title {
   font-size: 34px;
   font-weight: 700;
@@ -196,20 +201,22 @@ export default {
   margin-bottom: 12px;
 }
 
-.tools-panel {
-  background: #f1efef;
-  border-radius: 12px;
-  padding: 20px;
+.about-tools-block {
+  margin-top: 20px;
+}
+
+.tools-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 6px;
 }
 
-.tools-panel span {
+.tools-list span {
   border: 1px solid #ddd6ce;
   border-radius: 999px;
   padding: 6px 12px;
-  background: #ffffff;
+  background: #f8f6f2;
   color: #50545a;
   font-size: 14px;
   font-weight: 600;
@@ -226,7 +233,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .section-card {
+  .about-card {
     padding: 35px 25px;
   }
 

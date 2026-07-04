@@ -1,6 +1,6 @@
 <template>
   <main class="projects-page">
-    <section class="container section-card projects-heading">
+    <section class="container projects-card">
       <h2 class="skills-title">My Works</h2>
       <p class="skills-subtitle">Project Highlights</p>
       <span class="section-rule" aria-hidden="true"></span>
@@ -37,14 +37,14 @@ export default {
 
 <style scoped>
 .projects-page {
-  padding-bottom: 22px;
+  padding-bottom: 20px;
 }
 
-.section-card {
-  margin-top: 20px;
+.projects-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 40px 44px;
+  border-radius: 0 0 14px 14px;
+  margin-top: -2px;
+  padding: 40px 44px 46px;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.04),
     0 18px 40px rgba(0, 0, 0, 0.05);
@@ -135,7 +135,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .section-card {
+  .projects-card {
     padding: 35px 25px;
   }
 

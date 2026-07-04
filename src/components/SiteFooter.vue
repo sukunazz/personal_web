@@ -37,33 +37,33 @@ export default {
 
 <style scoped>
 .site-footer {
-  padding: 44px 0 40px;
+  padding: 12px 0 28px;
 }
 
 .footer-content {
   text-align: center;
-  color: #4c5a6a;
+  color: #50545a;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
 }
 
 .footer-content h3 {
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.1rem);
   margin-bottom: 8px;
-  color: #3f4f63;
+  color: #4b4f56;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   font-weight: 700;
 }
 
 .footer-location {
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  color: #6a7789;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  color: #666;
   margin-bottom: 10px;
 }
 
 .footer-email {
-  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 700;
-  color: #3f4f63;
+  color: #4b4f56;
   text-decoration: none;
 }
 
@@ -75,19 +75,19 @@ export default {
 }
 
 .footer-socials a {
-  font-size: clamp(1.55rem, 2vw, 1.9rem);
-  color: #5f6e80;
+  font-size: clamp(1.4rem, 1.8vw, 1.7rem);
+  color: #666;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-socials a:hover {
-  color: #42586f;
+  color: #e5524c;
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 36px 0 32px;
+    padding: 10px 0 22px;
   }
 }
 </style>
