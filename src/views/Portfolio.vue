@@ -1,34 +1,22 @@
 <template>
-  <main class="works-page">
-    <section class="container section-frame heading">
-      <h1>My Works</h1>
-      <p>Few of my past and present projects.</p>
+  <main class="projects-page">
+    <section class="container section-card heading">
+      <h1>Projects</h1>
+      <p>Selected work. Click any card to open full project details.</p>
     </section>
 
-    <section class="container section-frame works-list">
-      <h2>Web Applications</h2>
-      <div class="work-item" v-for="project in projects" :key="project.id">
-        <img :src="project.image" :alt="project.title" />
-        <div>
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <div class="item-meta">
-            <span>{{ project.category }}</span>
-            <router-link :to="{ name: 'ProjectDetails', params: { id: project.id } }">
-              open project
-            </router-link>
-          </div>
+    <section class="container section-card projects-grid">
+      <router-link
+        v-for="project in projects"
+        :key="project.id"
+        class="project-card"
+        :to="{ name: 'ProjectDetails', params: { id: project.id } }"
+      >
+        <div class="project-thumb">
+          <img :src="project.image" :alt="project.title" />
         </div>
-      </div>
-    </section>
-
-    <section class="container section-frame ingredients">
-      <h2>I cook with these ingredients</h2>
-      <p>
-        Vue.js, React, JavaScript, Node.js, Express, NestJS, MongoDB,
-        PostgreSQL, Git, Docker.
-      </p>
-      <a href="/sujan_resume.pdf" class="resume-link" download>my resume</a>
+        <h3>{{ project.title }}</h3>
+      </router-link>
     </section>
   </main>
 </template>
@@ -47,11 +35,11 @@ export default {
 </script>
 
 <style scoped>
-.works-page {
+.projects-page {
   padding: 1rem 0 2rem;
 }
 
-.section-frame {
+.section-card {
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -68,81 +56,57 @@ export default {
   color: var(--color-text-500);
 }
 
-h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.9rem;
-}
-
-.work-item {
+.projects-grid {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 0.9rem;
-  align-items: start;
-  padding: 0.8rem 0;
-  border-top: 1px solid var(--color-border);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.work-item:first-of-type {
-  border-top: none;
-  padding-top: 0;
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e3dfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.work-item img {
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 22px rgba(44, 41, 38, 0.09);
+}
+
+.project-thumb {
   width: 100%;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  object-fit: cover;
   aspect-ratio: 16/10;
+  overflow: hidden;
 }
 
-.work-item h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.2rem;
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.work-item p {
-  color: var(--color-text-700);
+.project-card h3 {
+  padding: 14px;
+  font-size: 22px;
+  color: #363a40;
 }
 
-.item-meta {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-  margin-top: 0.45rem;
-}
-
-.item-meta span {
-  font-size: 0.78rem;
-  color: var(--color-text-500);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.item-meta a {
-  color: var(--color-brand-700);
-  font-size: 0.85rem;
-  text-transform: lowercase;
-  font-weight: 600;
-}
-
-.ingredients p {
-  margin-bottom: 0.8rem;
-}
-
-.resume-link {
-  color: var(--color-brand-700);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-weight: 600;
+@media (max-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
-  .section-frame {
+  .section-card {
     padding: 1.1rem;
   }
 
-  .work-item {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <header class="site-header">
     <div class="container header-frame">
-      <!-- Logo -->
       <router-link to="/" class="brand">
         <span class="logo-red">&lt;</span>
         <span class="logo-black">S</span>
@@ -9,36 +8,36 @@
         <span class="logo-black">S</span>
       </router-link>
 
-      <!-- Email -->
       <a href="mailto:sujansigdel03@gmail.com" class="email-link">
         <i class="fas fa-envelope"></i>
         <span>sujansigdel03@gmail.com</span>
       </a>
 
-      <!-- Navigation -->
       <nav class="nav-links">
-        <a
-          href="#projects"
-          class="nav-link"
-          @click.prevent="goToSection('projects')"
-        >
+        <router-link to="/" class="nav-link">
+          <i class="fas fa-house"></i>
+          <span>Home</span>
+        </router-link>
+
+        <router-link to="/about" class="nav-link">
+          <i class="fas fa-user"></i>
+          <span>About</span>
+        </router-link>
+
+        <router-link to="/projects" class="nav-link">
           <i class="fas fa-file-alt"></i>
           <span>Projects</span>
-        </a>
+        </router-link>
 
         <a href="/sujan_resume.pdf" class="nav-link" download>
-          <i class="fas fa-user"></i>
+          <i class="fas fa-download"></i>
           <span>Resume</span>
         </a>
 
-        <a
-          href="#contact"
-          class="nav-link"
-          @click.prevent="goToSection('contact')"
-        >
+        <router-link to="/contact" class="nav-link">
           <i class="fas fa-book"></i>
           <span>Contact</span>
-        </a>
+        </router-link>
       </nav>
     </div>
   </header>
@@ -47,31 +46,6 @@
 <script>
 export default {
   name: "NavigationBar",
-  methods: {
-    async goToSection(sectionId) {
-      const scroll = () => {
-        const target = document.getElementById(sectionId);
-        if (!target) return;
-
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        if (window.location.hash) {
-          const cleanPath = window.location.pathname + window.location.search;
-          window.history.replaceState(null, "", cleanPath);
-        }
-      };
-
-      if (this.$route.path !== "/") {
-        await this.$router.push("/");
-        this.$nextTick(() => {
-          setTimeout(scroll, 80);
-        });
-        return;
-      }
-
-      scroll();
-    },
-  },
 };
 </script>
 
@@ -204,6 +178,10 @@ export default {
   color: #ef6b61;
 }
 
+.nav-link.router-link-exact-active {
+  color: #ef6b61;
+}
+
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 950px) {
@@ -229,7 +207,7 @@ export default {
 
     justify-content: center;
 
-    gap: 18px;
+    gap: 16px;
   }
 }
 

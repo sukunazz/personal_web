@@ -2,16 +2,19 @@
   <div id="app">
     <NavigationBar />
     <router-view></router-view>
+    <SiteFooter />
   </div>
 </template>
 
 <script>
 import NavigationBar from "./components/NavigationBar.vue";
+import SiteFooter from "./components/SiteFooter.vue";
 
 export default {
   name: "App",
   components: {
     NavigationBar,
+    SiteFooter,
   },
 };
 </script>

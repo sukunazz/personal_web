@@ -1,7 +1,7 @@
 <template>
   <main class="project-page">
     <section class="container section-frame" v-if="project">
-      <router-link to="/projects" class="back-link">back to works</router-link>
+      <router-link to="/projects" class="back-link">back to projects</router-link>
       <h1>{{ project.title }}</h1>
       <p class="subtitle">{{ project.category }}</p>
       <p class="intro">{{ project.description }}</p>
