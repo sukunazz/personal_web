@@ -12,12 +12,6 @@ html {
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
-  #app {
-    padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
-  }
-}
-
 a {
   text-decoration: none;
   transition: color 0.3s ease;

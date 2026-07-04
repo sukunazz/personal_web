@@ -13,6 +13,33 @@
         <span>sujansigdel03@gmail.com</span>
       </a>
 
+      <div class="header-socials" aria-label="social links">
+        <a
+          href="https://www.linkedin.com/in/sujansigdel/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/sukunazz"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://x.com/sigdelsujan03"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+
       <nav class="nav-links">
         <router-link to="/" class="nav-link">
           <i class="fas fa-house"></i>
@@ -182,6 +209,10 @@ export default {
   color: #ef6b61;
 }
 
+.header-socials {
+  display: none;
+}
+
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 950px) {
@@ -226,27 +257,87 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    padding-top: 12px;
+  }
+
   .header-frame {
-    padding: 18px 18px 14px;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand socials"
+      "email socials"
+      "nav nav";
+    align-items: center;
+    row-gap: 8px;
+    column-gap: 12px;
+    padding: 16px 14px 12px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .brand {
+    grid-area: brand;
+    justify-self: start;
   }
 
   .email-link {
+    grid-area: email;
+    order: initial;
+    margin-left: 0;
     font-size: 12px;
   }
 
+  .email-link span {
+    display: inline-block;
+    max-width: min(62vw, 240px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .header-socials {
+    grid-area: socials;
+    display: inline-flex;
+    gap: 10px;
+    justify-self: end;
+    align-self: start;
+  }
+
+  .header-socials a {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #e5ddd0;
+    background: #f7f2ea;
+    color: #4e4e4e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: 0.2s ease;
+  }
+
+  .header-socials a:hover {
+    color: #e5524c;
+    border-color: #e8b5af;
+  }
+
   .nav-links {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 70;
-    background: #ffffff;
-    border-top: 1px solid #e7e1d6;
-    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
-    justify-content: space-between;
-    gap: 0;
-    padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px));
+    grid-area: nav;
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: auto;
+    background: transparent;
+    border-top: 1px solid #ebe5da;
+    box-shadow: none;
+    justify-content: stretch;
+    gap: 4px;
+    padding: 10px 0 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .nav-link {
@@ -254,9 +345,9 @@ export default {
     justify-content: center;
     gap: 5px;
     min-width: 0;
-    min-height: 50px;
-    padding: 3px 4px;
-    flex: 1 1 20%;
+    min-height: 48px;
+    padding: 4px 2px;
+    flex: 1 1 auto;
     font-size: 12px;
     line-height: 1;
     border-radius: 8px;
@@ -269,7 +360,7 @@ export default {
 
   .nav-link span {
     white-space: nowrap;
-    font-size: 11.5px;
+    font-size: 11px;
   }
 
   .nav-link.router-link-exact-active,

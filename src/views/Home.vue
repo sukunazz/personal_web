@@ -294,12 +294,12 @@ export default {
 
   .hero-image {
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 12px;
   }
 
   .minion-sequence {
     padding: 4px 0 8px;
-    transform: translateY(-18px);
+    transform: translateY(-12px);
   }
 
   .hero-avatar {
@@ -351,7 +351,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-14px);
+    transform: translateY(-8px);
   }
 
   .hero-socials a {
@@ -370,7 +370,7 @@ export default {
   }
 
   .minion-sequence {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
   }
 }
 </style>

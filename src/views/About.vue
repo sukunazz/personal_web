@@ -329,13 +329,25 @@ export default {
     justify-items: start;
   }
 
+  .about-top-layout {
+    text-align: left;
+  }
+
+  .about-summary li {
+    justify-content: flex-start;
+  }
+
+  .about-summary li span {
+    text-align: left;
+  }
+
   .fun-fact {
     padding-left: 0;
   }
 
   .tools-cloud {
     gap: 14px 20px;
-    padding-left: 10px;
+    padding-left: 16px;
   }
 
   .tool-token {
@@ -363,7 +375,7 @@ export default {
 
   .tools-cloud {
     gap: 12px 14px;
-    padding-left: 8px;
+    padding-left: 12px;
   }
 
   .tool-token {
